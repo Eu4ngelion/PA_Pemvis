@@ -37,7 +37,6 @@ Partial Class Admin_Menu
         txtCari = New TextBox()
         labelCari = New Label()
         MenuStrip1 = New MenuStrip()
-        MenuToolStripMenuItem = New ToolStripMenuItem()
         LogoutToolStripMenuItem = New ToolStripMenuItem()
         txtPenulis = New TextBox()
         txtHarga = New TextBox()
@@ -186,19 +185,12 @@ Partial Class Admin_Menu
         ' MenuStrip1
         ' 
         MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {MenuToolStripMenuItem, LogoutToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {LogoutToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Size = New Size(1062, 28)
         MenuStrip1.TabIndex = 7
         MenuStrip1.Text = "MenuStrip1"
-        ' 
-        ' MenuToolStripMenuItem
-        ' 
-        MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        MenuToolStripMenuItem.Padding = New Padding(30, 0, 5, 0)
-        MenuToolStripMenuItem.Size = New Size(126, 24)
-        MenuToolStripMenuItem.Text = "Kelola Buku"
         ' 
         ' LogoutToolStripMenuItem
         ' 
@@ -457,7 +449,6 @@ Partial Class Admin_Menu
     Friend WithEvents txtCari As TextBox
     Friend WithEvents labelCari As Label
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents txtPenulis As TextBox
     Friend WithEvents txtHarga As TextBox
