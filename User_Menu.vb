@@ -12,7 +12,7 @@ Public Class User_Menu
         DataGridView1.DataSource = DS.Tables("tbBuku")
     End Sub
 
-    Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToolStripMenuItem.Click
+    Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuBack.Click
         Landing.Show()
         Me.Close()
     End Sub

@@ -25,31 +25,42 @@ Partial Class User_Menu
         btnAdd = New Button()
         DataGridView1 = New DataGridView()
         labelJudul = New Label()
-        TextBox1 = New TextBox()
-        Label1 = New Label()
-        TextBox2 = New TextBox()
-        Button1 = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
-        ListBox1 = New ListBox()
-        Label3 = New Label()
-        Label4 = New Label()
-        TextBox3 = New TextBox()
-        Label5 = New Label()
-        TextBox4 = New TextBox()
+        txtSearch = New TextBox()
+        txtJumlah = New TextBox()
+        btnKurang = New Button()
+        btnTambah = New Button()
+        btnCetakStruk = New Button()
+        listKeranjang = New ListBox()
         Label2 = New Label()
         PrintDialog1 = New PrintDialog()
         MenuStrip1 = New MenuStrip()
-        BackToolStripMenuItem = New ToolStripMenuItem()
+        menuBack = New ToolStripMenuItem()
+        txtStok = New TextBox()
+        txtHarga = New TextBox()
+        txtPenulis = New TextBox()
+        txtNamaBuku = New TextBox()
+        Label7 = New Label()
+        Label5 = New Label()
+        Label4 = New Label()
+        Label3 = New Label()
+        Label1 = New Label()
+        txtIdBuku = New TextBox()
+        btnCari = New Button()
+        Label6 = New Label()
+        Label8 = New Label()
+        Label9 = New Label()
+        txtDeskripsi = New TextBox()
+        txtJenis = New TextBox()
+        txtGenre = New TextBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
         ' btnAdd
         ' 
-        btnAdd.Location = New Point(758, 121)
+        btnAdd.Location = New Point(758, 384)
         btnAdd.Name = "btnAdd"
-        btnAdd.Size = New Size(133, 29)
+        btnAdd.Size = New Size(128, 29)
         btnAdd.TabIndex = 0
         btnAdd.Text = "+ Keranjang"
         btnAdd.UseVisualStyleBackColor = True
@@ -57,10 +68,10 @@ Partial Class User_Menu
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(31, 198)
+        DataGridView1.Location = New Point(30, 340)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(652, 488)
+        DataGridView1.Size = New Size(652, 368)
         DataGridView1.TabIndex = 1
         ' 
         ' labelJudul
@@ -72,115 +83,66 @@ Partial Class User_Menu
         labelJudul.TabIndex = 2
         labelJudul.Text = "Haven Media"
         ' 
-        ' TextBox1
+        ' txtSearch
         ' 
-        TextBox1.Location = New Point(90, 124)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(302, 27)
-        TextBox1.TabIndex = 4
+        txtSearch.Location = New Point(30, 296)
+        txtSearch.Name = "txtSearch"
+        txtSearch.Size = New Size(549, 27)
+        txtSearch.TabIndex = 4
         ' 
-        ' Label1
+        ' txtJumlah
         ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(31, 127)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(53, 20)
-        Label1.TabIndex = 5
-        Label1.Text = "Search"
+        txtJumlah.Location = New Point(825, 340)
+        txtJumlah.Name = "txtJumlah"
+        txtJumlah.Size = New Size(138, 27)
+        txtJumlah.TabIndex = 6
+        txtJumlah.Text = "txtJumlah"
         ' 
-        ' TextBox2
+        ' btnKurang
         ' 
-        TextBox2.Location = New Point(539, 161)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(76, 27)
-        TextBox2.TabIndex = 6
+        btnKurang.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        btnKurang.Location = New Point(758, 338)
+        btnKurang.Name = "btnKurang"
+        btnKurang.Size = New Size(61, 31)
+        btnKurang.TabIndex = 7
+        btnKurang.Text = "-"
+        btnKurang.UseVisualStyleBackColor = True
         ' 
-        ' Button1
+        ' btnTambah
         ' 
-        Button1.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Button1.Location = New Point(472, 160)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(61, 31)
-        Button1.TabIndex = 7
-        Button1.Text = "-"
-        Button1.UseVisualStyleBackColor = True
+        btnTambah.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        btnTambah.Location = New Point(969, 339)
+        btnTambah.Name = "btnTambah"
+        btnTambah.Size = New Size(62, 29)
+        btnTambah.TabIndex = 7
+        btnTambah.Text = "+"
+        btnTambah.UseVisualStyleBackColor = True
         ' 
-        ' Button2
+        ' btnCetakStruk
         ' 
-        Button2.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        Button2.Location = New Point(621, 159)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(62, 29)
-        Button2.TabIndex = 7
-        Button2.Text = "+"
-        Button2.UseVisualStyleBackColor = True
+        btnCetakStruk.Location = New Point(900, 384)
+        btnCetakStruk.Name = "btnCetakStruk"
+        btnCetakStruk.Size = New Size(131, 29)
+        btnCetakStruk.TabIndex = 0
+        btnCetakStruk.Text = "Cetak Struk"
+        btnCetakStruk.UseVisualStyleBackColor = True
         ' 
-        ' Button3
+        ' listKeranjang
         ' 
-        Button3.Location = New Point(897, 121)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(133, 29)
-        Button3.TabIndex = 0
-        Button3.Text = "Checkout"
-        Button3.UseVisualStyleBackColor = True
-        ' 
-        ' ListBox1
-        ' 
-        ListBox1.FormattingEnabled = True
-        ListBox1.Location = New Point(758, 159)
-        ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(272, 524)
-        ListBox1.TabIndex = 8
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Location = New Point(550, 138)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(55, 20)
-        Label3.TabIndex = 5
-        Label3.Text = "Jumlah"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Location = New Point(31, 165)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(22, 20)
-        Label4.TabIndex = 9
-        Label4.Text = "Id"
-        ' 
-        ' TextBox3
-        ' 
-        TextBox3.Location = New Point(59, 162)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(136, 27)
-        TextBox3.TabIndex = 4
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Location = New Point(201, 165)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(49, 20)
-        Label5.TabIndex = 9
-        Label5.Text = "Nama"
-        ' 
-        ' TextBox4
-        ' 
-        TextBox4.Location = New Point(256, 161)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(136, 27)
-        TextBox4.TabIndex = 4
+        listKeranjang.FormattingEnabled = True
+        listKeranjang.Location = New Point(758, 419)
+        listKeranjang.Name = "listKeranjang"
+        listKeranjang.Size = New Size(272, 264)
+        listKeranjang.TabIndex = 8
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(916, 98)
+        Label2.Location = New Point(856, 291)
         Label2.Name = "Label2"
-        Label2.Size = New Size(103, 20)
+        Label2.Size = New Size(76, 20)
         Label2.TabIndex = 10
-        Label2.Text = "<Cetak Struk>"
+        Label2.Text = "Keranjang"
         ' 
         ' PrintDialog1
         ' 
@@ -189,39 +151,188 @@ Partial Class User_Menu
         ' MenuStrip1
         ' 
         MenuStrip1.ImageScalingSize = New Size(20, 20)
-        MenuStrip1.Items.AddRange(New ToolStripItem() {BackToolStripMenuItem})
+        MenuStrip1.Items.AddRange(New ToolStripItem() {menuBack})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
         MenuStrip1.Size = New Size(1062, 28)
         MenuStrip1.TabIndex = 11
         MenuStrip1.Text = "MenuStrip1"
         ' 
-        ' BackToolStripMenuItem
+        ' menuBack
         ' 
-        BackToolStripMenuItem.Name = "BackToolStripMenuItem"
-        BackToolStripMenuItem.Size = New Size(54, 24)
-        BackToolStripMenuItem.Text = "Back"
+        menuBack.Name = "menuBack"
+        menuBack.Size = New Size(54, 24)
+        menuBack.Text = "Back"
+        ' 
+        ' txtStok
+        ' 
+        txtStok.Location = New Point(345, 48)
+        txtStok.Name = "txtStok"
+        txtStok.Size = New Size(120, 27)
+        txtStok.TabIndex = 17
+        ' 
+        ' txtHarga
+        ' 
+        txtHarga.Location = New Point(132, 151)
+        txtHarga.Name = "txtHarga"
+        txtHarga.Size = New Size(333, 27)
+        txtHarga.TabIndex = 18
+        ' 
+        ' txtPenulis
+        ' 
+        txtPenulis.Location = New Point(132, 118)
+        txtPenulis.Name = "txtPenulis"
+        txtPenulis.Size = New Size(333, 27)
+        txtPenulis.TabIndex = 19
+        ' 
+        ' txtNamaBuku
+        ' 
+        txtNamaBuku.Location = New Point(132, 85)
+        txtNamaBuku.Name = "txtNamaBuku"
+        txtNamaBuku.Size = New Size(333, 27)
+        txtNamaBuku.TabIndex = 20
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(281, 52)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(38, 20)
+        Label7.TabIndex = 13
+        Label7.Text = "Stok"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(31, 154)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(50, 20)
+        Label5.TabIndex = 14
+        Label5.Text = "Harga"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(31, 118)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(54, 20)
+        Label4.TabIndex = 15
+        Label4.Text = "Penulis"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(31, 84)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(85, 20)
+        Label3.TabIndex = 16
+        Label3.Text = "Nama Buku"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(31, 52)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(58, 20)
+        Label1.TabIndex = 12
+        Label1.Text = "Id Buku"
+        ' 
+        ' txtIdBuku
+        ' 
+        txtIdBuku.Location = New Point(132, 45)
+        txtIdBuku.Name = "txtIdBuku"
+        txtIdBuku.Size = New Size(120, 27)
+        txtIdBuku.TabIndex = 17
+        ' 
+        ' btnCari
+        ' 
+        btnCari.Location = New Point(587, 296)
+        btnCari.Name = "btnCari"
+        btnCari.Size = New Size(95, 29)
+        btnCari.TabIndex = 0
+        btnCari.Text = "Cari"
+        btnCari.UseVisualStyleBackColor = True
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(31, 187)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(40, 20)
+        Label6.TabIndex = 14
+        Label6.Text = "Jenis"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(31, 220)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(48, 20)
+        Label8.TabIndex = 14
+        Label8.Text = "Genre"
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Location = New Point(759, 52)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(69, 20)
+        Label9.TabIndex = 13
+        Label9.Text = "Deskripsi"
+        ' 
+        ' txtDeskripsi
+        ' 
+        txtDeskripsi.Location = New Point(530, 82)
+        txtDeskripsi.Multiline = True
+        txtDeskripsi.Name = "txtDeskripsi"
+        txtDeskripsi.Size = New Size(501, 158)
+        txtDeskripsi.TabIndex = 18
+        ' 
+        ' txtJenis
+        ' 
+        txtJenis.Location = New Point(132, 184)
+        txtJenis.Name = "txtJenis"
+        txtJenis.Size = New Size(333, 27)
+        txtJenis.TabIndex = 18
+        ' 
+        ' txtGenre
+        ' 
+        txtGenre.Location = New Point(132, 217)
+        txtGenre.Name = "txtGenre"
+        txtGenre.Size = New Size(333, 27)
+        txtGenre.TabIndex = 18
         ' 
         ' User_Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1062, 721)
-        Controls.Add(Label2)
+        Controls.Add(txtIdBuku)
+        Controls.Add(txtStok)
+        Controls.Add(txtDeskripsi)
+        Controls.Add(txtGenre)
+        Controls.Add(txtJenis)
+        Controls.Add(txtHarga)
+        Controls.Add(txtPenulis)
+        Controls.Add(txtNamaBuku)
+        Controls.Add(Label9)
+        Controls.Add(Label7)
+        Controls.Add(Label8)
+        Controls.Add(Label6)
         Controls.Add(Label5)
         Controls.Add(Label4)
-        Controls.Add(ListBox1)
-        Controls.Add(Button2)
-        Controls.Add(Button1)
-        Controls.Add(TextBox2)
         Controls.Add(Label3)
         Controls.Add(Label1)
-        Controls.Add(TextBox4)
-        Controls.Add(TextBox3)
-        Controls.Add(TextBox1)
+        Controls.Add(Label2)
+        Controls.Add(listKeranjang)
+        Controls.Add(btnTambah)
+        Controls.Add(btnKurang)
+        Controls.Add(txtJumlah)
+        Controls.Add(txtSearch)
         Controls.Add(labelJudul)
         Controls.Add(DataGridView1)
-        Controls.Add(Button3)
+        Controls.Add(btnCetakStruk)
+        Controls.Add(btnCari)
         Controls.Add(btnAdd)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
@@ -237,20 +348,31 @@ Partial Class User_Menu
     Friend WithEvents btnAdd As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents labelJudul As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents txtJumlah As TextBox
+    Friend WithEvents btnKurang As Button
+    Friend WithEvents btnTambah As Button
+    Friend WithEvents btnCetakStruk As Button
+    Friend WithEvents listKeranjang As ListBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents BackToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents menuBack As ToolStripMenuItem
+    Friend WithEvents txtStok As TextBox
+    Friend WithEvents txtHarga As TextBox
+    Friend WithEvents txtPenulis As TextBox
+    Friend WithEvents txtNamaBuku As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtIdBuku As TextBox
+    Friend WithEvents btnCari As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtDeskripsi As TextBox
+    Friend WithEvents txtJenis As TextBox
+    Friend WithEvents txtGenre As TextBox
 End Class
