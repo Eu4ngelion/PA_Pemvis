@@ -16,7 +16,7 @@
 - Harga : Double
 - Stok : Integer
 - Deskripsi : (Text, NULLable)
-- 
+  
 ## Anggota
 - Ahmad Zuhair Nur Aiman
 - Demosa Guardy Nugroho
