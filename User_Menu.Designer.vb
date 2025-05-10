@@ -80,9 +80,9 @@ Partial Class User_Menu
         labelJudul.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         labelJudul.Location = New Point(482, 9)
         labelJudul.Name = "labelJudul"
-        labelJudul.Size = New Size(115, 23)
+        labelJudul.Size = New Size(130, 23)
         labelJudul.TabIndex = 2
-        labelJudul.Text = "Haven Media"
+        labelJudul.Text = "Haven Media 2"
         ' 
         ' txtSearch
         ' 
