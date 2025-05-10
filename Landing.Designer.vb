@@ -44,7 +44,7 @@ Partial Class Landing
         landingBg.Image = My.Resources.Resources.Login_Bg1
         landingBg.Location = New Point(-2, -3)
         landingBg.Name = "landingBg"
-        landingBg.Size = New Size(1060, 746)
+        landingBg.Size = New Size(1060, 757)
         landingBg.SizeMode = PictureBoxSizeMode.Zoom
         landingBg.TabIndex = 1
         landingBg.TabStop = False

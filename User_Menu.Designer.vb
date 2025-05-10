@@ -45,13 +45,13 @@ Partial Class User_Menu
         Label3 = New Label()
         Label1 = New Label()
         txtIdBuku = New TextBox()
-        btnCari = New Button()
         Label6 = New Label()
         Label8 = New Label()
         Label9 = New Label()
         txtDeskripsi = New TextBox()
         txtJenis = New TextBox()
         txtGenre = New TextBox()
+        Label10 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
@@ -77,18 +77,21 @@ Partial Class User_Menu
         ' labelJudul
         ' 
         labelJudul.AutoSize = True
+        labelJudul.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         labelJudul.Location = New Point(482, 9)
         labelJudul.Name = "labelJudul"
-        labelJudul.Size = New Size(97, 20)
+        labelJudul.Size = New Size(115, 23)
         labelJudul.TabIndex = 2
         labelJudul.Text = "Haven Media"
         ' 
         ' txtSearch
         ' 
-        txtSearch.Location = New Point(30, 296)
+        txtSearch.BackColor = Color.Cyan
+        txtSearch.Location = New Point(91, 296)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(549, 27)
+        txtSearch.Size = New Size(591, 27)
         txtSearch.TabIndex = 4
+        txtSearch.Text = "txtSearch"
         ' 
         ' txtJumlah
         ' 
@@ -130,9 +133,9 @@ Partial Class User_Menu
         ' listKeranjang
         ' 
         listKeranjang.FormattingEnabled = True
-        listKeranjang.Location = New Point(758, 419)
+        listKeranjang.Location = New Point(759, 424)
         listKeranjang.Name = "listKeranjang"
-        listKeranjang.Size = New Size(272, 264)
+        listKeranjang.Size = New Size(272, 284)
         listKeranjang.TabIndex = 8
         ' 
         ' Label2
@@ -168,29 +171,38 @@ Partial Class User_Menu
         ' 
         txtStok.Location = New Point(345, 48)
         txtStok.Name = "txtStok"
+        txtStok.ReadOnly = True
         txtStok.Size = New Size(120, 27)
         txtStok.TabIndex = 17
+        txtStok.Text = "txtStok"
         ' 
         ' txtHarga
         ' 
         txtHarga.Location = New Point(132, 151)
         txtHarga.Name = "txtHarga"
+        txtHarga.ReadOnly = True
         txtHarga.Size = New Size(333, 27)
         txtHarga.TabIndex = 18
+        txtHarga.Text = "txtHarga"
         ' 
         ' txtPenulis
         ' 
         txtPenulis.Location = New Point(132, 118)
         txtPenulis.Name = "txtPenulis"
+        txtPenulis.ReadOnly = True
         txtPenulis.Size = New Size(333, 27)
         txtPenulis.TabIndex = 19
+        txtPenulis.Text = "txtPenulis"
         ' 
         ' txtNamaBuku
         ' 
+        txtNamaBuku.BackColor = SystemColors.Control
         txtNamaBuku.Location = New Point(132, 85)
         txtNamaBuku.Name = "txtNamaBuku"
+        txtNamaBuku.ReadOnly = True
         txtNamaBuku.Size = New Size(333, 27)
         txtNamaBuku.TabIndex = 20
+        txtNamaBuku.Text = "txtNamaBuku"
         ' 
         ' Label7
         ' 
@@ -239,19 +251,12 @@ Partial Class User_Menu
         ' 
         ' txtIdBuku
         ' 
+        txtIdBuku.BackColor = Color.Cyan
         txtIdBuku.Location = New Point(132, 45)
         txtIdBuku.Name = "txtIdBuku"
         txtIdBuku.Size = New Size(120, 27)
         txtIdBuku.TabIndex = 17
-        ' 
-        ' btnCari
-        ' 
-        btnCari.Location = New Point(587, 296)
-        btnCari.Name = "btnCari"
-        btnCari.Size = New Size(95, 29)
-        btnCari.TabIndex = 0
-        btnCari.Text = "Cari"
-        btnCari.UseVisualStyleBackColor = True
+        txtIdBuku.Text = "txtIdBuku"
         ' 
         ' Label6
         ' 
@@ -274,7 +279,7 @@ Partial Class User_Menu
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(759, 52)
+        Label9.Location = New Point(750, 52)
         Label9.Name = "Label9"
         Label9.Size = New Size(69, 20)
         Label9.TabIndex = 13
@@ -285,22 +290,37 @@ Partial Class User_Menu
         txtDeskripsi.Location = New Point(530, 82)
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
+        txtDeskripsi.ReadOnly = True
         txtDeskripsi.Size = New Size(501, 158)
         txtDeskripsi.TabIndex = 18
+        txtDeskripsi.Text = "txtDeskripsi"
         ' 
         ' txtJenis
         ' 
         txtJenis.Location = New Point(132, 184)
         txtJenis.Name = "txtJenis"
+        txtJenis.ReadOnly = True
         txtJenis.Size = New Size(333, 27)
         txtJenis.TabIndex = 18
+        txtJenis.Text = "txtJenis"
         ' 
         ' txtGenre
         ' 
         txtGenre.Location = New Point(132, 217)
         txtGenre.Name = "txtGenre"
+        txtGenre.ReadOnly = True
         txtGenre.Size = New Size(333, 27)
         txtGenre.TabIndex = 18
+        txtGenre.Text = "txtGenre"
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Location = New Point(32, 299)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(53, 20)
+        Label10.TabIndex = 12
+        Label10.Text = "Search"
         ' 
         ' User_Menu
         ' 
@@ -322,6 +342,7 @@ Partial Class User_Menu
         Controls.Add(Label5)
         Controls.Add(Label4)
         Controls.Add(Label3)
+        Controls.Add(Label10)
         Controls.Add(Label1)
         Controls.Add(Label2)
         Controls.Add(listKeranjang)
@@ -332,12 +353,11 @@ Partial Class User_Menu
         Controls.Add(labelJudul)
         Controls.Add(DataGridView1)
         Controls.Add(btnCetakStruk)
-        Controls.Add(btnCari)
         Controls.Add(btnAdd)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "User_Menu"
-        Text = "Haven Media"
+        Text = "Nama Buku..."
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
@@ -368,11 +388,11 @@ Partial Class User_Menu
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txtIdBuku As TextBox
-    Friend WithEvents btnCari As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents txtDeskripsi As TextBox
     Friend WithEvents txtJenis As TextBox
     Friend WithEvents txtGenre As TextBox
+    Friend WithEvents Label10 As Label
 End Class
