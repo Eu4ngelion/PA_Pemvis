@@ -10,7 +10,7 @@
 
 ### tbbBuku
 - id : Integer (PK, Auto_Increment)
-- Nama : Varchar(50)
+- Judul : Varchar(50)
 - Penulis : Varchar(50)
 - Jenis : Varchar(20)
 - Genre : Varchar(20)
@@ -22,7 +22,7 @@
 - id : Integer (PK, Auto_Increment)
 - id_user : Integer (FK)
 - id_buku : Integer (FK)
-- nama_buk: Varchar (20)_
+- judul: Varchar (20)_
 - jumlah : Integer
 - total_harga : Double
   
