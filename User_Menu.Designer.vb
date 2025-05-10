@@ -38,7 +38,7 @@ Partial Class User_Menu
         txtStok = New TextBox()
         txtHarga = New TextBox()
         txtPenulis = New TextBox()
-        txtNamaBuku = New TextBox()
+        txtJudul = New TextBox()
         Label7 = New Label()
         Label5 = New Label()
         Label4 = New Label()
@@ -70,7 +70,9 @@ Partial Class User_Menu
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(30, 340)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
         DataGridView1.RowHeadersWidth = 51
+        DataGridView1.ScrollBars = ScrollBars.Vertical
         DataGridView1.Size = New Size(652, 368)
         DataGridView1.TabIndex = 1
         ' 
@@ -91,10 +93,10 @@ Partial Class User_Menu
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(591, 27)
         txtSearch.TabIndex = 4
-        txtSearch.Text = "txtSearch"
         ' 
         ' txtJumlah
         ' 
+        txtJumlah.BackColor = Color.Cyan
         txtJumlah.Location = New Point(825, 340)
         txtJumlah.Name = "txtJumlah"
         txtJumlah.Size = New Size(138, 27)
@@ -163,8 +165,11 @@ Partial Class User_Menu
         ' 
         ' menuBack
         ' 
+        menuBack.BackColor = Color.Red
+        menuBack.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        menuBack.ForeColor = Color.White
         menuBack.Name = "menuBack"
-        menuBack.Size = New Size(54, 24)
+        menuBack.Size = New Size(56, 24)
         menuBack.Text = "Back"
         ' 
         ' txtStok
@@ -194,15 +199,15 @@ Partial Class User_Menu
         txtPenulis.TabIndex = 19
         txtPenulis.Text = "txtPenulis"
         ' 
-        ' txtNamaBuku
+        ' txtJudul
         ' 
-        txtNamaBuku.BackColor = SystemColors.Control
-        txtNamaBuku.Location = New Point(132, 85)
-        txtNamaBuku.Name = "txtNamaBuku"
-        txtNamaBuku.ReadOnly = True
-        txtNamaBuku.Size = New Size(333, 27)
-        txtNamaBuku.TabIndex = 20
-        txtNamaBuku.Text = "txtNamaBuku"
+        txtJudul.BackColor = SystemColors.Control
+        txtJudul.Location = New Point(132, 85)
+        txtJudul.Name = "txtJudul"
+        txtJudul.ReadOnly = True
+        txtJudul.Size = New Size(333, 27)
+        txtJudul.TabIndex = 20
+        txtJudul.Text = "txtJudul"
         ' 
         ' Label7
         ' 
@@ -236,9 +241,9 @@ Partial Class User_Menu
         Label3.AutoSize = True
         Label3.Location = New Point(31, 84)
         Label3.Name = "Label3"
-        Label3.Size = New Size(85, 20)
+        Label3.Size = New Size(47, 20)
         Label3.TabIndex = 16
-        Label3.Text = "Nama Buku"
+        Label3.Text = "Judul "
         ' 
         ' Label1
         ' 
@@ -334,7 +339,7 @@ Partial Class User_Menu
         Controls.Add(txtJenis)
         Controls.Add(txtHarga)
         Controls.Add(txtPenulis)
-        Controls.Add(txtNamaBuku)
+        Controls.Add(txtJudul)
         Controls.Add(Label9)
         Controls.Add(Label7)
         Controls.Add(Label8)
@@ -381,7 +386,7 @@ Partial Class User_Menu
     Friend WithEvents txtStok As TextBox
     Friend WithEvents txtHarga As TextBox
     Friend WithEvents txtPenulis As TextBox
-    Friend WithEvents txtNamaBuku As TextBox
+    Friend WithEvents txtJudul As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label

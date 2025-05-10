@@ -6,12 +6,19 @@ Public Class Landing
 
     End Sub
 
-    ' Pict Belanja & Admin
+    'Pict Belanja, Member,  Admin
     Private Sub pictBelanja_MouseHover(sender As Object, e As EventArgs) Handles pictBelanja.MouseHover
         pictBelanja.Image = My.Resources.icon_belanja_dark
     End Sub
     Private Sub pictBelanja_MouseLeave(sender As Object, e As EventArgs) Handles pictBelanja.MouseLeave
         pictBelanja.Image = My.Resources.icon_belanja_light
+    End Sub
+
+    Private Sub pictMember_MouseHover(sender As Object, e As EventArgs) Handles pictMember.MouseHover
+        pictMember.Image = My.Resources.icon_member_dark
+    End Sub
+    Private Sub pictMember_MouseLeave(sender As Object, e As EventArgs) Handles pictMember.MouseLeave
+        pictMember.Image = My.Resources.icon_member_light
     End Sub
 
     Private Sub pictAdmin_MouseHover(sender As Object, e As EventArgs) Handles pictAdmin.MouseHover
@@ -20,67 +27,72 @@ Public Class Landing
     Private Sub pictAdmin_MouseLeave(sender As Object, e As EventArgs) Handles pictAdmin.MouseLeave
         pictAdmin.Image = My.Resources.icon_admin_light
     End Sub
+
     Private Sub pictBelanja_Click(sender As Object, e As EventArgs) Handles pictBelanja.Click
         User_Menu.Show()
         Me.Close()
     End Sub
-    Private Sub pictAdmin_Click(sender As Object, e As EventArgs) Handles pictAdmin.Click
-        panelLogin.Visible = True
+    Private Sub pictMember_Click(sender As Object, e As EventArgs) Handles pictMember.Click
+        panelLoginMember.Visible = True
+        pictBelanja.Visible = False
+        pictMember.Visible = False
         pictAdmin.Visible = False
+    End Sub
+
+    Private Sub pictAdmin_Click(sender As Object, e As EventArgs) Handles pictAdmin.Click
+        panelLoginAdmin.Visible = True
+        pictAdmin.Visible = False
+        pictMember.Visible = False
         pictBelanja.Visible = False
     End Sub
 
-    ' Form Login Admin
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        panelLogin.Visible = False
+    'Panel Form Login Admin
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBackAdmin.Click
+        panelLoginAdmin.Visible = False
         pictAdmin.Visible = True
         pictBelanja.Visible = True
     End Sub
 
-    Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyDown
-        'Suppress Key
+    Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsernameAdmin.KeyDown
         If e.KeyCode = Keys.Space Then
             e.SuppressKeyPress = True
         End If
 
-        'Enter
         If e.KeyCode = Keys.Enter Then
-            txtPassword.Focus()
+            txtPasswordAdmin.Focus()
         End If
     End Sub
 
-    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
-        'Suppress Key
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPasswordAdmin.KeyDown
         If e.KeyCode = Keys.Space Then
             e.SuppressKeyPress = True
         End If
-        'Enter
+
         If e.KeyCode = Keys.Enter Then
-            btnLogin.Focus()
+            btnLoginAdmin.Focus()
         End If
     End Sub
 
-    ' Authorization (Finish Nanti)
-    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        If txtUsername.Text = "" Or txtPassword.Text = "" Then
+    'Auntentikasi Admin
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLoginAdmin.Click
+        If txtUsernameAdmin.Text = "" Or txtPasswordAdmin.Text = "" Then
             MsgBox("Username dan Password tidak boleh kosong", MsgBoxStyle.Critical, "Error")
-            txtUsername.Focus()
+            txtUsernameAdmin.Focus()
             Exit Sub
         Else
-            'Authorization from Database
             koneksi()
-            Dim query As String = "SELECT * FROM tbAdmin WHERE username = @username AND password = @password"
+            Dim query As String = "SELECT * FROM tbUser WHERE username = @username AND password = @password AND role = 'admin'"
             CMD = New MySqlCommand(query, CONN)
-            CMD.Parameters.AddWithValue("@username", txtUsername.Text)
-            CMD.Parameters.AddWithValue("@password", txtPassword.Text)
+            CMD.Parameters.AddWithValue("@username", txtUsernameAdmin.Text)
+            CMD.Parameters.AddWithValue("@password", txtPasswordAdmin.Text)
             DA = New MySqlDataAdapter(CMD)
             DS = New DataSet()
-            DA.Fill(DS, "tbAdmin")
-            If DS.Tables("tbAdmin").Rows.Count = 0 Then
+            DA.Fill(DS, "tbUser")
+            If DS.Tables("tbUser").Rows.Count = 0 Then
                 MsgBox("Username atau Password salah", MsgBoxStyle.Critical, "Error")
-                txtUsername.Focus()
-                txtUsername.Clear()
-                txtPassword.Clear()
+                txtUsernameAdmin.Focus()
+                txtUsernameAdmin.Clear()
+                txtPasswordAdmin.Clear()
             Else
                 DA.Dispose()
                 DS.Dispose()
@@ -91,6 +103,98 @@ Public Class Landing
                 Admin_Menu.Show()
                 Me.Close()
             End If
+        End If
+    End Sub
+
+    'Panel Form Member
+    Private Sub btnBackMember_Click(sender As Object, e As EventArgs) Handles btnBackMember.Click
+        panelLoginMember.Visible = False
+        pictBelanja.Visible = True
+        pictMember.Visible = True
+        pictAdmin.Visible = True
+    End Sub
+
+    Private Sub txtUsernameMember_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsernameMember.KeyDown
+        If e.KeyCode = Keys.Space Then
+            e.SuppressKeyPress = True
+        End If
+        If e.KeyCode = Keys.Enter Then
+            txtPasswordMember.Focus()
+        End If
+    End Sub
+
+    Private Sub txtPasswordMember_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPasswordMember.KeyDown
+        If e.KeyCode = Keys.Space Then
+            e.SuppressKeyPress = True
+        End If
+        If e.KeyCode = Keys.Enter Then
+            btnLoginMember.Focus()
+        End If
+    End Sub
+
+    'Login Member
+    Private Sub btnLoginMember_Click(sender As Object, e As EventArgs) Handles btnLoginMember.Click
+        If txtUsernameMember.Text = "" Or txtPasswordMember.Text = "" Then
+            MsgBox("Username dan Password tidak boleh kosong", MsgBoxStyle.Critical, "Error")
+            txtUsernameMember.Focus()
+            Exit Sub
+        Else
+            koneksi()
+            Dim query As String = "SELECT * FROM tbUser WHERE username = @username AND password = @password AND role = 'member'"
+            CMD = New MySqlCommand(query, CONN)
+            CMD.Parameters.AddWithValue("@username", txtUsernameMember.Text)
+            CMD.Parameters.AddWithValue("@password", txtPasswordMember.Text)
+            DA = New MySqlDataAdapter(CMD)
+            DS = New DataSet()
+            DA.Fill(DS, "tbUser")
+            If DS.Tables("tbUser").Rows.Count = 0 Then
+                MsgBox("Username atau Password salah", MsgBoxStyle.Critical, "Error")
+                txtUsernameMember.Focus()
+                txtUsernameMember.Clear()
+                txtPasswordMember.Clear()
+            Else
+                DA.Dispose()
+                DS.Dispose()
+                CMD.Dispose()
+                CONN.Close()
+                MsgBox("Login Berhasil", MsgBoxStyle.Information, "Success")
+                User_Menu.Show()
+                Me.Close()
+            End If
+        End If
+    End Sub
+
+    'Regist Member
+    Private Sub btnRegistMember_Click(sender As Object, e As EventArgs) Handles btnRegistMember.Click
+        If txtUsernameMember.Text = "" Or txtPasswordMember.Text = "" Then
+            MsgBox("Username dan Password tidak boleh kosong", MsgBoxStyle.Critical, "Error")
+            txtUsernameMember.Focus()
+            Exit Sub
+        Else
+            koneksi()
+            Dim checkQuery As String = "SELECT * FROM tbUser WHERE username = @username"
+            CMD = New MySqlCommand(checkQuery, CONN)
+            CMD.Parameters.AddWithValue("@username", txtUsernameMember.Text)
+            DA = New MySqlDataAdapter(CMD)
+            DS = New DataSet()
+            DA.Fill(DS, "tbUser")
+            If DS.Tables("tbUser").Rows.Count > 0 Then
+                MsgBox("Username sudah terdaftar, gunakan username lain", MsgBoxStyle.Critical, "Error")
+                txtUsernameMember.Focus()
+                txtUsernameMember.Clear()
+                txtPasswordMember.Clear()
+            Else
+                Dim query As String = "INSERT INTO tbUser (username, password, role) VALUES (@username, @password, 'member')"
+                CMD = New MySqlCommand(query, CONN)
+                CMD.Parameters.AddWithValue("@username", txtUsernameMember.Text)
+                CMD.Parameters.AddWithValue("@password", txtPasswordMember.Text)
+                CMD.ExecuteNonQuery()
+                MsgBox("Registrasi Berhasil", MsgBoxStyle.Information, "Success")
+            End If
+            DA.Dispose()
+            DS.Dispose()
+            CMD.Dispose()
+            CONN.Close()
         End If
     End Sub
 End Class

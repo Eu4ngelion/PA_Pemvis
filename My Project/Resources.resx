@@ -118,25 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Group 33571" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\lib\Group 33571.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon_belanja_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\lib\icon_belanja_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login_Bg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\lib\Login_Bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_belanja_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\lib\icon_belanja_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Login_Bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\lib\Login_Bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_admin_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\lib\icon_admin_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_member_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\lib\icon_member_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_admin_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\lib\icon_admin_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_belanja_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\lib\icon_belanja_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login_Bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\lib\Login_Bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Group 33571" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\lib\Group 33571.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_admin_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\lib\icon_admin_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login_Bg1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\lib\Login_Bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_member_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\lib\icon_member_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

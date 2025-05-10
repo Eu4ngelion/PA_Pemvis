@@ -42,7 +42,7 @@ Partial Class Admin_Menu
         txtHarga = New TextBox()
         txtStok = New TextBox()
         txtDeskripsi = New TextBox()
-        txtNamaBuku = New TextBox()
+        txtJudul = New TextBox()
         Label9 = New Label()
         comboId = New ComboBox()
         radioFiksi = New RadioButton()
@@ -99,9 +99,9 @@ Partial Class Admin_Menu
         Label3.AutoSize = True
         Label3.Location = New Point(60, 86)
         Label3.Name = "Label3"
-        Label3.Size = New Size(85, 20)
+        Label3.Size = New Size(43, 20)
         Label3.TabIndex = 3
-        Label3.Text = "Nama Buku"
+        Label3.Text = "Judul"
         ' 
         ' Label4
         ' 
@@ -194,10 +194,11 @@ Partial Class Admin_Menu
         ' 
         ' LogoutToolStripMenuItem
         ' 
-        LogoutToolStripMenuItem.Alignment = ToolStripItemAlignment.Right
+        LogoutToolStripMenuItem.BackColor = Color.Red
+        LogoutToolStripMenuItem.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        LogoutToolStripMenuItem.ForeColor = Color.White
         LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        LogoutToolStripMenuItem.Padding = New Padding(5, 0, 100, 0)
-        LogoutToolStripMenuItem.Size = New Size(165, 24)
+        LogoutToolStripMenuItem.Size = New Size(73, 24)
         LogoutToolStripMenuItem.Text = "Logout"
         ' 
         ' txtPenulis
@@ -229,12 +230,12 @@ Partial Class Admin_Menu
         txtDeskripsi.Size = New Size(400, 237)
         txtDeskripsi.TabIndex = 9
         ' 
-        ' txtNamaBuku
+        ' txtJudul
         ' 
-        txtNamaBuku.Location = New Point(161, 87)
-        txtNamaBuku.Name = "txtNamaBuku"
-        txtNamaBuku.Size = New Size(333, 27)
-        txtNamaBuku.TabIndex = 8
+        txtJudul.Location = New Point(161, 87)
+        txtJudul.Name = "txtJudul"
+        txtJudul.Size = New Size(333, 27)
+        txtJudul.TabIndex = 8
         ' 
         ' Label9
         ' 
@@ -403,7 +404,7 @@ Partial Class Admin_Menu
         Controls.Add(txtStok)
         Controls.Add(txtHarga)
         Controls.Add(txtPenulis)
-        Controls.Add(txtNamaBuku)
+        Controls.Add(txtJudul)
         Controls.Add(labelCari)
         Controls.Add(txtCari)
         Controls.Add(btnCari)
@@ -454,7 +455,7 @@ Partial Class Admin_Menu
     Friend WithEvents txtHarga As TextBox
     Friend WithEvents txtStok As TextBox
     Friend WithEvents txtDeskripsi As TextBox
-    Friend WithEvents txtNamaBuku As TextBox
+    Friend WithEvents txtJudul As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents comboId As ComboBox
     Friend WithEvents radioFiksi As RadioButton
