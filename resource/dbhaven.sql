@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 10, 2025 at 04:41 PM
+-- Generation Time: May 10, 2025 at 06:02 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -26,18 +26,6 @@ USE `dbhaven`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbadmin`
---
-
-CREATE TABLE `tbadmin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbbuku`
 --
 
@@ -52,16 +40,34 @@ CREATE TABLE `tbbuku` (
   `Deskripsi` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbkeranjang`
+--
+
+CREATE TABLE `tbkeranjang` (
+  `id_buku` int(11) DEFAULT NULL,
+  `nama_buku` varchar(50) NOT NULL,
+  `jumlah` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbuser`
+--
+
+CREATE TABLE `tbuser` (
+  `id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `role` enum('member','admin') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `tbadmin`
---
-ALTER TABLE `tbadmin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `usn` (`username`);
 
 --
 -- Indexes for table `tbbuku`
@@ -70,20 +76,33 @@ ALTER TABLE `tbbuku`
   ADD PRIMARY KEY (`Id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `tbkeranjang`
 --
+ALTER TABLE `tbkeranjang`
+  ADD UNIQUE KEY `id_buku` (`id_buku`);
 
 --
--- AUTO_INCREMENT for table `tbadmin`
+-- Indexes for table `tbuser`
 --
-ALTER TABLE `tbadmin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `tbuser`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usn` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
 --
 -- AUTO_INCREMENT for table `tbbuku`
 --
 ALTER TABLE `tbbuku`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbuser`
+--
+ALTER TABLE `tbuser`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
