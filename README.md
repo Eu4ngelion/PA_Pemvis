@@ -1,6 +1,7 @@
 # Proyek Akhir Pemrogram Visual
-## NB: Import databasenya dulu (/resource/dbhaven.sql)
 ## Database = dbHaven
+### NB: Import databasenya dulu (/resource/dbhaven.sql)
+
 ### tbAdmin
 - id : Integer (PK, Auto_Increment)
 - username : Varchar(20)
@@ -15,9 +16,8 @@
 - Harga : Double
 - Stok : Integer
 - Deskripsi : (Text, NULLable)
-
-
-### Anggota
+- 
+## Anggota
 - Ahmad Zuhair Nur Aiman
 - Demosa Guardy Nugroho
 - Injil Karepowan
