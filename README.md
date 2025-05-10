@@ -1,6 +1,5 @@
 # Proyek Akhir Pemrogram Visual
-
-NB: Bikin databasenya dulu (inpo SQL)
+##NB: Import databasenya dulu (/resource/dbhaven.sql)
 ## Database = dbHaven
 ### tbAdmin
 - id : Integer (PK, Auto_Increment)
