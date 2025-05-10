@@ -52,7 +52,7 @@ Partial Class User_Menu
         txtGenre = New TextBox()
         Label10 = New Label()
         DataGridView2 = New DataGridView()
-        btnKurangKeranjang = New Button()
+        btnHapusKeranjang = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
@@ -60,21 +60,30 @@ Partial Class User_Menu
         ' 
         ' btnTambahKeranjang
         ' 
-        btnTambahKeranjang.Location = New Point(894, 355)
+        btnTambahKeranjang.Enabled = False
+        btnTambahKeranjang.Location = New Point(890, 340)
         btnTambahKeranjang.Name = "btnTambahKeranjang"
-        btnTambahKeranjang.Size = New Size(128, 29)
+        btnTambahKeranjang.Size = New Size(141, 29)
         btnTambahKeranjang.TabIndex = 0
-        btnTambahKeranjang.Text = "+ Keranjang"
+        btnTambahKeranjang.Text = "Tambah"
         btnTambahKeranjang.UseVisualStyleBackColor = True
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AllowUserToResizeColumns = False
+        DataGridView1.AllowUserToResizeRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(30, 340)
+        DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
+        DataGridView1.RowHeadersVisible = False
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.ScrollBars = ScrollBars.Vertical
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridView1.ShowEditingIcon = False
         DataGridView1.Size = New Size(652, 368)
         DataGridView1.TabIndex = 1
         ' 
@@ -323,30 +332,38 @@ Partial Class User_Menu
         ' 
         ' DataGridView2
         ' 
+        DataGridView2.AllowUserToAddRows = False
+        DataGridView2.AllowUserToDeleteRows = False
+        DataGridView2.AllowUserToResizeColumns = False
+        DataGridView2.AllowUserToResizeRows = False
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView2.Location = New Point(732, 390)
+        DataGridView2.Location = New Point(732, 375)
+        DataGridView2.MultiSelect = False
         DataGridView2.Name = "DataGridView2"
         DataGridView2.ReadOnly = True
+        DataGridView2.RowHeadersVisible = False
         DataGridView2.RowHeadersWidth = 51
-        DataGridView2.ScrollBars = ScrollBars.Vertical
-        DataGridView2.Size = New Size(299, 289)
+        DataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DataGridView2.ShowEditingIcon = False
+        DataGridView2.Size = New Size(299, 304)
         DataGridView2.TabIndex = 21
         ' 
-        ' btnKurangKeranjang
+        ' btnHapusKeranjang
         ' 
-        btnKurangKeranjang.Location = New Point(750, 355)
-        btnKurangKeranjang.Name = "btnKurangKeranjang"
-        btnKurangKeranjang.Size = New Size(128, 29)
-        btnKurangKeranjang.TabIndex = 22
-        btnKurangKeranjang.Text = "+ Keranjang"
-        btnKurangKeranjang.UseVisualStyleBackColor = True
+        btnHapusKeranjang.Enabled = False
+        btnHapusKeranjang.Location = New Point(734, 340)
+        btnHapusKeranjang.Name = "btnHapusKeranjang"
+        btnHapusKeranjang.Size = New Size(150, 29)
+        btnHapusKeranjang.TabIndex = 22
+        btnHapusKeranjang.Text = "Hapus"
+        btnHapusKeranjang.UseVisualStyleBackColor = True
         ' 
         ' User_Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1062, 721)
-        Controls.Add(btnKurangKeranjang)
+        Controls.Add(btnHapusKeranjang)
         Controls.Add(DataGridView2)
         Controls.Add(txtIdBuku)
         Controls.Add(txtStok)
@@ -416,5 +433,5 @@ Partial Class User_Menu
     Friend WithEvents txtGenre As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents btnKurangKeranjang As Button
+    Friend WithEvents btnHapusKeranjang As Button
 End Class

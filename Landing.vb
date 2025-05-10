@@ -2,45 +2,39 @@
 
 Public Class Landing
 
-    Private Sub Landing_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    'Pict Member,  Admin
+    'Pict Member 
     Private Sub pictMember_MouseHover(sender As Object, e As EventArgs) Handles pictMember.MouseHover
         pictMember.Image = My.Resources.icon_member_dark
     End Sub
     Private Sub pictMember_MouseLeave(sender As Object, e As EventArgs) Handles pictMember.MouseLeave
         pictMember.Image = My.Resources.icon_member_light
     End Sub
+    Private Sub pictMember_Click(sender As Object, e As EventArgs) Handles pictMember.Click
+        panelLoginMember.Visible = True
+        pictMember.Visible = False
+        pictAdmin.Visible = False
+        txtUsernameMember.Focus()
+    End Sub
 
+    'Pict Admin
     Private Sub pictAdmin_MouseHover(sender As Object, e As EventArgs) Handles pictAdmin.MouseHover
         pictAdmin.Image = My.Resources.icon_admin_dark
     End Sub
     Private Sub pictAdmin_MouseLeave(sender As Object, e As EventArgs) Handles pictAdmin.MouseLeave
         pictAdmin.Image = My.Resources.icon_admin_light
     End Sub
-
-    Private Sub pictBelanja_Click(sender As Object, e As EventArgs)
-        User_Menu.Show()
-        Close()
-    End Sub
-    Private Sub pictMember_Click(sender As Object, e As EventArgs) Handles pictMember.Click
-        panelLoginMember.Visible = True
-        pictMember.Visible = False
-        pictAdmin.Visible = False
-    End Sub
-
     Private Sub pictAdmin_Click(sender As Object, e As EventArgs) Handles pictAdmin.Click
         panelLoginAdmin.Visible = True
         pictAdmin.Visible = False
         pictMember.Visible = False
+        txtUsernameAdmin.Focus()
     End Sub
 
     'Panel Form Login Admin
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBackAdmin.Click
         panelLoginAdmin.Visible = False
         pictAdmin.Visible = True
+        pictMember.Visible = True
     End Sub
 
     Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsernameAdmin.KeyDown
@@ -59,7 +53,7 @@ Public Class Landing
         End If
 
         If e.KeyCode = Keys.Enter Then
-            btnLoginAdmin.Focus()
+            btnLoginAdmin.PerformClick()
         End If
     End Sub
 
@@ -90,8 +84,9 @@ Public Class Landing
                 CONN.Close()
 
                 MsgBox("Login Berhasil", MsgBoxStyle.Information, "Success")
-                loggged_username = txtUsernameAdmin.Text
-                loggged_role = "admin"
+                logged_id = DS.Tables("tbUser").Rows(0).Item("id")
+                logged_username = txtUsernameAdmin.Text
+                logged_role = "admin"
                 Admin_Menu.Show()
                 Me.Close()
             End If
@@ -119,7 +114,7 @@ Public Class Landing
             e.SuppressKeyPress = True
         End If
         If e.KeyCode = Keys.Enter Then
-            btnLoginMember.Focus()
+            btnLoginMember.PerformClick()
         End If
     End Sub
 
@@ -150,8 +145,9 @@ Public Class Landing
                 CONN.Close()
 
                 MsgBox("Login Berhasil", MsgBoxStyle.Information, "Success")
-                loggged_username = txtUsernameMember.Text
-                loggged_role = "member"
+                logged_id = DS.Tables("tbUser").Rows(0).Item("id")
+                logged_username = txtUsernameMember.Text
+                logged_role = "member"
                 User_Menu.Show()
                 Me.Close()
             End If

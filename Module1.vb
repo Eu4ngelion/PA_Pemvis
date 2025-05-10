@@ -21,8 +21,9 @@ Module Module1
     End Sub
 
     'Variabel Global
-    Public loggged_username As String
-    Public loggged_role As String
+    Public logged_id As Integer
+    Public logged_username As String
+    Public logged_role As String
 
 End Module
 
