@@ -22,7 +22,7 @@ Partial Class User_Menu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        btnAdd = New Button()
+        btnTambahKeranjang = New Button()
         DataGridView1 = New DataGridView()
         labelJudul = New Label()
         txtSearch = New TextBox()
@@ -30,7 +30,6 @@ Partial Class User_Menu
         btnKurang = New Button()
         btnTambah = New Button()
         btnCetakStruk = New Button()
-        listKeranjang = New ListBox()
         Label2 = New Label()
         PrintDialog1 = New PrintDialog()
         MenuStrip1 = New MenuStrip()
@@ -52,18 +51,21 @@ Partial Class User_Menu
         txtJenis = New TextBox()
         txtGenre = New TextBox()
         Label10 = New Label()
+        DataGridView2 = New DataGridView()
+        btnKurangKeranjang = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
+        CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' btnAdd
+        ' btnTambahKeranjang
         ' 
-        btnAdd.Location = New Point(758, 384)
-        btnAdd.Name = "btnAdd"
-        btnAdd.Size = New Size(128, 29)
-        btnAdd.TabIndex = 0
-        btnAdd.Text = "+ Keranjang"
-        btnAdd.UseVisualStyleBackColor = True
+        btnTambahKeranjang.Location = New Point(894, 355)
+        btnTambahKeranjang.Name = "btnTambahKeranjang"
+        btnTambahKeranjang.Size = New Size(128, 29)
+        btnTambahKeranjang.TabIndex = 0
+        btnTambahKeranjang.Text = "+ Keranjang"
+        btnTambahKeranjang.UseVisualStyleBackColor = True
         ' 
         ' DataGridView1
         ' 
@@ -97,7 +99,7 @@ Partial Class User_Menu
         ' txtJumlah
         ' 
         txtJumlah.BackColor = Color.Cyan
-        txtJumlah.Location = New Point(825, 340)
+        txtJumlah.Location = New Point(814, 297)
         txtJumlah.Name = "txtJumlah"
         txtJumlah.Size = New Size(138, 27)
         txtJumlah.TabIndex = 6
@@ -106,7 +108,7 @@ Partial Class User_Menu
         ' btnKurang
         ' 
         btnKurang.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        btnKurang.Location = New Point(758, 338)
+        btnKurang.Location = New Point(732, 296)
         btnKurang.Name = "btnKurang"
         btnKurang.Size = New Size(61, 31)
         btnKurang.TabIndex = 7
@@ -116,7 +118,7 @@ Partial Class User_Menu
         ' btnTambah
         ' 
         btnTambah.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        btnTambah.Location = New Point(969, 339)
+        btnTambah.Location = New Point(969, 297)
         btnTambah.Name = "btnTambah"
         btnTambah.Size = New Size(62, 29)
         btnTambah.TabIndex = 7
@@ -125,25 +127,17 @@ Partial Class User_Menu
         ' 
         ' btnCetakStruk
         ' 
-        btnCetakStruk.Location = New Point(900, 384)
+        btnCetakStruk.Location = New Point(732, 685)
         btnCetakStruk.Name = "btnCetakStruk"
-        btnCetakStruk.Size = New Size(131, 29)
+        btnCetakStruk.Size = New Size(299, 29)
         btnCetakStruk.TabIndex = 0
         btnCetakStruk.Text = "Cetak Struk"
         btnCetakStruk.UseVisualStyleBackColor = True
         ' 
-        ' listKeranjang
-        ' 
-        listKeranjang.FormattingEnabled = True
-        listKeranjang.Location = New Point(759, 424)
-        listKeranjang.Name = "listKeranjang"
-        listKeranjang.Size = New Size(272, 284)
-        listKeranjang.TabIndex = 8
-        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(856, 291)
+        Label2.Location = New Point(856, 268)
         Label2.Name = "Label2"
         Label2.Size = New Size(76, 20)
         Label2.TabIndex = 10
@@ -327,11 +321,33 @@ Partial Class User_Menu
         Label10.TabIndex = 12
         Label10.Text = "Search"
         ' 
+        ' DataGridView2
+        ' 
+        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView2.Location = New Point(732, 390)
+        DataGridView2.Name = "DataGridView2"
+        DataGridView2.ReadOnly = True
+        DataGridView2.RowHeadersWidth = 51
+        DataGridView2.ScrollBars = ScrollBars.Vertical
+        DataGridView2.Size = New Size(299, 289)
+        DataGridView2.TabIndex = 21
+        ' 
+        ' btnKurangKeranjang
+        ' 
+        btnKurangKeranjang.Location = New Point(750, 355)
+        btnKurangKeranjang.Name = "btnKurangKeranjang"
+        btnKurangKeranjang.Size = New Size(128, 29)
+        btnKurangKeranjang.TabIndex = 22
+        btnKurangKeranjang.Text = "+ Keranjang"
+        btnKurangKeranjang.UseVisualStyleBackColor = True
+        ' 
         ' User_Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1062, 721)
+        Controls.Add(btnKurangKeranjang)
+        Controls.Add(DataGridView2)
         Controls.Add(txtIdBuku)
         Controls.Add(txtStok)
         Controls.Add(txtDeskripsi)
@@ -350,7 +366,6 @@ Partial Class User_Menu
         Controls.Add(Label10)
         Controls.Add(Label1)
         Controls.Add(Label2)
-        Controls.Add(listKeranjang)
         Controls.Add(btnTambah)
         Controls.Add(btnKurang)
         Controls.Add(txtJumlah)
@@ -358,7 +373,7 @@ Partial Class User_Menu
         Controls.Add(labelJudul)
         Controls.Add(DataGridView1)
         Controls.Add(btnCetakStruk)
-        Controls.Add(btnAdd)
+        Controls.Add(btnTambahKeranjang)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "User_Menu"
@@ -366,11 +381,12 @@ Partial Class User_Menu
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
+        CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents btnAdd As Button
+    Friend WithEvents btnTambahKeranjang As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents labelJudul As Label
     Friend WithEvents txtSearch As TextBox
@@ -378,7 +394,6 @@ Partial Class User_Menu
     Friend WithEvents btnKurang As Button
     Friend WithEvents btnTambah As Button
     Friend WithEvents btnCetakStruk As Button
-    Friend WithEvents listKeranjang As ListBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents MenuStrip1 As MenuStrip
@@ -400,4 +415,6 @@ Partial Class User_Menu
     Friend WithEvents txtJenis As TextBox
     Friend WithEvents txtGenre As TextBox
     Friend WithEvents Label10 As Label
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents btnKurangKeranjang As Button
 End Class

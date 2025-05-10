@@ -6,14 +6,7 @@ Public Class Landing
 
     End Sub
 
-    'Pict Belanja, Member,  Admin
-    Private Sub pictBelanja_MouseHover(sender As Object, e As EventArgs) Handles pictBelanja.MouseHover
-        pictBelanja.Image = My.Resources.icon_belanja_dark
-    End Sub
-    Private Sub pictBelanja_MouseLeave(sender As Object, e As EventArgs) Handles pictBelanja.MouseLeave
-        pictBelanja.Image = My.Resources.icon_belanja_light
-    End Sub
-
+    'Pict Member,  Admin
     Private Sub pictMember_MouseHover(sender As Object, e As EventArgs) Handles pictMember.MouseHover
         pictMember.Image = My.Resources.icon_member_dark
     End Sub
@@ -28,13 +21,12 @@ Public Class Landing
         pictAdmin.Image = My.Resources.icon_admin_light
     End Sub
 
-    Private Sub pictBelanja_Click(sender As Object, e As EventArgs) Handles pictBelanja.Click
+    Private Sub pictBelanja_Click(sender As Object, e As EventArgs)
         User_Menu.Show()
-        Me.Close()
+        Close()
     End Sub
     Private Sub pictMember_Click(sender As Object, e As EventArgs) Handles pictMember.Click
         panelLoginMember.Visible = True
-        pictBelanja.Visible = False
         pictMember.Visible = False
         pictAdmin.Visible = False
     End Sub
@@ -43,14 +35,12 @@ Public Class Landing
         panelLoginAdmin.Visible = True
         pictAdmin.Visible = False
         pictMember.Visible = False
-        pictBelanja.Visible = False
     End Sub
 
     'Panel Form Login Admin
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBackAdmin.Click
         panelLoginAdmin.Visible = False
         pictAdmin.Visible = True
-        pictBelanja.Visible = True
     End Sub
 
     Private Sub txtUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles txtUsernameAdmin.KeyDown
@@ -100,6 +90,8 @@ Public Class Landing
                 CONN.Close()
 
                 MsgBox("Login Berhasil", MsgBoxStyle.Information, "Success")
+                loggged_username = txtUsernameAdmin.Text
+                loggged_role = "admin"
                 Admin_Menu.Show()
                 Me.Close()
             End If
@@ -109,7 +101,6 @@ Public Class Landing
     'Panel Form Member
     Private Sub btnBackMember_Click(sender As Object, e As EventArgs) Handles btnBackMember.Click
         panelLoginMember.Visible = False
-        pictBelanja.Visible = True
         pictMember.Visible = True
         pictAdmin.Visible = True
     End Sub
@@ -157,7 +148,10 @@ Public Class Landing
                 DS.Dispose()
                 CMD.Dispose()
                 CONN.Close()
+
                 MsgBox("Login Berhasil", MsgBoxStyle.Information, "Success")
+                loggged_username = txtUsernameMember.Text
+                loggged_role = "member"
                 User_Menu.Show()
                 Me.Close()
             End If

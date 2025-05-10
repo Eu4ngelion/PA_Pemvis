@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Module Module1
+    'Koneksi
     Public CONN As MySqlConnection
     Public CMD As MySqlCommand
     Public RD As MySqlDataReader
@@ -18,5 +19,10 @@ Module Module1
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    'Variabel Global
+    Public loggged_username As String
+    Public loggged_role As String
+
 End Module
 

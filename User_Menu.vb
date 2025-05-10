@@ -114,15 +114,15 @@ Public Class User_Menu
 
     'Klik DataGrid
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim i As Integer = DataGridView1.CurrentRow.Index
-        txtIdBuku.Text = DataGridView1.Item(0, i).Value.ToString()
-        txtJudul.Text = DataGridView1.Item(1, i).Value.ToString()
-        txtPenulis.Text = DataGridView1.Item(2, i).Value.ToString()
-        txtStok.Text = DataGridView1.Item(3, i).Value.ToString()
-        txtHarga.Text = DataGridView1.Item(4, i).Value.ToString()
-        txtJenis.Text = DataGridView1.Item(5, i).Value.ToString()
-        txtGenre.Text = DataGridView1.Item(6, i).Value.ToString()
-        txtDeskripsi.Text = DataGridView1.Item(7, i).Value.ToString()
+        Dim i = DataGridView1.CurrentRow.Index
+        txtIdBuku.Text = DataGridView1.Item(0, i).Value.ToString
+        txtJudul.Text = DataGridView1.Item(1, i).Value.ToString
+        txtPenulis.Text = DataGridView1.Item(2, i).Value.ToString
+        txtStok.Text = DataGridView1.Item(3, i).Value.ToString
+        txtHarga.Text = DataGridView1.Item(4, i).Value.ToString
+        txtJenis.Text = DataGridView1.Item(5, i).Value.ToString
+        txtGenre.Text = DataGridView1.Item(6, i).Value.ToString
+        txtDeskripsi.Text = DataGridView1.Item(7, i).Value.ToString
     End Sub
 
     'Keranjang Trigger
@@ -167,7 +167,7 @@ Public Class User_Menu
     End Sub
 
     'Tambah Keranjang
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnTambahKeranjang.Click
 
     End Sub
 End Class

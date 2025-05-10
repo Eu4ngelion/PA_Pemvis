@@ -23,7 +23,6 @@ Partial Class Landing
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         landingBg = New PictureBox()
-        pictBelanja = New PictureBox()
         pictAdmin = New PictureBox()
         panelLoginAdmin = New Panel()
         txtPasswordAdmin = New TextBox()
@@ -44,7 +43,6 @@ Partial Class Landing
         Label5 = New Label()
         Label6 = New Label()
         CType(landingBg, ComponentModel.ISupportInitialize).BeginInit()
-        CType(pictBelanja, ComponentModel.ISupportInitialize).BeginInit()
         CType(pictAdmin, ComponentModel.ISupportInitialize).BeginInit()
         panelLoginAdmin.SuspendLayout()
         CType(pictMember, ComponentModel.ISupportInitialize).BeginInit()
@@ -61,20 +59,10 @@ Partial Class Landing
         landingBg.TabIndex = 1
         landingBg.TabStop = False
         ' 
-        ' pictBelanja
-        ' 
-        pictBelanja.Image = My.Resources.Resources.icon_belanja_light
-        pictBelanja.Location = New Point(344, 396)
-        pictBelanja.Name = "pictBelanja"
-        pictBelanja.Size = New Size(105, 154)
-        pictBelanja.SizeMode = PictureBoxSizeMode.Zoom
-        pictBelanja.TabIndex = 2
-        pictBelanja.TabStop = False
-        ' 
         ' pictAdmin
         ' 
         pictAdmin.Image = My.Resources.Resources.icon_admin_light
-        pictAdmin.Location = New Point(617, 411)
+        pictAdmin.Location = New Point(552, 403)
         pictAdmin.Name = "pictAdmin"
         pictAdmin.Size = New Size(88, 139)
         pictAdmin.SizeMode = PictureBoxSizeMode.Zoom
@@ -90,7 +78,7 @@ Partial Class Landing
         panelLoginAdmin.Controls.Add(Label3)
         panelLoginAdmin.Controls.Add(Label2)
         panelLoginAdmin.Controls.Add(Label1)
-        panelLoginAdmin.Location = New Point(277, 329)
+        panelLoginAdmin.Location = New Point(281, 330)
         panelLoginAdmin.Name = "panelLoginAdmin"
         panelLoginAdmin.Size = New Size(496, 257)
         panelLoginAdmin.TabIndex = 4
@@ -161,7 +149,7 @@ Partial Class Landing
         ' pictMember
         ' 
         pictMember.Image = My.Resources.Resources.icon_member_light
-        pictMember.Location = New Point(484, 405)
+        pictMember.Location = New Point(405, 403)
         pictMember.Name = "pictMember"
         pictMember.Size = New Size(103, 147)
         pictMember.SizeMode = PictureBoxSizeMode.Zoom
@@ -178,7 +166,7 @@ Partial Class Landing
         panelLoginMember.Controls.Add(Label4)
         panelLoginMember.Controls.Add(Label5)
         panelLoginMember.Controls.Add(Label6)
-        panelLoginMember.Location = New Point(274, 331)
+        panelLoginMember.Location = New Point(278, 333)
         panelLoginMember.Name = "panelLoginMember"
         panelLoginMember.Size = New Size(496, 257)
         panelLoginMember.TabIndex = 5
@@ -265,7 +253,6 @@ Partial Class Landing
         Controls.Add(pictMember)
         Controls.Add(panelLoginAdmin)
         Controls.Add(pictAdmin)
-        Controls.Add(pictBelanja)
         Controls.Add(landingBg)
         FormBorderStyle = FormBorderStyle.Fixed3D
         MaximumSize = New Size(1080, 768)
@@ -274,7 +261,6 @@ Partial Class Landing
         StartPosition = FormStartPosition.CenterScreen
         Text = "Haven Media"
         CType(landingBg, ComponentModel.ISupportInitialize).EndInit()
-        CType(pictBelanja, ComponentModel.ISupportInitialize).EndInit()
         CType(pictAdmin, ComponentModel.ISupportInitialize).EndInit()
         panelLoginAdmin.ResumeLayout(False)
         panelLoginAdmin.PerformLayout()
@@ -284,7 +270,6 @@ Partial Class Landing
         ResumeLayout(False)
     End Sub
     Friend WithEvents landingBg As PictureBox
-    Friend WithEvents pictBelanja As PictureBox
     Friend WithEvents pictAdmin As PictureBox
     Friend WithEvents panelLoginAdmin As Panel
     Friend WithEvents txtPasswordAdmin As TextBox
