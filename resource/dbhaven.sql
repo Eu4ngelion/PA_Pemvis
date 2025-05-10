@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 10, 2025 at 06:23 AM
+-- Generation Time: May 10, 2025 at 04:41 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,13 +35,6 @@ CREATE TABLE `tbadmin` (
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `tbadmin`
---
-
-INSERT INTO `tbadmin` (`id`, `username`, `password`) VALUES
-(1, 'admin', 'admin123');
-
 -- --------------------------------------------------------
 
 --
@@ -50,7 +43,7 @@ INSERT INTO `tbadmin` (`id`, `username`, `password`) VALUES
 
 CREATE TABLE `tbbuku` (
   `Id` int(11) NOT NULL,
-  `Nama` varchar(50) NOT NULL,
+  `Judul` varchar(50) NOT NULL,
   `Penulis` varchar(50) NOT NULL,
   `Jenis` varchar(20) NOT NULL,
   `Genre` varchar(20) NOT NULL,
@@ -58,13 +51,6 @@ CREATE TABLE `tbbuku` (
   `Stok` int(11) NOT NULL,
   `Deskripsi` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tbbuku`
---
-
-INSERT INTO `tbbuku` (`Id`, `Nama`, `Penulis`, `Jenis`, `Genre`, `Harga`, `Stok`, `Deskripsi`) VALUES
-(1, 'Buku 1', 'Penulis 1', 'Fiksi', 'Action', 20000, 99, 'Ini adalah teks deskripsi');
 
 --
 -- Indexes for dumped tables
@@ -91,13 +77,13 @@ ALTER TABLE `tbbuku`
 -- AUTO_INCREMENT for table `tbadmin`
 --
 ALTER TABLE `tbadmin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbbuku`
 --
 ALTER TABLE `tbbuku`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
