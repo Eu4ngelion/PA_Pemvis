@@ -36,8 +36,6 @@ Public Class User_Menu
         DataGridView2.Refresh()
     End Sub
 
-
-
     Sub Atur_Grid()
         With DataGridView1
             .Columns(0).HeaderText = "Id"
@@ -58,13 +56,12 @@ Public Class User_Menu
             .Columns(0).Visible = False
             .Columns(1).HeaderText = "Judul Buku"
             .Columns(1).Width = 120
-            .Columns(2).HeaderText = "Jumlah"
+            .Columns(2).HeaderText = "Pcs"
             .Columns(2).Width = 60
             .Columns(3).HeaderText = "Sub Total"
             .Columns(3).Width = 120
         End With
     End Sub
-
 
     Private Sub User_Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         koneksi()
@@ -74,6 +71,7 @@ Public Class User_Menu
         Atur_Grid()
     End Sub
 
+    ' Logout
     Private Sub BackToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuBack.Click
         Landing.Show()
         Me.Close()
@@ -107,8 +105,6 @@ Public Class User_Menu
             txtGenre.Text = DS.Tables("tbBuku").Rows(0).Item("genre").ToString()
             txtDeskripsi.Text = DS.Tables("tbBuku").Rows(0).Item("deskripsi").ToString()
         Else
-            MessageBox.Show("Data Buku dengan Id: " + txtIdBuku.Text + " tidak ditemukan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            txtIdBuku.Focus()
             txtJudul.Clear()
             txtStok.Clear()
             txtPenulis.Clear()

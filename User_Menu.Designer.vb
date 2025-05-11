@@ -53,9 +53,12 @@ Partial Class User_Menu
         Label10 = New Label()
         DataGridView2 = New DataGridView()
         btnHapusKeranjang = New Button()
+        PictureBox1 = New PictureBox()
+        Label11 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' btnTambahKeranjang
@@ -177,7 +180,7 @@ Partial Class User_Menu
         ' 
         ' txtStok
         ' 
-        txtStok.Location = New Point(345, 48)
+        txtStok.Location = New Point(564, 48)
         txtStok.Name = "txtStok"
         txtStok.ReadOnly = True
         txtStok.Size = New Size(120, 27)
@@ -186,7 +189,7 @@ Partial Class User_Menu
         ' 
         ' txtHarga
         ' 
-        txtHarga.Location = New Point(132, 151)
+        txtHarga.Location = New Point(351, 151)
         txtHarga.Name = "txtHarga"
         txtHarga.ReadOnly = True
         txtHarga.Size = New Size(333, 27)
@@ -195,7 +198,7 @@ Partial Class User_Menu
         ' 
         ' txtPenulis
         ' 
-        txtPenulis.Location = New Point(132, 118)
+        txtPenulis.Location = New Point(351, 118)
         txtPenulis.Name = "txtPenulis"
         txtPenulis.ReadOnly = True
         txtPenulis.Size = New Size(333, 27)
@@ -205,7 +208,7 @@ Partial Class User_Menu
         ' txtJudul
         ' 
         txtJudul.BackColor = SystemColors.Control
-        txtJudul.Location = New Point(132, 85)
+        txtJudul.Location = New Point(351, 85)
         txtJudul.Name = "txtJudul"
         txtJudul.ReadOnly = True
         txtJudul.Size = New Size(333, 27)
@@ -215,7 +218,7 @@ Partial Class User_Menu
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(281, 52)
+        Label7.Location = New Point(500, 52)
         Label7.Name = "Label7"
         Label7.Size = New Size(38, 20)
         Label7.TabIndex = 13
@@ -224,7 +227,7 @@ Partial Class User_Menu
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(31, 154)
+        Label5.Location = New Point(250, 154)
         Label5.Name = "Label5"
         Label5.Size = New Size(50, 20)
         Label5.TabIndex = 14
@@ -233,7 +236,7 @@ Partial Class User_Menu
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(31, 118)
+        Label4.Location = New Point(250, 118)
         Label4.Name = "Label4"
         Label4.Size = New Size(54, 20)
         Label4.TabIndex = 15
@@ -242,7 +245,7 @@ Partial Class User_Menu
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(31, 84)
+        Label3.Location = New Point(250, 84)
         Label3.Name = "Label3"
         Label3.Size = New Size(47, 20)
         Label3.TabIndex = 16
@@ -251,7 +254,7 @@ Partial Class User_Menu
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(31, 52)
+        Label1.Location = New Point(250, 52)
         Label1.Name = "Label1"
         Label1.Size = New Size(58, 20)
         Label1.TabIndex = 12
@@ -260,7 +263,7 @@ Partial Class User_Menu
         ' txtIdBuku
         ' 
         txtIdBuku.BackColor = Color.Cyan
-        txtIdBuku.Location = New Point(132, 45)
+        txtIdBuku.Location = New Point(351, 45)
         txtIdBuku.Name = "txtIdBuku"
         txtIdBuku.Size = New Size(120, 27)
         txtIdBuku.TabIndex = 17
@@ -269,7 +272,7 @@ Partial Class User_Menu
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(31, 187)
+        Label6.Location = New Point(250, 187)
         Label6.Name = "Label6"
         Label6.Size = New Size(40, 20)
         Label6.TabIndex = 14
@@ -278,7 +281,7 @@ Partial Class User_Menu
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(31, 220)
+        Label8.Location = New Point(250, 220)
         Label8.Name = "Label8"
         Label8.Size = New Size(48, 20)
         Label8.TabIndex = 14
@@ -287,7 +290,7 @@ Partial Class User_Menu
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(750, 52)
+        Label9.Location = New Point(883, 48)
         Label9.Name = "Label9"
         Label9.Size = New Size(69, 20)
         Label9.TabIndex = 13
@@ -295,17 +298,17 @@ Partial Class User_Menu
         ' 
         ' txtDeskripsi
         ' 
-        txtDeskripsi.Location = New Point(530, 82)
+        txtDeskripsi.Location = New Point(752, 81)
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
         txtDeskripsi.ReadOnly = True
-        txtDeskripsi.Size = New Size(501, 158)
+        txtDeskripsi.Size = New Size(279, 158)
         txtDeskripsi.TabIndex = 18
         txtDeskripsi.Text = "txtDeskripsi"
         ' 
         ' txtJenis
         ' 
-        txtJenis.Location = New Point(132, 184)
+        txtJenis.Location = New Point(351, 184)
         txtJenis.Name = "txtJenis"
         txtJenis.ReadOnly = True
         txtJenis.Size = New Size(333, 27)
@@ -314,7 +317,7 @@ Partial Class User_Menu
         ' 
         ' txtGenre
         ' 
-        txtGenre.Location = New Point(132, 217)
+        txtGenre.Location = New Point(351, 217)
         txtGenre.Name = "txtGenre"
         txtGenre.ReadOnly = True
         txtGenre.Size = New Size(333, 27)
@@ -358,11 +361,32 @@ Partial Class User_Menu
         btnHapusKeranjang.Text = "Hapus"
         btnHapusKeranjang.UseVisualStyleBackColor = True
         ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources.Group_33571
+        PictureBox1.Location = New Point(27, 52)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(199, 192)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 24
+        PictureBox1.TabStop = False
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Location = New Point(76, 28)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(87, 20)
+        Label11.TabIndex = 23
+        Label11.Text = "Cover (WIP)"
+        ' 
         ' User_Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1062, 721)
+        Controls.Add(PictureBox1)
+        Controls.Add(Label11)
         Controls.Add(btnHapusKeranjang)
         Controls.Add(DataGridView2)
         Controls.Add(txtIdBuku)
@@ -399,6 +423,7 @@ Partial Class User_Menu
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -434,4 +459,6 @@ Partial Class User_Menu
     Friend WithEvents Label10 As Label
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents btnHapusKeranjang As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label11 As Label
 End Class

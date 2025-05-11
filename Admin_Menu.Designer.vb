@@ -59,20 +59,24 @@ Partial Class Admin_Menu
         CheckBox7 = New CheckBox()
         CheckBox2 = New CheckBox()
         btnCari = New Button()
+        Label8 = New Label()
+        PictureBox1 = New PictureBox()
+        btnUpload = New Button()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
         groupJenis.SuspendLayout()
         groupGenre.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(60, 366)
+        DataGridView1.Location = New Point(27, 366)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(935, 313)
+        DataGridView1.Size = New Size(1000, 313)
         DataGridView1.TabIndex = 0
         ' 
         ' Label1
@@ -88,7 +92,7 @@ Partial Class Admin_Menu
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(60, 54)
+        Label2.Location = New Point(36, 54)
         Label2.Name = "Label2"
         Label2.Size = New Size(58, 20)
         Label2.TabIndex = 2
@@ -97,7 +101,7 @@ Partial Class Admin_Menu
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(60, 86)
+        Label3.Location = New Point(36, 86)
         Label3.Name = "Label3"
         Label3.Size = New Size(43, 20)
         Label3.TabIndex = 3
@@ -106,7 +110,7 @@ Partial Class Admin_Menu
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(60, 120)
+        Label4.Location = New Point(36, 120)
         Label4.Name = "Label4"
         Label4.Size = New Size(54, 20)
         Label4.TabIndex = 3
@@ -115,7 +119,7 @@ Partial Class Admin_Menu
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(60, 156)
+        Label5.Location = New Point(36, 156)
         Label5.Name = "Label5"
         Label5.Size = New Size(50, 20)
         Label5.TabIndex = 3
@@ -124,7 +128,7 @@ Partial Class Admin_Menu
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(742, 51)
+        Label6.Location = New Point(590, 48)
         Label6.Name = "Label6"
         Label6.Size = New Size(69, 20)
         Label6.TabIndex = 3
@@ -133,7 +137,7 @@ Partial Class Admin_Menu
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(310, 54)
+        Label7.Location = New Point(286, 54)
         Label7.Name = "Label7"
         Label7.Size = New Size(38, 20)
         Label7.TabIndex = 3
@@ -141,7 +145,7 @@ Partial Class Admin_Menu
         ' 
         ' btnTambah
         ' 
-        btnTambah.Location = New Point(670, 332)
+        btnTambah.Location = New Point(733, 332)
         btnTambah.Name = "btnTambah"
         btnTambah.Size = New Size(94, 29)
         btnTambah.TabIndex = 4
@@ -150,7 +154,7 @@ Partial Class Admin_Menu
         ' 
         ' btnUbah
         ' 
-        btnUbah.Location = New Point(785, 332)
+        btnUbah.Location = New Point(833, 332)
         btnUbah.Name = "btnUbah"
         btnUbah.Size = New Size(94, 29)
         btnUbah.TabIndex = 4
@@ -159,7 +163,7 @@ Partial Class Admin_Menu
         ' 
         ' btnHapus
         ' 
-        btnHapus.Location = New Point(901, 332)
+        btnHapus.Location = New Point(933, 332)
         btnHapus.Name = "btnHapus"
         btnHapus.Size = New Size(94, 29)
         btnHapus.TabIndex = 4
@@ -168,9 +172,9 @@ Partial Class Admin_Menu
         ' 
         ' txtCari
         ' 
-        txtCari.Location = New Point(60, 333)
+        txtCari.Location = New Point(27, 332)
         txtCari.Name = "txtCari"
-        txtCari.Size = New Size(434, 27)
+        txtCari.Size = New Size(452, 27)
         txtCari.TabIndex = 5
         txtCari.Text = "txtCari"
         ' 
@@ -203,36 +207,36 @@ Partial Class Admin_Menu
         ' 
         ' txtPenulis
         ' 
-        txtPenulis.Location = New Point(161, 120)
+        txtPenulis.Location = New Point(137, 120)
         txtPenulis.Name = "txtPenulis"
         txtPenulis.Size = New Size(333, 27)
         txtPenulis.TabIndex = 8
         ' 
         ' txtHarga
         ' 
-        txtHarga.Location = New Point(161, 156)
+        txtHarga.Location = New Point(137, 156)
         txtHarga.Name = "txtHarga"
         txtHarga.Size = New Size(333, 27)
         txtHarga.TabIndex = 8
         ' 
         ' txtStok
         ' 
-        txtStok.Location = New Point(374, 50)
+        txtStok.Location = New Point(350, 50)
         txtStok.Name = "txtStok"
         txtStok.Size = New Size(120, 27)
         txtStok.TabIndex = 8
         ' 
         ' txtDeskripsi
         ' 
-        txtDeskripsi.Location = New Point(595, 77)
+        txtDeskripsi.Location = New Point(492, 77)
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
-        txtDeskripsi.Size = New Size(400, 237)
+        txtDeskripsi.Size = New Size(272, 225)
         txtDeskripsi.TabIndex = 9
         ' 
         ' txtJudul
         ' 
-        txtJudul.Location = New Point(161, 87)
+        txtJudul.Location = New Point(137, 87)
         txtJudul.Name = "txtJudul"
         txtJudul.Size = New Size(333, 27)
         txtJudul.TabIndex = 8
@@ -240,7 +244,7 @@ Partial Class Admin_Menu
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(60, 208)
+        Label9.Location = New Point(36, 208)
         Label9.Name = "Label9"
         Label9.Size = New Size(0, 20)
         Label9.TabIndex = 3
@@ -248,7 +252,7 @@ Partial Class Admin_Menu
         ' comboId
         ' 
         comboId.FormattingEnabled = True
-        comboId.Location = New Point(161, 48)
+        comboId.Location = New Point(137, 48)
         comboId.Name = "comboId"
         comboId.Size = New Size(97, 28)
         comboId.TabIndex = 10
@@ -278,9 +282,9 @@ Partial Class Admin_Menu
         ' 
         groupJenis.Controls.Add(radioNonFiksi)
         groupJenis.Controls.Add(radioFiksi)
-        groupJenis.Location = New Point(56, 192)
+        groupJenis.Location = New Point(32, 192)
         groupJenis.Name = "groupJenis"
-        groupJenis.Size = New Size(180, 122)
+        groupJenis.Size = New Size(147, 122)
         groupJenis.TabIndex = 13
         groupJenis.TabStop = False
         groupJenis.Text = "Jenis Buku"
@@ -306,9 +310,9 @@ Partial Class Admin_Menu
         groupGenre.Controls.Add(CheckBox7)
         groupGenre.Controls.Add(CheckBox2)
         groupGenre.Controls.Add(CheckBox1)
-        groupGenre.Location = New Point(264, 192)
+        groupGenre.Location = New Point(203, 192)
         groupGenre.Name = "groupGenre"
-        groupGenre.Size = New Size(307, 122)
+        groupGenre.Size = New Size(260, 122)
         groupGenre.TabIndex = 13
         groupGenre.TabStop = False
         groupGenre.Text = "Genre"
@@ -385,18 +389,46 @@ Partial Class Admin_Menu
         ' 
         ' btnCari
         ' 
-        btnCari.Location = New Point(502, 332)
+        btnCari.Location = New Point(492, 330)
         btnCari.Name = "btnCari"
         btnCari.Size = New Size(94, 29)
         btnCari.TabIndex = 4
         btnCari.Text = "Cari"
         btnCari.UseVisualStyleBackColor = True
         ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(886, 53)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(47, 20)
+        Label8.TabIndex = 3
+        Label8.Text = "Cover"
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Location = New Point(792, 78)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(217, 189)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 14
+        PictureBox1.TabStop = False
+        ' 
+        ' btnUpload
+        ' 
+        btnUpload.Location = New Point(792, 273)
+        btnUpload.Name = "btnUpload"
+        btnUpload.Size = New Size(217, 29)
+        btnUpload.TabIndex = 4
+        btnUpload.Text = "Upload"
+        btnUpload.UseVisualStyleBackColor = True
+        ' 
         ' Admin_Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1062, 721)
+        Controls.Add(PictureBox1)
         Controls.Add(groupGenre)
         Controls.Add(groupJenis)
         Controls.Add(comboId)
@@ -410,7 +442,9 @@ Partial Class Admin_Menu
         Controls.Add(btnCari)
         Controls.Add(btnHapus)
         Controls.Add(btnUbah)
+        Controls.Add(btnUpload)
         Controls.Add(btnTambah)
+        Controls.Add(Label8)
         Controls.Add(Label6)
         Controls.Add(Label7)
         Controls.Add(Label9)
@@ -432,6 +466,7 @@ Partial Class Admin_Menu
         groupJenis.PerformLayout()
         groupGenre.ResumeLayout(False)
         groupGenre.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -472,4 +507,7 @@ Partial Class Admin_Menu
     Friend WithEvents CheckBox7 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents btnCari As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnUpload As Button
 End Class

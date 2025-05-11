@@ -1,6 +1,22 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Admin_Menu
+
+    Sub ClearTxt()
+        'combo id clear
+        comboId.Text = ""
+        txtStok.Clear()
+        txtJudul.Clear()
+        txtPenulis.Clear()
+        txtHarga.Clear()
+        txtDeskripsi.Clear()
+
+
+        txtCari.Clear()
+
+    End Sub
+
+
     Private Sub Admin_Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Database
         koneksi()

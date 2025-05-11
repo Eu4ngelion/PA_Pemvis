@@ -64,13 +64,14 @@ Partial Class Landing
         pictAdmin.Image = My.Resources.Resources.icon_admin_light
         pictAdmin.Location = New Point(552, 403)
         pictAdmin.Name = "pictAdmin"
-        pictAdmin.Size = New Size(88, 139)
+        pictAdmin.Size = New Size(98, 147)
         pictAdmin.SizeMode = PictureBoxSizeMode.Zoom
         pictAdmin.TabIndex = 3
         pictAdmin.TabStop = False
         ' 
         ' panelLoginAdmin
         ' 
+        panelLoginAdmin.BackColor = Color.Transparent
         panelLoginAdmin.Controls.Add(txtPasswordAdmin)
         panelLoginAdmin.Controls.Add(txtUsernameAdmin)
         panelLoginAdmin.Controls.Add(btnBackAdmin)
@@ -78,9 +79,9 @@ Partial Class Landing
         panelLoginAdmin.Controls.Add(Label3)
         panelLoginAdmin.Controls.Add(Label2)
         panelLoginAdmin.Controls.Add(Label1)
-        panelLoginAdmin.Location = New Point(281, 330)
+        panelLoginAdmin.Location = New Point(280, 335)
         panelLoginAdmin.Name = "panelLoginAdmin"
-        panelLoginAdmin.Size = New Size(496, 257)
+        panelLoginAdmin.Size = New Size(493, 257)
         panelLoginAdmin.TabIndex = 4
         panelLoginAdmin.Visible = False
         ' 
@@ -166,7 +167,7 @@ Partial Class Landing
         panelLoginMember.Controls.Add(Label4)
         panelLoginMember.Controls.Add(Label5)
         panelLoginMember.Controls.Add(Label6)
-        panelLoginMember.Location = New Point(278, 333)
+        panelLoginMember.Location = New Point(278, 335)
         panelLoginMember.Name = "panelLoginMember"
         panelLoginMember.Size = New Size(496, 257)
         panelLoginMember.TabIndex = 5
