@@ -24,7 +24,6 @@ Partial Class User_Menu
     Private Sub InitializeComponent()
         btnTambahKeranjang = New Button()
         DataGridView1 = New DataGridView()
-        labelJudul = New Label()
         txtSearch = New TextBox()
         txtJumlah = New TextBox()
         btnKurang = New Button()
@@ -77,6 +76,7 @@ Partial Class User_Menu
         DataGridView1.AllowUserToDeleteRows = False
         DataGridView1.AllowUserToResizeColumns = False
         DataGridView1.AllowUserToResizeRows = False
+        DataGridView1.BackgroundColor = SystemColors.Control
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(30, 340)
         DataGridView1.MultiSelect = False
@@ -90,19 +90,9 @@ Partial Class User_Menu
         DataGridView1.Size = New Size(652, 368)
         DataGridView1.TabIndex = 1
         ' 
-        ' labelJudul
-        ' 
-        labelJudul.AutoSize = True
-        labelJudul.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        labelJudul.Location = New Point(482, 9)
-        labelJudul.Name = "labelJudul"
-        labelJudul.Size = New Size(130, 23)
-        labelJudul.TabIndex = 2
-        labelJudul.Text = "Haven Media 2"
-        ' 
         ' txtSearch
         ' 
-        txtSearch.BackColor = Color.Cyan
+        txtSearch.BackColor = SystemColors.Control
         txtSearch.Location = New Point(91, 296)
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(591, 27)
@@ -110,7 +100,7 @@ Partial Class User_Menu
         ' 
         ' txtJumlah
         ' 
-        txtJumlah.BackColor = Color.Cyan
+        txtJumlah.BackColor = SystemColors.Control
         txtJumlah.Location = New Point(814, 297)
         txtJumlah.Name = "txtJumlah"
         txtJumlah.Size = New Size(138, 27)
@@ -149,6 +139,8 @@ Partial Class User_Menu
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
+        Label2.ForeColor = SystemColors.Control
         Label2.Location = New Point(856, 268)
         Label2.Name = "Label2"
         Label2.Size = New Size(76, 20)
@@ -161,6 +153,7 @@ Partial Class User_Menu
         ' 
         ' MenuStrip1
         ' 
+        MenuStrip1.BackColor = Color.Transparent
         MenuStrip1.ImageScalingSize = New Size(20, 20)
         MenuStrip1.Items.AddRange(New ToolStripItem() {menuBack})
         MenuStrip1.Location = New Point(0, 0)
@@ -180,7 +173,7 @@ Partial Class User_Menu
         ' 
         ' txtStok
         ' 
-        txtStok.Location = New Point(564, 48)
+        txtStok.Location = New Point(562, 85)
         txtStok.Name = "txtStok"
         txtStok.ReadOnly = True
         txtStok.Size = New Size(120, 27)
@@ -189,7 +182,7 @@ Partial Class User_Menu
         ' 
         ' txtHarga
         ' 
-        txtHarga.Location = New Point(351, 151)
+        txtHarga.Location = New Point(349, 184)
         txtHarga.Name = "txtHarga"
         txtHarga.ReadOnly = True
         txtHarga.Size = New Size(333, 27)
@@ -198,7 +191,7 @@ Partial Class User_Menu
         ' 
         ' txtPenulis
         ' 
-        txtPenulis.Location = New Point(351, 118)
+        txtPenulis.Location = New Point(349, 151)
         txtPenulis.Name = "txtPenulis"
         txtPenulis.ReadOnly = True
         txtPenulis.Size = New Size(333, 27)
@@ -208,7 +201,7 @@ Partial Class User_Menu
         ' txtJudul
         ' 
         txtJudul.BackColor = SystemColors.Control
-        txtJudul.Location = New Point(351, 85)
+        txtJudul.Location = New Point(349, 118)
         txtJudul.Name = "txtJudul"
         txtJudul.ReadOnly = True
         txtJudul.Size = New Size(333, 27)
@@ -218,7 +211,9 @@ Partial Class User_Menu
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(500, 52)
+        Label7.BackColor = Color.Transparent
+        Label7.ForeColor = SystemColors.Control
+        Label7.Location = New Point(500, 88)
         Label7.Name = "Label7"
         Label7.Size = New Size(38, 20)
         Label7.TabIndex = 13
@@ -227,7 +222,9 @@ Partial Class User_Menu
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(250, 154)
+        Label5.BackColor = Color.Transparent
+        Label5.ForeColor = SystemColors.Control
+        Label5.Location = New Point(250, 187)
         Label5.Name = "Label5"
         Label5.Size = New Size(50, 20)
         Label5.TabIndex = 14
@@ -236,7 +233,9 @@ Partial Class User_Menu
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(250, 118)
+        Label4.BackColor = Color.Transparent
+        Label4.ForeColor = SystemColors.Control
+        Label4.Location = New Point(250, 154)
         Label4.Name = "Label4"
         Label4.Size = New Size(54, 20)
         Label4.TabIndex = 15
@@ -245,7 +244,9 @@ Partial Class User_Menu
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(250, 84)
+        Label3.BackColor = Color.Transparent
+        Label3.ForeColor = SystemColors.Control
+        Label3.Location = New Point(250, 121)
         Label3.Name = "Label3"
         Label3.Size = New Size(47, 20)
         Label3.TabIndex = 16
@@ -254,7 +255,9 @@ Partial Class User_Menu
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(250, 52)
+        Label1.BackColor = Color.Transparent
+        Label1.ForeColor = SystemColors.Control
+        Label1.Location = New Point(250, 85)
         Label1.Name = "Label1"
         Label1.Size = New Size(58, 20)
         Label1.TabIndex = 12
@@ -262,8 +265,8 @@ Partial Class User_Menu
         ' 
         ' txtIdBuku
         ' 
-        txtIdBuku.BackColor = Color.Cyan
-        txtIdBuku.Location = New Point(351, 45)
+        txtIdBuku.BackColor = SystemColors.Control
+        txtIdBuku.Location = New Point(349, 85)
         txtIdBuku.Name = "txtIdBuku"
         txtIdBuku.Size = New Size(120, 27)
         txtIdBuku.TabIndex = 17
@@ -272,7 +275,9 @@ Partial Class User_Menu
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(250, 187)
+        Label6.BackColor = Color.Transparent
+        Label6.ForeColor = SystemColors.Control
+        Label6.Location = New Point(250, 220)
         Label6.Name = "Label6"
         Label6.Size = New Size(40, 20)
         Label6.TabIndex = 14
@@ -281,7 +286,9 @@ Partial Class User_Menu
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(250, 220)
+        Label8.BackColor = Color.Transparent
+        Label8.ForeColor = SystemColors.Control
+        Label8.Location = New Point(250, 250)
         Label8.Name = "Label8"
         Label8.Size = New Size(48, 20)
         Label8.TabIndex = 14
@@ -290,7 +297,9 @@ Partial Class User_Menu
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(883, 48)
+        Label9.BackColor = Color.Transparent
+        Label9.ForeColor = SystemColors.Control
+        Label9.Location = New Point(856, 73)
         Label9.Name = "Label9"
         Label9.Size = New Size(69, 20)
         Label9.TabIndex = 13
@@ -298,7 +307,7 @@ Partial Class User_Menu
         ' 
         ' txtDeskripsi
         ' 
-        txtDeskripsi.Location = New Point(752, 81)
+        txtDeskripsi.Location = New Point(752, 107)
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
         txtDeskripsi.ReadOnly = True
@@ -308,7 +317,7 @@ Partial Class User_Menu
         ' 
         ' txtJenis
         ' 
-        txtJenis.Location = New Point(351, 184)
+        txtJenis.Location = New Point(349, 217)
         txtJenis.Name = "txtJenis"
         txtJenis.ReadOnly = True
         txtJenis.Size = New Size(333, 27)
@@ -317,7 +326,7 @@ Partial Class User_Menu
         ' 
         ' txtGenre
         ' 
-        txtGenre.Location = New Point(351, 217)
+        txtGenre.Location = New Point(349, 250)
         txtGenre.Name = "txtGenre"
         txtGenre.ReadOnly = True
         txtGenre.Size = New Size(333, 27)
@@ -327,6 +336,8 @@ Partial Class User_Menu
         ' Label10
         ' 
         Label10.AutoSize = True
+        Label10.BackColor = Color.Transparent
+        Label10.ForeColor = SystemColors.Control
         Label10.Location = New Point(32, 299)
         Label10.Name = "Label10"
         Label10.Size = New Size(53, 20)
@@ -339,6 +350,7 @@ Partial Class User_Menu
         DataGridView2.AllowUserToDeleteRows = False
         DataGridView2.AllowUserToResizeColumns = False
         DataGridView2.AllowUserToResizeRows = False
+        DataGridView2.BackgroundColor = SystemColors.Control
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView2.Location = New Point(732, 375)
         DataGridView2.MultiSelect = False
@@ -363,8 +375,9 @@ Partial Class User_Menu
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.BackColor = Color.Transparent
         PictureBox1.Image = My.Resources.Resources.Group_33571
-        PictureBox1.Location = New Point(27, 52)
+        PictureBox1.Location = New Point(30, 73)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(199, 192)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
@@ -374,7 +387,9 @@ Partial Class User_Menu
         ' Label11
         ' 
         Label11.AutoSize = True
-        Label11.Location = New Point(76, 28)
+        Label11.BackColor = Color.Transparent
+        Label11.ForeColor = SystemColors.Control
+        Label11.Location = New Point(74, 45)
         Label11.Name = "Label11"
         Label11.Size = New Size(87, 20)
         Label11.TabIndex = 23
@@ -384,6 +399,7 @@ Partial Class User_Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = My.Resources.Resources.Menu_User
         ClientSize = New Size(1062, 721)
         Controls.Add(PictureBox1)
         Controls.Add(Label11)
@@ -411,7 +427,6 @@ Partial Class User_Menu
         Controls.Add(btnKurang)
         Controls.Add(txtJumlah)
         Controls.Add(txtSearch)
-        Controls.Add(labelJudul)
         Controls.Add(DataGridView1)
         Controls.Add(btnCetakStruk)
         Controls.Add(btnTambahKeranjang)
@@ -430,7 +445,6 @@ Partial Class User_Menu
 
     Friend WithEvents btnTambahKeranjang As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents labelJudul As Label
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents txtJumlah As TextBox
     Friend WithEvents btnKurang As Button
