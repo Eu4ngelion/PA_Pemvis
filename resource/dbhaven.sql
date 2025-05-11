@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 11, 2025 at 02:35 PM
+-- Generation Time: May 11, 2025 at 07:27 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,13 +33,13 @@ CREATE TABLE `tbbuku` (
   `Id` int(11) NOT NULL,
   `Judul` varchar(50) NOT NULL,
   `Penulis` varchar(50) NOT NULL,
-  `Tahun_Terbit` date DEFAULT NULL,
+  `Tahun_Terbit` varchar(4) NOT NULL,
   `Jenis` varchar(20) NOT NULL,
   `Genre` varchar(20) NOT NULL,
   `Harga` double NOT NULL,
   `Stok` int(11) NOT NULL,
   `Deskripsi` text DEFAULT NULL,
-  `Cover` longblob NOT NULL
+  `Cover` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
