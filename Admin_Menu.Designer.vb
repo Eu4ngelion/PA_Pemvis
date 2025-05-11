@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Admin_Menu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Admin_Menu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         DataGridView1 = New DataGridView()
@@ -39,7 +39,6 @@ Partial Class Admin_Menu
         MenuStrip1 = New MenuStrip()
         LogoutToolStripMenuItem = New ToolStripMenuItem()
         txtPenulis = New TextBox()
-        txtHarga = New TextBox()
         txtStok = New TextBox()
         txtDeskripsi = New TextBox()
         txtJudul = New TextBox()
@@ -51,38 +50,40 @@ Partial Class Admin_Menu
         groupJenis = New GroupBox()
         radioNonFiksi = New RadioButton()
         groupGenre = New GroupBox()
-        CheckBox6 = New CheckBox()
         CheckBox8 = New CheckBox()
         CheckBox5 = New CheckBox()
-        CheckBox4 = New CheckBox()
-        CheckBox3 = New CheckBox()
-        CheckBox7 = New CheckBox()
         CheckBox2 = New CheckBox()
-        btnCari = New Button()
+        CheckBox4 = New CheckBox()
+        CheckBox7 = New CheckBox()
+        txtHarga = New TextBox()
+        Label10 = New Label()
+        dateTahunTerbit = New DateTimePicker()
         Label8 = New Label()
-        PictureBox1 = New PictureBox()
         btnUpload = New Button()
+        pictCover = New PictureBox()
+        OpenFileDialog1 = New OpenFileDialog()
+        Label11 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
         groupJenis.SuspendLayout()
         groupGenre.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(pictCover, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(27, 366)
+        DataGridView1.Location = New Point(27, 367)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(1000, 313)
+        DataGridView1.Size = New Size(1000, 292)
         DataGridView1.TabIndex = 0
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
+        Label1.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
         Label1.Location = New Point(462, 3)
         Label1.Name = "Label1"
         Label1.Size = New Size(134, 28)
@@ -92,7 +93,7 @@ Partial Class Admin_Menu
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(36, 54)
+        Label2.Location = New Point(291, 54)
         Label2.Name = "Label2"
         Label2.Size = New Size(58, 20)
         Label2.TabIndex = 2
@@ -101,7 +102,7 @@ Partial Class Admin_Menu
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(36, 86)
+        Label3.Location = New Point(291, 86)
         Label3.Name = "Label3"
         Label3.Size = New Size(43, 20)
         Label3.TabIndex = 3
@@ -110,7 +111,7 @@ Partial Class Admin_Menu
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(36, 120)
+        Label4.Location = New Point(291, 120)
         Label4.Name = "Label4"
         Label4.Size = New Size(54, 20)
         Label4.TabIndex = 3
@@ -119,16 +120,16 @@ Partial Class Admin_Menu
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(36, 156)
+        Label5.Location = New Point(291, 156)
         Label5.Name = "Label5"
-        Label5.Size = New Size(50, 20)
+        Label5.Size = New Size(89, 20)
         Label5.TabIndex = 3
-        Label5.Text = "Harga"
+        Label5.Text = "Tahun Terbit"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(590, 48)
+        Label6.Location = New Point(845, 48)
         Label6.Name = "Label6"
         Label6.Size = New Size(69, 20)
         Label6.TabIndex = 3
@@ -137,7 +138,7 @@ Partial Class Admin_Menu
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(286, 54)
+        Label7.Location = New Point(541, 54)
         Label7.Name = "Label7"
         Label7.Size = New Size(38, 20)
         Label7.TabIndex = 3
@@ -145,7 +146,7 @@ Partial Class Admin_Menu
         ' 
         ' btnTambah
         ' 
-        btnTambah.Location = New Point(733, 332)
+        btnTambah.Location = New Point(733, 334)
         btnTambah.Name = "btnTambah"
         btnTambah.Size = New Size(94, 29)
         btnTambah.TabIndex = 4
@@ -154,7 +155,7 @@ Partial Class Admin_Menu
         ' 
         ' btnUbah
         ' 
-        btnUbah.Location = New Point(833, 332)
+        btnUbah.Location = New Point(833, 334)
         btnUbah.Name = "btnUbah"
         btnUbah.Size = New Size(94, 29)
         btnUbah.TabIndex = 4
@@ -163,7 +164,7 @@ Partial Class Admin_Menu
         ' 
         ' btnHapus
         ' 
-        btnHapus.Location = New Point(933, 332)
+        btnHapus.Location = New Point(933, 334)
         btnHapus.Name = "btnHapus"
         btnHapus.Size = New Size(94, 29)
         btnHapus.TabIndex = 4
@@ -172,16 +173,16 @@ Partial Class Admin_Menu
         ' 
         ' txtCari
         ' 
-        txtCari.Location = New Point(27, 332)
+        txtCari.Location = New Point(96, 330)
         txtCari.Name = "txtCari"
-        txtCari.Size = New Size(452, 27)
+        txtCari.Size = New Size(607, 27)
         txtCari.TabIndex = 5
         txtCari.Text = "txtCari"
         ' 
         ' labelCari
         ' 
         labelCari.AutoSize = True
-        labelCari.Location = New Point(60, 336)
+        labelCari.Location = New Point(60, 388)
         labelCari.Name = "labelCari"
         labelCari.Size = New Size(0, 20)
         labelCari.TabIndex = 6
@@ -199,7 +200,7 @@ Partial Class Admin_Menu
         ' LogoutToolStripMenuItem
         ' 
         LogoutToolStripMenuItem.BackColor = Color.Red
-        LogoutToolStripMenuItem.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        LogoutToolStripMenuItem.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         LogoutToolStripMenuItem.ForeColor = Color.White
         LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
         LogoutToolStripMenuItem.Size = New Size(73, 24)
@@ -207,36 +208,29 @@ Partial Class Admin_Menu
         ' 
         ' txtPenulis
         ' 
-        txtPenulis.Location = New Point(137, 120)
+        txtPenulis.Location = New Point(392, 120)
         txtPenulis.Name = "txtPenulis"
         txtPenulis.Size = New Size(333, 27)
         txtPenulis.TabIndex = 8
         ' 
-        ' txtHarga
-        ' 
-        txtHarga.Location = New Point(137, 156)
-        txtHarga.Name = "txtHarga"
-        txtHarga.Size = New Size(333, 27)
-        txtHarga.TabIndex = 8
-        ' 
         ' txtStok
         ' 
-        txtStok.Location = New Point(350, 50)
+        txtStok.Location = New Point(605, 50)
         txtStok.Name = "txtStok"
         txtStok.Size = New Size(120, 27)
         txtStok.TabIndex = 8
         ' 
         ' txtDeskripsi
         ' 
-        txtDeskripsi.Location = New Point(492, 77)
+        txtDeskripsi.Location = New Point(753, 77)
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
-        txtDeskripsi.Size = New Size(272, 225)
+        txtDeskripsi.Size = New Size(272, 237)
         txtDeskripsi.TabIndex = 9
         ' 
         ' txtJudul
         ' 
-        txtJudul.Location = New Point(137, 87)
+        txtJudul.Location = New Point(392, 87)
         txtJudul.Name = "txtJudul"
         txtJudul.Size = New Size(333, 27)
         txtJudul.TabIndex = 8
@@ -244,7 +238,7 @@ Partial Class Admin_Menu
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(36, 208)
+        Label9.Location = New Point(254, 208)
         Label9.Name = "Label9"
         Label9.Size = New Size(0, 20)
         Label9.TabIndex = 3
@@ -252,7 +246,7 @@ Partial Class Admin_Menu
         ' comboId
         ' 
         comboId.FormattingEnabled = True
-        comboId.Location = New Point(137, 48)
+        comboId.Location = New Point(392, 48)
         comboId.Name = "comboId"
         comboId.Size = New Size(97, 28)
         comboId.TabIndex = 10
@@ -282,9 +276,9 @@ Partial Class Admin_Menu
         ' 
         groupJenis.Controls.Add(radioNonFiksi)
         groupJenis.Controls.Add(radioFiksi)
-        groupJenis.Location = New Point(32, 192)
+        groupJenis.Location = New Point(287, 223)
         groupJenis.Name = "groupJenis"
-        groupJenis.Size = New Size(147, 122)
+        groupJenis.Size = New Size(147, 91)
         groupJenis.TabIndex = 13
         groupJenis.TabStop = False
         groupJenis.Text = "Jenis Buku"
@@ -302,39 +296,27 @@ Partial Class Admin_Menu
         ' 
         ' groupGenre
         ' 
-        groupGenre.Controls.Add(CheckBox6)
         groupGenre.Controls.Add(CheckBox8)
         groupGenre.Controls.Add(CheckBox5)
-        groupGenre.Controls.Add(CheckBox4)
-        groupGenre.Controls.Add(CheckBox3)
-        groupGenre.Controls.Add(CheckBox7)
         groupGenre.Controls.Add(CheckBox2)
+        groupGenre.Controls.Add(CheckBox4)
+        groupGenre.Controls.Add(CheckBox7)
         groupGenre.Controls.Add(CheckBox1)
-        groupGenre.Location = New Point(203, 192)
+        groupGenre.Location = New Point(458, 223)
         groupGenre.Name = "groupGenre"
-        groupGenre.Size = New Size(260, 122)
+        groupGenre.Size = New Size(260, 91)
         groupGenre.TabIndex = 13
         groupGenre.TabStop = False
         groupGenre.Text = "Genre"
         ' 
-        ' CheckBox6
-        ' 
-        CheckBox6.AutoSize = True
-        CheckBox6.Location = New Point(174, 57)
-        CheckBox6.Name = "CheckBox6"
-        CheckBox6.Size = New Size(78, 24)
-        CheckBox6.TabIndex = 12
-        CheckBox6.Text = "Genre8"
-        CheckBox6.UseVisualStyleBackColor = True
-        ' 
         ' CheckBox8
         ' 
         CheckBox8.AutoSize = True
-        CheckBox8.Location = New Point(90, 86)
+        CheckBox8.Location = New Point(174, 57)
         CheckBox8.Name = "CheckBox8"
         CheckBox8.Size = New Size(78, 24)
         CheckBox8.TabIndex = 12
-        CheckBox8.Text = "Genre6"
+        CheckBox8.Text = "Genre8"
         CheckBox8.UseVisualStyleBackColor = True
         ' 
         ' CheckBox5
@@ -347,100 +329,123 @@ Partial Class Admin_Menu
         CheckBox5.Text = "Genre5"
         CheckBox5.UseVisualStyleBackColor = True
         ' 
+        ' CheckBox2
+        ' 
+        CheckBox2.AutoSize = True
+        CheckBox2.Location = New Point(6, 57)
+        CheckBox2.Name = "CheckBox2"
+        CheckBox2.Size = New Size(78, 24)
+        CheckBox2.TabIndex = 12
+        CheckBox2.Text = "Genre2"
+        CheckBox2.UseVisualStyleBackColor = True
+        ' 
         ' CheckBox4
         ' 
         CheckBox4.AutoSize = True
-        CheckBox4.Location = New Point(6, 57)
+        CheckBox4.Location = New Point(90, 27)
         CheckBox4.Name = "CheckBox4"
         CheckBox4.Size = New Size(78, 24)
         CheckBox4.TabIndex = 12
-        CheckBox4.Text = "Genre2"
+        CheckBox4.Text = "Genre4"
         CheckBox4.UseVisualStyleBackColor = True
-        ' 
-        ' CheckBox3
-        ' 
-        CheckBox3.AutoSize = True
-        CheckBox3.Location = New Point(90, 27)
-        CheckBox3.Name = "CheckBox3"
-        CheckBox3.Size = New Size(78, 24)
-        CheckBox3.TabIndex = 12
-        CheckBox3.Text = "Genre4"
-        CheckBox3.UseVisualStyleBackColor = True
         ' 
         ' CheckBox7
         ' 
         CheckBox7.AutoSize = True
-        CheckBox7.Location = New Point(6, 86)
+        CheckBox7.Location = New Point(174, 27)
         CheckBox7.Name = "CheckBox7"
         CheckBox7.Size = New Size(78, 24)
         CheckBox7.TabIndex = 12
-        CheckBox7.Text = "Genre3"
+        CheckBox7.Text = "Genre7"
         CheckBox7.UseVisualStyleBackColor = True
         ' 
-        ' CheckBox2
+        ' txtHarga
         ' 
-        CheckBox2.AutoSize = True
-        CheckBox2.Location = New Point(174, 27)
-        CheckBox2.Name = "CheckBox2"
-        CheckBox2.Size = New Size(78, 24)
-        CheckBox2.TabIndex = 12
-        CheckBox2.Text = "Genre7"
-        CheckBox2.UseVisualStyleBackColor = True
+        txtHarga.Location = New Point(392, 191)
+        txtHarga.Name = "txtHarga"
+        txtHarga.Size = New Size(333, 27)
+        txtHarga.TabIndex = 16
         ' 
-        ' btnCari
+        ' Label10
         ' 
-        btnCari.Location = New Point(492, 330)
-        btnCari.Name = "btnCari"
-        btnCari.Size = New Size(94, 29)
-        btnCari.TabIndex = 4
-        btnCari.Text = "Cari"
-        btnCari.UseVisualStyleBackColor = True
+        Label10.AutoSize = True
+        Label10.Location = New Point(291, 190)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(50, 20)
+        Label10.TabIndex = 15
+        Label10.Text = "Harga"
+        ' 
+        ' dateTahunTerbit
+        ' 
+        dateTahunTerbit.CustomFormat = "yyyy"
+        dateTahunTerbit.Format = DateTimePickerFormat.Custom
+        dateTahunTerbit.Location = New Point(392, 156)
+        dateTahunTerbit.MaxDate = New Date(2099, 5, 11, 0, 0, 0, 0)
+        dateTahunTerbit.Name = "dateTahunTerbit"
+        dateTahunTerbit.Size = New Size(333, 27)
+        dateTahunTerbit.TabIndex = 17
+        dateTahunTerbit.Value = New Date(2025, 5, 11, 0, 0, 0, 0)
         ' 
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(886, 53)
+        Label8.Location = New Point(131, 40)
         Label8.Name = "Label8"
         Label8.Size = New Size(47, 20)
         Label8.TabIndex = 3
         Label8.Text = "Cover"
         ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = My.Resources.Resources.Group_33571
-        PictureBox1.Location = New Point(792, 78)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(217, 189)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 14
-        PictureBox1.TabStop = False
-        ' 
         ' btnUpload
         ' 
-        btnUpload.Location = New Point(792, 273)
+        btnUpload.Location = New Point(27, 272)
         btnUpload.Name = "btnUpload"
-        btnUpload.Size = New Size(217, 29)
+        btnUpload.Size = New Size(227, 29)
         btnUpload.TabIndex = 4
         btnUpload.Text = "Upload"
         btnUpload.UseVisualStyleBackColor = True
         ' 
+        ' pictCover
+        ' 
+        pictCover.Image = My.Resources.Resources.no_image
+        pictCover.Location = New Point(27, 65)
+        pictCover.Name = "pictCover"
+        pictCover.Size = New Size(227, 196)
+        pictCover.SizeMode = PictureBoxSizeMode.Zoom
+        pictCover.TabIndex = 14
+        pictCover.TabStop = False
+        ' 
+        ' OpenFileDialog1
+        ' 
+        OpenFileDialog1.FileName = "OpenFileDialog1"
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Location = New Point(29, 334)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(61, 20)
+        Label11.TabIndex = 18
+        Label11.Text = "Label11"
+        ' 
         ' Admin_Menu
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1062, 721)
-        Controls.Add(PictureBox1)
+        Controls.Add(Label11)
+        Controls.Add(dateTahunTerbit)
+        Controls.Add(txtHarga)
+        Controls.Add(Label10)
+        Controls.Add(pictCover)
         Controls.Add(groupGenre)
         Controls.Add(groupJenis)
         Controls.Add(comboId)
         Controls.Add(txtDeskripsi)
         Controls.Add(txtStok)
-        Controls.Add(txtHarga)
         Controls.Add(txtPenulis)
         Controls.Add(txtJudul)
         Controls.Add(labelCari)
         Controls.Add(txtCari)
-        Controls.Add(btnCari)
         Controls.Add(btnHapus)
         Controls.Add(btnUbah)
         Controls.Add(btnUpload)
@@ -467,7 +472,7 @@ Partial Class Admin_Menu
         groupJenis.PerformLayout()
         groupGenre.ResumeLayout(False)
         groupGenre.PerformLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(pictCover, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -488,7 +493,6 @@ Partial Class Admin_Menu
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents LogoutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents txtPenulis As TextBox
-    Friend WithEvents txtHarga As TextBox
     Friend WithEvents txtStok As TextBox
     Friend WithEvents txtDeskripsi As TextBox
     Friend WithEvents txtJudul As TextBox
@@ -500,15 +504,17 @@ Partial Class Admin_Menu
     Friend WithEvents groupJenis As GroupBox
     Friend WithEvents radioNonFiksi As RadioButton
     Friend WithEvents groupGenre As GroupBox
-    Friend WithEvents CheckBox6 As CheckBox
     Friend WithEvents CheckBox8 As CheckBox
     Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox7 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents btnCari As Button
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents txtHarga As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents dateTahunTerbit As DateTimePicker
     Friend WithEvents Label8 As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnUpload As Button
+    Friend WithEvents pictCover As PictureBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Label11 As Label
 End Class
