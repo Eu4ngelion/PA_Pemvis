@@ -407,6 +407,7 @@ Partial Class Admin_Menu
         ' 
         ' PictureBox1
         ' 
+        PictureBox1.Image = My.Resources.Resources.Group_33571
         PictureBox1.Location = New Point(792, 78)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(217, 189)
