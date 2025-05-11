@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 10, 2025 at 06:02 PM
+-- Generation Time: May 11, 2025 at 02:35 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -33,11 +33,13 @@ CREATE TABLE `tbbuku` (
   `Id` int(11) NOT NULL,
   `Judul` varchar(50) NOT NULL,
   `Penulis` varchar(50) NOT NULL,
+  `Tahun_Terbit` date DEFAULT NULL,
   `Jenis` varchar(20) NOT NULL,
   `Genre` varchar(20) NOT NULL,
   `Harga` double NOT NULL,
   `Stok` int(11) NOT NULL,
-  `Deskripsi` text DEFAULT NULL
+  `Deskripsi` text DEFAULT NULL,
+  `Cover` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -47,8 +49,9 @@ CREATE TABLE `tbbuku` (
 --
 
 CREATE TABLE `tbkeranjang` (
-  `id_buku` int(11) DEFAULT NULL,
-  `nama_buku` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_buku` int(11) NOT NULL,
   `jumlah` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -79,7 +82,8 @@ ALTER TABLE `tbbuku`
 -- Indexes for table `tbkeranjang`
 --
 ALTER TABLE `tbkeranjang`
-  ADD UNIQUE KEY `id_buku` (`id_buku`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `buku_keranjang` (`id_buku`) USING BTREE;
 
 --
 -- Indexes for table `tbuser`
@@ -99,10 +103,27 @@ ALTER TABLE `tbbuku`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tbkeranjang`
+--
+ALTER TABLE `tbkeranjang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tbuser`
 --
 ALTER TABLE `tbuser`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbkeranjang`
+--
+ALTER TABLE `tbkeranjang`
+  ADD CONSTRAINT `keranjang-buku` FOREIGN KEY (`id_buku`) REFERENCES `tbbuku` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `keranjang-user` FOREIGN KEY (`id_user`) REFERENCES `tbuser` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
