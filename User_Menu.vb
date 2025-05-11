@@ -3,6 +3,7 @@ Public Class User_Menu
     'Array Keranjang
     Dim keranjang(10) As String
 
+    'Fungsi Clear Tools
     Sub ClearTxt()
         txtIdBuku.Clear()
         txtJudul.Clear()
@@ -13,8 +14,10 @@ Public Class User_Menu
         txtGenre.Clear()
         txtDeskripsi.Clear()
         txtSearch.Clear()
+        PictureBox1.Image = Nothing
     End Sub
 
+    'Fungsi Show Datagrid Buku
     Sub Show_Data_Buku()
         Dim query As String = "SELECT * FROM tbBuku"
         CMD = New MySqlCommand(query, CONN)
@@ -25,6 +28,7 @@ Public Class User_Menu
         DataGridView1.Refresh()
     End Sub
 
+    'Fungsi Show Datagrid Keranjang
     Sub Show_Data_Keranjang()
         Dim query As String = "SELECT k.id_buku, b.judul, k.jumlah, b.harga * k.jumlah AS sub_total FROM tbKeranjang k INNER JOIN tbBuku b ON k.id_buku = b.id WHERE k.id_user = @id_user"
         CMD = New MySqlCommand(query, CONN)
@@ -36,6 +40,7 @@ Public Class User_Menu
         DataGridView2.Refresh()
     End Sub
 
+    'Fungsi Atur Grid
     Sub Atur_Grid()
         With DataGridView1
             .Columns(0).HeaderText = "Id"
@@ -63,6 +68,7 @@ Public Class User_Menu
         End With
     End Sub
 
+    'Form Load
     Private Sub User_Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         koneksi()
         ClearTxt()
@@ -82,7 +88,6 @@ Public Class User_Menu
         If e.KeyChar = Chr(13) Then
             txtJudul.Focus()
         End If
-
 
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
             e.Handled = True
@@ -133,15 +138,16 @@ Public Class User_Menu
 
     'Klik DataGrid Buku
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim i = DataGridView1.CurrentRow.Index
-        txtIdBuku.Text = DataGridView1.Item(0, i).Value.ToString
-        txtJudul.Text = DataGridView1.Item(1, i).Value.ToString
-        txtPenulis.Text = DataGridView1.Item(2, i).Value.ToString
-        txtGenre.Text = DataGridView1.Item(3, i).Value.ToString
-        txtJenis.Text = DataGridView1.Item(4, i).Value.ToString
-        txtHarga.Text = DataGridView1.Item(5, i).Value.ToString
-        txtStok.Text = DataGridView1.Item(6, i).Value.ToString
-        txtDeskripsi.Text = DataGridView1.Item(7, i).Value.ToString
+        If e.RowIndex >= 0 Then
+            txtIdBuku.Text = DataGridView1.Item(0, e.RowIndex).Value.ToString()
+            txtJudul.Text = DataGridView1.Item(1, e.RowIndex).Value.ToString()
+            txtPenulis.Text = DataGridView1.Item(2, e.RowIndex).Value.ToString()
+            txtJenis.Text = DataGridView1.Item(3, e.RowIndex).Value.ToString()
+            txtGenre.Text = DataGridView1.Item(4, e.RowIndex).Value.ToString()
+            txtStok.Text = DataGridView1.Item(5, e.RowIndex).Value.ToString()
+            txtHarga.Text = DataGridView1.Item(6, e.RowIndex).Value.ToString()
+            txtDeskripsi.Text = DataGridView1.Item(7, e.RowIndex).Value.ToString()
+        End If
     End Sub
 
     'Klik DataGrid Keranjang

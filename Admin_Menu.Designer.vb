@@ -62,7 +62,6 @@ Partial Class Admin_Menu
         btnUpload = New Button()
         pictCover = New PictureBox()
         OpenFileDialog1 = New OpenFileDialog()
-        Label11 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         CType(BindingSource1, ComponentModel.ISupportInitialize).BeginInit()
@@ -73,17 +72,25 @@ Partial Class Admin_Menu
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AllowUserToAddRows = False
+        DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AllowUserToResizeColumns = False
+        DataGridView1.AllowUserToResizeRows = False
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Location = New Point(27, 367)
+        DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
         DataGridView1.RowHeadersWidth = 51
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(1000, 292)
         DataGridView1.TabIndex = 0
+        DataGridView1.TabStop = False
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 12.0F, FontStyle.Bold)
+        Label1.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
         Label1.Location = New Point(462, 3)
         Label1.Name = "Label1"
         Label1.Size = New Size(134, 28)
@@ -149,7 +156,7 @@ Partial Class Admin_Menu
         btnTambah.Location = New Point(733, 334)
         btnTambah.Name = "btnTambah"
         btnTambah.Size = New Size(94, 29)
-        btnTambah.TabIndex = 4
+        btnTambah.TabIndex = 18
         btnTambah.Text = "Tambah"
         btnTambah.UseVisualStyleBackColor = True
         ' 
@@ -158,7 +165,7 @@ Partial Class Admin_Menu
         btnUbah.Location = New Point(833, 334)
         btnUbah.Name = "btnUbah"
         btnUbah.Size = New Size(94, 29)
-        btnUbah.TabIndex = 4
+        btnUbah.TabIndex = 19
         btnUbah.Text = "Ubah"
         btnUbah.UseVisualStyleBackColor = True
         ' 
@@ -167,16 +174,16 @@ Partial Class Admin_Menu
         btnHapus.Location = New Point(933, 334)
         btnHapus.Name = "btnHapus"
         btnHapus.Size = New Size(94, 29)
-        btnHapus.TabIndex = 4
+        btnHapus.TabIndex = 20
         btnHapus.Text = "Hapus"
         btnHapus.UseVisualStyleBackColor = True
         ' 
         ' txtCari
         ' 
-        txtCari.Location = New Point(96, 330)
+        txtCari.Location = New Point(27, 334)
         txtCari.Name = "txtCari"
-        txtCari.Size = New Size(607, 27)
-        txtCari.TabIndex = 5
+        txtCari.Size = New Size(569, 27)
+        txtCari.TabIndex = 17
         txtCari.Text = "txtCari"
         ' 
         ' labelCari
@@ -200,7 +207,7 @@ Partial Class Admin_Menu
         ' LogoutToolStripMenuItem
         ' 
         LogoutToolStripMenuItem.BackColor = Color.Red
-        LogoutToolStripMenuItem.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        LogoutToolStripMenuItem.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         LogoutToolStripMenuItem.ForeColor = Color.White
         LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
         LogoutToolStripMenuItem.Size = New Size(73, 24)
@@ -209,16 +216,17 @@ Partial Class Admin_Menu
         ' txtPenulis
         ' 
         txtPenulis.Location = New Point(392, 120)
+        txtPenulis.MaxLength = 50
         txtPenulis.Name = "txtPenulis"
         txtPenulis.Size = New Size(333, 27)
-        txtPenulis.TabIndex = 8
+        txtPenulis.TabIndex = 4
         ' 
         ' txtStok
         ' 
         txtStok.Location = New Point(605, 50)
         txtStok.Name = "txtStok"
         txtStok.Size = New Size(120, 27)
-        txtStok.TabIndex = 8
+        txtStok.TabIndex = 2
         ' 
         ' txtDeskripsi
         ' 
@@ -226,14 +234,15 @@ Partial Class Admin_Menu
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
         txtDeskripsi.Size = New Size(272, 237)
-        txtDeskripsi.TabIndex = 9
+        txtDeskripsi.TabIndex = 14
         ' 
         ' txtJudul
         ' 
         txtJudul.Location = New Point(392, 87)
+        txtJudul.MaxLength = 50
         txtJudul.Name = "txtJudul"
         txtJudul.Size = New Size(333, 27)
-        txtJudul.TabIndex = 8
+        txtJudul.TabIndex = 3
         ' 
         ' Label9
         ' 
@@ -249,7 +258,7 @@ Partial Class Admin_Menu
         comboId.Location = New Point(392, 48)
         comboId.Name = "comboId"
         comboId.Size = New Size(97, 28)
-        comboId.TabIndex = 10
+        comboId.TabIndex = 0
         ' 
         ' radioFiksi
         ' 
@@ -257,7 +266,7 @@ Partial Class Admin_Menu
         radioFiksi.Location = New Point(20, 26)
         radioFiksi.Name = "radioFiksi"
         radioFiksi.Size = New Size(58, 24)
-        radioFiksi.TabIndex = 11
+        radioFiksi.TabIndex = 7
         radioFiksi.TabStop = True
         radioFiksi.Text = "Fiksi"
         radioFiksi.UseVisualStyleBackColor = True
@@ -268,7 +277,7 @@ Partial Class Admin_Menu
         CheckBox1.Location = New Point(6, 27)
         CheckBox1.Name = "CheckBox1"
         CheckBox1.Size = New Size(78, 24)
-        CheckBox1.TabIndex = 12
+        CheckBox1.TabIndex = 8
         CheckBox1.Text = "Genre1"
         CheckBox1.UseVisualStyleBackColor = True
         ' 
@@ -279,7 +288,7 @@ Partial Class Admin_Menu
         groupJenis.Location = New Point(287, 223)
         groupJenis.Name = "groupJenis"
         groupJenis.Size = New Size(147, 91)
-        groupJenis.TabIndex = 13
+        groupJenis.TabIndex = 6
         groupJenis.TabStop = False
         groupJenis.Text = "Jenis Buku"
         ' 
@@ -289,7 +298,7 @@ Partial Class Admin_Menu
         radioNonFiksi.Location = New Point(20, 56)
         radioNonFiksi.Name = "radioNonFiksi"
         radioNonFiksi.Size = New Size(92, 24)
-        radioNonFiksi.TabIndex = 11
+        radioNonFiksi.TabIndex = 8
         radioNonFiksi.TabStop = True
         radioNonFiksi.Text = "Non-Fiksi"
         radioNonFiksi.UseVisualStyleBackColor = True
@@ -305,7 +314,7 @@ Partial Class Admin_Menu
         groupGenre.Location = New Point(458, 223)
         groupGenre.Name = "groupGenre"
         groupGenre.Size = New Size(260, 91)
-        groupGenre.TabIndex = 13
+        groupGenre.TabIndex = 7
         groupGenre.TabStop = False
         groupGenre.Text = "Genre"
         ' 
@@ -315,7 +324,7 @@ Partial Class Admin_Menu
         CheckBox8.Location = New Point(174, 57)
         CheckBox8.Name = "CheckBox8"
         CheckBox8.Size = New Size(78, 24)
-        CheckBox8.TabIndex = 12
+        CheckBox8.TabIndex = 13
         CheckBox8.Text = "Genre8"
         CheckBox8.UseVisualStyleBackColor = True
         ' 
@@ -325,7 +334,7 @@ Partial Class Admin_Menu
         CheckBox5.Location = New Point(90, 57)
         CheckBox5.Name = "CheckBox5"
         CheckBox5.Size = New Size(78, 24)
-        CheckBox5.TabIndex = 12
+        CheckBox5.TabIndex = 11
         CheckBox5.Text = "Genre5"
         CheckBox5.UseVisualStyleBackColor = True
         ' 
@@ -335,7 +344,7 @@ Partial Class Admin_Menu
         CheckBox2.Location = New Point(6, 57)
         CheckBox2.Name = "CheckBox2"
         CheckBox2.Size = New Size(78, 24)
-        CheckBox2.TabIndex = 12
+        CheckBox2.TabIndex = 9
         CheckBox2.Text = "Genre2"
         CheckBox2.UseVisualStyleBackColor = True
         ' 
@@ -345,7 +354,7 @@ Partial Class Admin_Menu
         CheckBox4.Location = New Point(90, 27)
         CheckBox4.Name = "CheckBox4"
         CheckBox4.Size = New Size(78, 24)
-        CheckBox4.TabIndex = 12
+        CheckBox4.TabIndex = 10
         CheckBox4.Text = "Genre4"
         CheckBox4.UseVisualStyleBackColor = True
         ' 
@@ -364,7 +373,7 @@ Partial Class Admin_Menu
         txtHarga.Location = New Point(392, 191)
         txtHarga.Name = "txtHarga"
         txtHarga.Size = New Size(333, 27)
-        txtHarga.TabIndex = 16
+        txtHarga.TabIndex = 6
         ' 
         ' Label10
         ' 
@@ -383,13 +392,13 @@ Partial Class Admin_Menu
         dateTahunTerbit.MaxDate = New Date(2099, 5, 11, 0, 0, 0, 0)
         dateTahunTerbit.Name = "dateTahunTerbit"
         dateTahunTerbit.Size = New Size(333, 27)
-        dateTahunTerbit.TabIndex = 17
+        dateTahunTerbit.TabIndex = 5
         dateTahunTerbit.Value = New Date(2025, 5, 11, 0, 0, 0, 0)
         ' 
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(131, 40)
+        Label8.Location = New Point(126, 40)
         Label8.Name = "Label8"
         Label8.Size = New Size(47, 20)
         Label8.TabIndex = 3
@@ -400,13 +409,13 @@ Partial Class Admin_Menu
         btnUpload.Location = New Point(27, 272)
         btnUpload.Name = "btnUpload"
         btnUpload.Size = New Size(227, 29)
-        btnUpload.TabIndex = 4
+        btnUpload.TabIndex = 15
         btnUpload.Text = "Upload"
         btnUpload.UseVisualStyleBackColor = True
         ' 
         ' pictCover
         ' 
-        pictCover.Image = My.Resources.Resources.no_image
+        pictCover.BackColor = Color.DimGray
         pictCover.Location = New Point(27, 65)
         pictCover.Name = "pictCover"
         pictCover.Size = New Size(227, 196)
@@ -418,21 +427,11 @@ Partial Class Admin_Menu
         ' 
         OpenFileDialog1.FileName = "OpenFileDialog1"
         ' 
-        ' Label11
-        ' 
-        Label11.AutoSize = True
-        Label11.Location = New Point(29, 334)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(61, 20)
-        Label11.TabIndex = 18
-        Label11.Text = "Label11"
-        ' 
         ' Admin_Menu
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1062, 721)
-        Controls.Add(Label11)
         Controls.Add(dateTahunTerbit)
         Controls.Add(txtHarga)
         Controls.Add(Label10)
@@ -462,6 +461,8 @@ Partial Class Admin_Menu
         Controls.Add(DataGridView1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
+        MaximumSize = New Size(1080, 768)
+        MinimumSize = New Size(1080, 768)
         Name = "Admin_Menu"
         Text = "Haven Media"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
@@ -516,5 +517,4 @@ Partial Class Admin_Menu
     Friend WithEvents btnUpload As Button
     Friend WithEvents pictCover As PictureBox
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents Label11 As Label
 End Class

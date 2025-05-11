@@ -376,7 +376,7 @@ Partial Class User_Menu
         ' PictureBox1
         ' 
         PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Image = My.Resources.Resources.Group_33571
+        PictureBox1.Image = My.Resources.Resources.no_image
         PictureBox1.Location = New Point(30, 73)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(199, 192)
