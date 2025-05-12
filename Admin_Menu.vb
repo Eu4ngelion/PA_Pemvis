@@ -193,9 +193,6 @@ Public Class Admin_Menu
             Dim foto() As Byte = CType(DataGridView1.Rows(e.RowIndex).Cells(9).Value, Byte())
             Dim ms As New IO.MemoryStream(foto)
             pictCover.Image = Image.FromStream(ms)
-
-
-
         End If
     End Sub
 
@@ -307,7 +304,6 @@ Public Class Admin_Menu
             End If
         End Try
     End Sub
-
 
 
 

@@ -41,21 +41,30 @@ Public Class User_Menu
 
     'Fungsi Atur Grid
     Sub Atur_Grid()
+        ' id, judul, penulis, tahun terbit, jenis, genre, harga, stok, deskripsi, cover
         With DataGridView1
             .Columns(0).HeaderText = "Id"
             .Columns(0).Width = 50
             .Columns(1).HeaderText = "Judul Buku"
-            .Columns(1).Width = 150
+            .Columns(1).Width = 140
             .Columns(2).HeaderText = "Penulis"
-            .Columns(2).Width = 150
-            .Columns(3).HeaderText = "Jenis Buku"
-            .Columns(3).Width = 150
-            .Columns(4).HeaderText = "Genre"
-            .Columns(4).Width = 150
-            .Columns(5).Visible = False
+            .Columns(2).Width = 140
+            .Columns(3).HeaderText = "Tahun"
+            .Columns(3).Width = 80
+            .Columns(4).HeaderText = "Jenis"
+            .Columns(4).Width = 100
+            .Columns(5).HeaderText = "Genre"
+            .Columns(5).Width = 140
             .Columns(6).Visible = False
             .Columns(7).Visible = False
+            .Columns(8).Visible = False
+            .Columns(9).Visible = False
+
+            .DefaultCellStyle.WrapMode = DataGridViewTriState.True
+            .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+
         End With
+
         With DataGridView2
             .Columns(0).Visible = False
             .Columns(1).HeaderText = "Judul Buku"
@@ -141,11 +150,16 @@ Public Class User_Menu
             txtIdBuku.Text = DataGridView1.Item(0, e.RowIndex).Value.ToString()
             txtJudul.Text = DataGridView1.Item(1, e.RowIndex).Value.ToString()
             txtPenulis.Text = DataGridView1.Item(2, e.RowIndex).Value.ToString()
-            txtJenis.Text = DataGridView1.Item(3, e.RowIndex).Value.ToString()
-            txtGenre.Text = DataGridView1.Item(4, e.RowIndex).Value.ToString()
-            txtStok.Text = DataGridView1.Item(5, e.RowIndex).Value.ToString()
+            txtTahunTerbit.Text = DataGridView1.Item(3, e.RowIndex).Value.ToString()
+            txtJenis.Text = DataGridView1.Item(4, e.RowIndex).Value.ToString()
+            txtGenre.Text = DataGridView1.Item(5, e.RowIndex).Value.ToString()
             txtHarga.Text = DataGridView1.Item(6, e.RowIndex).Value.ToString()
-            txtDeskripsi.Text = DataGridView1.Item(7, e.RowIndex).Value.ToString()
+            txtStok.Text = DataGridView1.Item(7, e.RowIndex).Value.ToString()
+            txtDeskripsi.Text = DataGridView1.Item(8, e.RowIndex).Value.ToString()
+            Dim foto() As Byte = DataGridView1.Item(9, e.RowIndex).Value
+            Dim ms As New IO.MemoryStream(foto)
+            PictureBox1.Image = Image.FromStream(ms)
+
         End If
     End Sub
 

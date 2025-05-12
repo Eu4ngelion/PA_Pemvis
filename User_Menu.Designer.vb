@@ -173,38 +173,38 @@ Partial Class User_Menu
         ' 
         ' txtStok
         ' 
-        txtStok.Location = New Point(562, 85)
+        txtStok.Location = New Point(596, 84)
         txtStok.Name = "txtStok"
         txtStok.ReadOnly = True
-        txtStok.Size = New Size(120, 27)
+        txtStok.Size = New Size(86, 27)
         txtStok.TabIndex = 17
         txtStok.Text = "txtStok"
         ' 
         ' txtHarga
         ' 
-        txtHarga.Location = New Point(349, 230)
+        txtHarga.Location = New Point(383, 223)
         txtHarga.Name = "txtHarga"
         txtHarga.ReadOnly = True
-        txtHarga.Size = New Size(333, 27)
+        txtHarga.Size = New Size(299, 27)
         txtHarga.TabIndex = 18
         txtHarga.Text = "txtHarga"
         ' 
         ' txtPenulis
         ' 
-        txtPenulis.Location = New Point(349, 151)
+        txtPenulis.Location = New Point(383, 153)
         txtPenulis.Name = "txtPenulis"
         txtPenulis.ReadOnly = True
-        txtPenulis.Size = New Size(333, 27)
+        txtPenulis.Size = New Size(299, 27)
         txtPenulis.TabIndex = 19
         txtPenulis.Text = "txtPenulis"
         ' 
         ' txtJudul
         ' 
         txtJudul.BackColor = SystemColors.Control
-        txtJudul.Location = New Point(349, 118)
+        txtJudul.Location = New Point(383, 118)
         txtJudul.Name = "txtJudul"
         txtJudul.ReadOnly = True
-        txtJudul.Size = New Size(333, 27)
+        txtJudul.Size = New Size(299, 27)
         txtJudul.TabIndex = 20
         txtJudul.Text = "txtJudul"
         ' 
@@ -213,7 +213,7 @@ Partial Class User_Menu
         Label7.AutoSize = True
         Label7.BackColor = Color.Transparent
         Label7.ForeColor = SystemColors.Control
-        Label7.Location = New Point(500, 88)
+        Label7.Location = New Point(534, 87)
         Label7.Name = "Label7"
         Label7.Size = New Size(38, 20)
         Label7.TabIndex = 13
@@ -224,7 +224,7 @@ Partial Class User_Menu
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
         Label5.ForeColor = SystemColors.Control
-        Label5.Location = New Point(250, 233)
+        Label5.Location = New Point(284, 226)
         Label5.Name = "Label5"
         Label5.Size = New Size(50, 20)
         Label5.TabIndex = 14
@@ -235,7 +235,7 @@ Partial Class User_Menu
         Label4.AutoSize = True
         Label4.BackColor = Color.Transparent
         Label4.ForeColor = SystemColors.Control
-        Label4.Location = New Point(250, 154)
+        Label4.Location = New Point(284, 156)
         Label4.Name = "Label4"
         Label4.Size = New Size(54, 20)
         Label4.TabIndex = 15
@@ -246,7 +246,7 @@ Partial Class User_Menu
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
         Label3.ForeColor = SystemColors.Control
-        Label3.Location = New Point(250, 121)
+        Label3.Location = New Point(284, 121)
         Label3.Name = "Label3"
         Label3.Size = New Size(47, 20)
         Label3.TabIndex = 16
@@ -257,7 +257,7 @@ Partial Class User_Menu
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
         Label1.ForeColor = SystemColors.Control
-        Label1.Location = New Point(250, 85)
+        Label1.Location = New Point(284, 84)
         Label1.Name = "Label1"
         Label1.Size = New Size(58, 20)
         Label1.TabIndex = 12
@@ -266,7 +266,7 @@ Partial Class User_Menu
         ' txtIdBuku
         ' 
         txtIdBuku.BackColor = SystemColors.Control
-        txtIdBuku.Location = New Point(349, 85)
+        txtIdBuku.Location = New Point(383, 84)
         txtIdBuku.Name = "txtIdBuku"
         txtIdBuku.Size = New Size(120, 27)
         txtIdBuku.TabIndex = 17
@@ -277,7 +277,7 @@ Partial Class User_Menu
         Label6.AutoSize = True
         Label6.BackColor = Color.Transparent
         Label6.ForeColor = SystemColors.Control
-        Label6.Location = New Point(250, 266)
+        Label6.Location = New Point(284, 262)
         Label6.Name = "Label6"
         Label6.Size = New Size(40, 20)
         Label6.TabIndex = 14
@@ -288,7 +288,7 @@ Partial Class User_Menu
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
         Label8.ForeColor = SystemColors.Control
-        Label8.Location = New Point(250, 296)
+        Label8.Location = New Point(284, 296)
         Label8.Name = "Label8"
         Label8.Size = New Size(48, 20)
         Label8.TabIndex = 14
@@ -307,29 +307,29 @@ Partial Class User_Menu
         ' 
         ' txtDeskripsi
         ' 
-        txtDeskripsi.Location = New Point(752, 107)
+        txtDeskripsi.Location = New Point(732, 107)
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
         txtDeskripsi.ReadOnly = True
-        txtDeskripsi.Size = New Size(279, 158)
+        txtDeskripsi.Size = New Size(299, 158)
         txtDeskripsi.TabIndex = 18
         txtDeskripsi.Text = "txtDeskripsi"
         ' 
         ' txtJenis
         ' 
-        txtJenis.Location = New Point(349, 263)
+        txtJenis.Location = New Point(383, 259)
         txtJenis.Name = "txtJenis"
         txtJenis.ReadOnly = True
-        txtJenis.Size = New Size(333, 27)
+        txtJenis.Size = New Size(299, 27)
         txtJenis.TabIndex = 18
         txtJenis.Text = "txtJenis"
         ' 
         ' txtGenre
         ' 
-        txtGenre.Location = New Point(349, 296)
+        txtGenre.Location = New Point(383, 296)
         txtGenre.Name = "txtGenre"
         txtGenre.ReadOnly = True
-        txtGenre.Size = New Size(333, 27)
+        txtGenre.Size = New Size(299, 27)
         txtGenre.TabIndex = 18
         txtGenre.Text = "txtGenre"
         ' 
@@ -378,7 +378,7 @@ Partial Class User_Menu
         PictureBox1.BackColor = Color.DimGray
         PictureBox1.Location = New Point(30, 73)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(199, 192)
+        PictureBox1.Size = New Size(231, 243)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 24
         PictureBox1.TabStop = False
@@ -388,7 +388,7 @@ Partial Class User_Menu
         Label11.AutoSize = True
         Label11.BackColor = Color.Transparent
         Label11.ForeColor = SystemColors.Control
-        Label11.Location = New Point(74, 45)
+        Label11.Location = New Point(91, 50)
         Label11.Name = "Label11"
         Label11.Size = New Size(87, 20)
         Label11.TabIndex = 23
@@ -410,10 +410,10 @@ Partial Class User_Menu
         ' 
         ' txtTahunTerbit
         ' 
-        txtTahunTerbit.Location = New Point(349, 184)
+        txtTahunTerbit.Location = New Point(383, 187)
         txtTahunTerbit.Name = "txtTahunTerbit"
         txtTahunTerbit.ReadOnly = True
-        txtTahunTerbit.Size = New Size(333, 27)
+        txtTahunTerbit.Size = New Size(299, 27)
         txtTahunTerbit.TabIndex = 26
         txtTahunTerbit.Text = "txtTahunTerbit"
         ' 
@@ -422,7 +422,7 @@ Partial Class User_Menu
         Label12.AutoSize = True
         Label12.BackColor = Color.Transparent
         Label12.ForeColor = SystemColors.Control
-        Label12.Location = New Point(250, 187)
+        Label12.Location = New Point(284, 190)
         Label12.Name = "Label12"
         Label12.Size = New Size(89, 20)
         Label12.TabIndex = 25
