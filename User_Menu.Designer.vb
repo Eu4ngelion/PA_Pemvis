@@ -22,6 +22,7 @@ Partial Class User_Menu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(User_Menu))
         btnTambahKeranjang = New Button()
         DataGridView1 = New DataGridView()
         txtSearch = New TextBox()
@@ -30,7 +31,6 @@ Partial Class User_Menu
         btnTambah = New Button()
         btnCetakStruk = New Button()
         Label2 = New Label()
-        PrintDialog1 = New PrintDialog()
         MenuStrip1 = New MenuStrip()
         menuBack = New ToolStripMenuItem()
         txtStok = New TextBox()
@@ -54,6 +54,10 @@ Partial Class User_Menu
         btnHapusKeranjang = New Button()
         PictureBox1 = New PictureBox()
         Label11 = New Label()
+        PrintPreviewDialog1 = New PrintPreviewDialog()
+        PrintDocument1 = New Printing.PrintDocument()
+        txtTahunTerbit = New TextBox()
+        Label12 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +82,7 @@ Partial Class User_Menu
         DataGridView1.AllowUserToResizeRows = False
         DataGridView1.BackgroundColor = SystemColors.Control
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(30, 340)
+        DataGridView1.Location = New Point(30, 375)
         DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
@@ -87,13 +91,13 @@ Partial Class User_Menu
         DataGridView1.ScrollBars = ScrollBars.Vertical
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.ShowEditingIcon = False
-        DataGridView1.Size = New Size(652, 368)
+        DataGridView1.Size = New Size(652, 333)
         DataGridView1.TabIndex = 1
         ' 
         ' txtSearch
         ' 
         txtSearch.BackColor = SystemColors.Control
-        txtSearch.Location = New Point(91, 296)
+        txtSearch.Location = New Point(91, 346)
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(591, 27)
         txtSearch.TabIndex = 4
@@ -147,10 +151,6 @@ Partial Class User_Menu
         Label2.TabIndex = 10
         Label2.Text = "Keranjang"
         ' 
-        ' PrintDialog1
-        ' 
-        PrintDialog1.UseEXDialog = True
-        ' 
         ' MenuStrip1
         ' 
         MenuStrip1.BackColor = Color.Transparent
@@ -182,7 +182,7 @@ Partial Class User_Menu
         ' 
         ' txtHarga
         ' 
-        txtHarga.Location = New Point(349, 184)
+        txtHarga.Location = New Point(349, 230)
         txtHarga.Name = "txtHarga"
         txtHarga.ReadOnly = True
         txtHarga.Size = New Size(333, 27)
@@ -224,7 +224,7 @@ Partial Class User_Menu
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
         Label5.ForeColor = SystemColors.Control
-        Label5.Location = New Point(250, 187)
+        Label5.Location = New Point(250, 233)
         Label5.Name = "Label5"
         Label5.Size = New Size(50, 20)
         Label5.TabIndex = 14
@@ -277,7 +277,7 @@ Partial Class User_Menu
         Label6.AutoSize = True
         Label6.BackColor = Color.Transparent
         Label6.ForeColor = SystemColors.Control
-        Label6.Location = New Point(250, 220)
+        Label6.Location = New Point(250, 266)
         Label6.Name = "Label6"
         Label6.Size = New Size(40, 20)
         Label6.TabIndex = 14
@@ -288,7 +288,7 @@ Partial Class User_Menu
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
         Label8.ForeColor = SystemColors.Control
-        Label8.Location = New Point(250, 250)
+        Label8.Location = New Point(250, 296)
         Label8.Name = "Label8"
         Label8.Size = New Size(48, 20)
         Label8.TabIndex = 14
@@ -317,7 +317,7 @@ Partial Class User_Menu
         ' 
         ' txtJenis
         ' 
-        txtJenis.Location = New Point(349, 217)
+        txtJenis.Location = New Point(349, 263)
         txtJenis.Name = "txtJenis"
         txtJenis.ReadOnly = True
         txtJenis.Size = New Size(333, 27)
@@ -326,7 +326,7 @@ Partial Class User_Menu
         ' 
         ' txtGenre
         ' 
-        txtGenre.Location = New Point(349, 250)
+        txtGenre.Location = New Point(349, 296)
         txtGenre.Name = "txtGenre"
         txtGenre.ReadOnly = True
         txtGenre.Size = New Size(333, 27)
@@ -338,7 +338,7 @@ Partial Class User_Menu
         Label10.AutoSize = True
         Label10.BackColor = Color.Transparent
         Label10.ForeColor = SystemColors.Control
-        Label10.Location = New Point(32, 299)
+        Label10.Location = New Point(32, 349)
         Label10.Name = "Label10"
         Label10.Size = New Size(53, 20)
         Label10.TabIndex = 12
@@ -375,8 +375,7 @@ Partial Class User_Menu
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Image = My.Resources.Resources.no_image
+        PictureBox1.BackColor = Color.DimGray
         PictureBox1.Location = New Point(30, 73)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(199, 192)
@@ -395,12 +394,48 @@ Partial Class User_Menu
         Label11.TabIndex = 23
         Label11.Text = "Cover (WIP)"
         ' 
+        ' PrintPreviewDialog1
+        ' 
+        PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)
+        PrintPreviewDialog1.AutoScrollMinSize = New Size(0, 0)
+        PrintPreviewDialog1.ClientSize = New Size(400, 300)
+        PrintPreviewDialog1.Enabled = True
+        PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), Icon)
+        PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        PrintPreviewDialog1.Visible = False
+        ' 
+        ' PrintDocument1
+        ' 
+        PrintDocument1.DocumentName = "Struk_Pesanan"
+        ' 
+        ' txtTahunTerbit
+        ' 
+        txtTahunTerbit.Location = New Point(349, 184)
+        txtTahunTerbit.Name = "txtTahunTerbit"
+        txtTahunTerbit.ReadOnly = True
+        txtTahunTerbit.Size = New Size(333, 27)
+        txtTahunTerbit.TabIndex = 26
+        txtTahunTerbit.Text = "txtTahunTerbit"
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.BackColor = Color.Transparent
+        Label12.ForeColor = SystemColors.Control
+        Label12.Location = New Point(250, 187)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(89, 20)
+        Label12.TabIndex = 25
+        Label12.Text = "Tahun Terbit"
+        ' 
         ' User_Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.Menu_User
         ClientSize = New Size(1062, 721)
+        Controls.Add(txtTahunTerbit)
+        Controls.Add(Label12)
         Controls.Add(PictureBox1)
         Controls.Add(Label11)
         Controls.Add(btnHapusKeranjang)
@@ -451,7 +486,6 @@ Partial Class User_Menu
     Friend WithEvents btnTambah As Button
     Friend WithEvents btnCetakStruk As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents PrintDialog1 As PrintDialog
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents menuBack As ToolStripMenuItem
     Friend WithEvents txtStok As TextBox
@@ -475,4 +509,8 @@ Partial Class User_Menu
     Friend WithEvents btnHapusKeranjang As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents txtTahunTerbit As TextBox
+    Friend WithEvents Label12 As Label
 End Class

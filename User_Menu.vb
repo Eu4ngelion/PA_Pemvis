@@ -1,7 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class User_Menu
     'Array Keranjang
-    Dim keranjang(10) As String
 
     'Fungsi Clear Tools
     Sub ClearTxt()
@@ -30,7 +29,7 @@ Public Class User_Menu
 
     'Fungsi Show Datagrid Keranjang
     Sub Show_Data_Keranjang()
-        Dim query As String = "SELECT k.id_buku, b.judul, k.jumlah, b.harga * k.jumlah AS sub_total FROM tbKeranjang k INNER JOIN tbBuku b ON k.id_buku = b.id WHERE k.id_user = @id_user"
+        Dim query As String = "SELECT k.id_buku, b.judul, k.jumlah, ROUND(b.harga * k.jumlah, 2) AS sub_total FROM tbKeranjang k INNER JOIN tbBuku b ON k.id_buku = b.id WHERE k.id_user = @id_user"
         CMD = New MySqlCommand(query, CONN)
         CMD.Parameters.AddWithValue("@id_user", logged_id)
         DA = New MySqlDataAdapter(CMD)
@@ -260,10 +259,96 @@ Public Class User_Menu
         Show_Data_Keranjang()
     End Sub
 
-
     'Print Struk Pesan (WIP)
+    Private Sub btnCetakStruk_Click(sender As Object, e As EventArgs) Handles btnCetakStruk.Click
+        'Validasi Keranjang
+        If DataGridView2.Rows.Count <= 1 Then
+            MessageBox.Show("Keranjang kosong, tidak ada data untuk dicetak.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+
+        'Konfirmasi Cetak
+        Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin? Keranjang akan dikosongkan setelah struk dicetak.", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.No Then
+            Exit Sub
+        End If
+
+        'Array keranjang
+        Dim arrKeranjang((DataGridView2.Rows.Count - 1), 3) As String
+        Dim index As Integer = 0
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow Then
+                arrKeranjang(index, 1) = row.Cells(1).Value.ToString() ' Judul Buku
+                arrKeranjang(index, 2) = row.Cells(2).Value.ToString() ' Jumlah
+                arrKeranjang(index, 3) = row.Cells(3).Value.ToString() ' Sub Total
+                index += 1
+            End If
+        Next
+
+        'Header Struk
+        Dim strukContent As String =
+                        "=====================================" & Environment.NewLine
+        strukContent &= "            STRUK PESANAN           " & Environment.NewLine
+        strukContent &= "=====================================" & Environment.NewLine & Environment.NewLine
+        strukContent &= "Username: " & logged_username & Environment.NewLine
+        strukContent &= "Tanggal: " & DateTime.Now.ToString("dd/MM/yyyy HH:mm") & Environment.NewLine & Environment.NewLine
 
 
+        'Detail Keranjang
+        strukContent &= "-------------------------------------" & Environment.NewLine
+        strukContent &= "Judul Buku       Qty     Subtotal" & Environment.NewLine
+        strukContent &= "-------------------------------------" & Environment.NewLine & Environment.NewLine
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow Then
+                Dim judul As String = row.Cells(1).Value.ToString().PadRight(15)
+                Dim qty As String = row.Cells(2).Value.ToString().PadLeft(3)
+                Dim subtotal As String = row.Cells(3).Value.ToString().PadLeft(14)
+                strukContent &= $"{judul}{qty}{subtotal}" & Environment.NewLine
+            End If
+        Next
 
+        'Total
+        Dim total As Decimal = 0
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow Then
+                total += Convert.ToDecimal(row.Cells(3).Value)
+            End If
+        Next
+        strukContent &= Environment.NewLine & "-------------------------------------" & Environment.NewLine
+        strukContent &= "Total:".PadLeft(25) & total.ToString("C2").PadLeft(10) & Environment.NewLine & Environment.NewLine
+        strukContent &= "=====================================" & Environment.NewLine
+        strukContent &= "Terima Kasih atas Pesanan Anda!" & Environment.NewLine
+        strukContent &= "=====================================" & Environment.NewLine
+
+        'Print Dokumen
+        PrintDocument1.DefaultPageSettings.Landscape = False
+        PrintDocument1.DefaultPageSettings.PaperSize = New Printing.PaperSize("Struk", 350, 600)
+        AddHandler PrintDocument1.PrintPage, Sub(s, ev)
+                                                 ev.Graphics.DrawString(strukContent, New Font("Courier New", 10), Brushes.Black, 10, 10)
+                                             End Sub
+        PrintPreviewDialog1.Document = PrintDocument1
+        PrintPreviewDialog1.ShowDialog()
+
+        'Update Stok Buku setelah cetak struk
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow Then
+                Dim id_buku As String = row.Cells(0).Value.ToString()
+                Dim jumlah As Integer = Convert.ToInt32(row.Cells(2).Value)
+                Dim queryUpdateStok As String = "UPDATE tbBuku SET stok = stok - @jumlah WHERE id = @id_buku"
+                CMD = New MySqlCommand(queryUpdateStok, CONN)
+                CMD.Parameters.AddWithValue("@jumlah", jumlah)
+                CMD.Parameters.AddWithValue("@id_buku", id_buku)
+                CMD.ExecuteNonQuery()
+            End If
+        Next
+
+        'Hapus Keranjang
+        Dim queryDeleteKeranjang As String = "DELETE FROM tbKeranjang WHERE id_user = @id_user"
+        CMD = New MySqlCommand(queryDeleteKeranjang, CONN)
+        CMD.Parameters.AddWithValue("@id_user", logged_id)
+        CMD.ExecuteNonQuery()
+        Show_Data_Keranjang()
+        MessageBox.Show("Struk pesanan berhasil dicetak dan keranjang telah dikosongkan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
 
 End Class
