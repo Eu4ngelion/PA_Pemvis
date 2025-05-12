@@ -233,21 +233,30 @@ Public Class User_Menu
             Exit Sub
         End If
 
-        'Validasi Stok
+        'Validasi Stok Input
         If txtJumlah.Text > txtStok.Text Then
             MessageBox.Show("Stok Buku Tidak Cukup", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
             txtJumlah.Focus()
             Exit Sub
         End If
 
+        'Cek apakah buku sudah ada di keranjang
         Dim queryCheck As String = "SELECT jumlah FROM tbKeranjang WHERE id_user = @id_user AND id_buku = @id_buku"
         CMD = New MySqlCommand(queryCheck, CONN)
         CMD.Parameters.AddWithValue("@id_user", logged_id)
         CMD.Parameters.AddWithValue("@id_buku", txtIdBuku.Text)
-        Dim jumlahExisting As Object = CMD.ExecuteScalar()
+        Dim kolomKeranjang As Object = CMD.ExecuteScalar()
 
-        If jumlahExisting IsNot Nothing Then
+        If kolomKeranjang IsNot Nothing Then
             'buku sudah ada di keranjang
+            Dim jumlahBukuKeranjang As Integer = Convert.ToInt32(kolomKeranjang)
+            Dim totalJumlahBuku As Integer = jumlahBukuKeranjang + Convert.ToInt32(txtJumlah.Text)
+            If totalJumlahBuku > Convert.ToInt32(txtStok.Text) Then
+                MessageBox.Show("Stok Buku Tidak Cukup", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                txtJumlah.Focus()
+                Exit Sub
+            End If
+
             Dim queryUpdate As String = "UPDATE tbKeranjang SET jumlah = jumlah + @jumlah WHERE id_user = @id_user AND id_buku = @id_buku"
             CMD = New MySqlCommand(queryUpdate, CONN)
             CMD.Parameters.AddWithValue("@id_user", logged_id)
@@ -282,21 +291,10 @@ Public Class User_Menu
     'Print Struk Pesan (WIP)
     Private Sub btnCetakStruk_Click(sender As Object, e As EventArgs) Handles btnCetakStruk.Click
         'Validasi Keranjang
-        If DataGridView2.Rows.Count <= 1 Then
+        If DataGridView2.Rows.Count < 1 Then
             MessageBox.Show("Keranjang kosong, tidak ada data untuk dicetak.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
-
-        'Validasi Jumlah Stok
-        For Each row As DataGridViewRow In DataGridView2.Rows
-            If Not row.IsNewRow Then
-                Dim jumlah As Integer = Convert.ToInt32(row.Cells(2).Value)
-                If jumlah <= 0 Then
-                    MessageBox.Show("Stok Buku id " & row.Cells(0).Value.ToString() & " tidak mencukupi.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Exit Sub
-                End If
-            End If
-        Next
 
         'Konfirmasi Cetak
         Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin? Keranjang akan dikosongkan setelah struk dicetak.", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -380,6 +378,8 @@ Public Class User_Menu
         CMD.ExecuteNonQuery()
         Show_Data_Keranjang()
         MessageBox.Show("Struk pesanan berhasil dicetak dan keranjang telah dikosongkan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Show_Data_Buku()
+        Show_Data_Keranjang()
     End Sub
 
 End Class

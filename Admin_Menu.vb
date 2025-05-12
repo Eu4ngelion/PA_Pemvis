@@ -56,25 +56,30 @@ Public Class Admin_Menu
 
     'Fungsi Atur Tampilan Grid
     Sub AturGrid()
-        DataGridView1.Columns(0).HeaderText = "ID"
-        DataGridView1.Columns(1).HeaderText = "Judul"
-        DataGridView1.Columns(2).HeaderText = "Penulis"
-        DataGridView1.Columns(3).HeaderText = "Tahun Terbit"
-        DataGridView1.Columns(4).HeaderText = "Jenis"
-        DataGridView1.Columns(5).HeaderText = "Genre"
-        DataGridView1.Columns(6).HeaderText = "Harga"
-        DataGridView1.Columns(7).HeaderText = "Stok"
-        DataGridView1.Columns(8).Visible = False
-        DataGridView1.Columns(9).Visible = False
+        With DataGridView1
+            .Columns(0).HeaderText = "ID"
+            .Columns(1).HeaderText = "Judul"
+            .Columns(2).HeaderText = "Penulis"
+            .Columns(3).HeaderText = "Tahun Terbit"
+            .Columns(4).HeaderText = "Jenis"
+            .Columns(5).HeaderText = "Genre"
+            .Columns(6).HeaderText = "Harga"
+            .Columns(7).HeaderText = "Stok"
+            .Columns(8).Visible = False
+            .Columns(9).Visible = False
 
-        DataGridView1.Columns(0).Width = 50
-        DataGridView1.Columns(1).Width = 200
-        DataGridView1.Columns(2).Width = 150
-        DataGridView1.Columns(3).Width = 150
-        DataGridView1.Columns(4).Width = 100
-        DataGridView1.Columns(5).Width = 100
-        DataGridView1.Columns(6).Width = 100
-        DataGridView1.Columns(7).Width = 100
+            .Columns(0).Width = 50
+            .Columns(1).Width = 200
+            .Columns(2).Width = 150
+            .Columns(3).Width = 150
+            .Columns(4).Width = 100
+            .Columns(5).Width = 100
+            .Columns(6).Width = 100
+            .Columns(7).Width = 100
+
+            .DefaultCellStyle.WrapMode = DataGridViewTriState.True
+            .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        End With
     End Sub
 
     'Load Form
