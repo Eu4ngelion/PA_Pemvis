@@ -377,7 +377,7 @@ Public Class User_Menu
         CMD.Parameters.AddWithValue("@id_user", logged_id)
         CMD.ExecuteNonQuery()
         Show_Data_Keranjang()
-        MessageBox.Show("Struk pesanan berhasil dicetak dan keranjang telah dikosongkan.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Struk pesanan berhasil dicetak, silahkan bawa ke kasir", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Show_Data_Buku()
         Show_Data_Keranjang()
     End Sub
