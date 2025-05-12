@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3307
--- Generation Time: May 11, 2025 at 07:27 PM
+-- Generation Time: May 12, 2025 at 01:55 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,7 +35,7 @@ CREATE TABLE `tbbuku` (
   `Penulis` varchar(50) NOT NULL,
   `Tahun_Terbit` varchar(4) NOT NULL,
   `Jenis` varchar(20) NOT NULL,
-  `Genre` varchar(20) NOT NULL,
+  `Genre` varchar(255) NOT NULL,
   `Harga` double NOT NULL,
   `Stok` int(11) NOT NULL,
   `Deskripsi` text DEFAULT NULL,
@@ -67,6 +67,15 @@ CREATE TABLE `tbuser` (
   `password` varchar(20) NOT NULL,
   `role` enum('member','admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbuser`
+--
+
+INSERT INTO `tbuser` (`id`, `username`, `password`, `role`) VALUES
+(1, 'admin', 'admin123', 'admin'),
+(2, 'user1', 'user1', 'member'),
+(3, 'user2', 'user2', 'member');
 
 --
 -- Indexes for dumped tables
@@ -112,7 +121,7 @@ ALTER TABLE `tbkeranjang`
 -- AUTO_INCREMENT for table `tbuser`
 --
 ALTER TABLE `tbuser`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
