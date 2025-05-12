@@ -62,7 +62,6 @@ Public Class User_Menu
 
             .DefaultCellStyle.WrapMode = DataGridViewTriState.True
             .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-
         End With
 
         With DataGridView2
@@ -234,6 +233,13 @@ Public Class User_Menu
             Exit Sub
         End If
 
+        'Validasi Stok
+        If txtJumlah.Text > txtStok.Text Then
+            MessageBox.Show("Stok Buku Tidak Cukup", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            txtJumlah.Focus()
+            Exit Sub
+        End If
+
         Dim queryCheck As String = "SELECT jumlah FROM tbKeranjang WHERE id_user = @id_user AND id_buku = @id_buku"
         CMD = New MySqlCommand(queryCheck, CONN)
         CMD.Parameters.AddWithValue("@id_user", logged_id)
@@ -280,6 +286,17 @@ Public Class User_Menu
             MessageBox.Show("Keranjang kosong, tidak ada data untuk dicetak.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Exit Sub
         End If
+
+        'Validasi Jumlah Stok
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow Then
+                Dim jumlah As Integer = Convert.ToInt32(row.Cells(2).Value)
+                If jumlah <= 0 Then
+                    MessageBox.Show("Stok Buku id " & row.Cells(0).Value.ToString() & " tidak mencukupi.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Exit Sub
+                End If
+            End If
+        Next
 
         'Konfirmasi Cetak
         Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin? Keranjang akan dikosongkan setelah struk dicetak.", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
