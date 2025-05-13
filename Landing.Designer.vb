@@ -25,14 +25,6 @@ Partial Class Landing
         landingBg = New PictureBox()
         pictAdmin = New PictureBox()
         panelLoginAdmin = New Panel()
-        txtPasswordAdmin = New TextBox()
-        txtUsernameAdmin = New TextBox()
-        btnBackAdmin = New Button()
-        btnLoginAdmin = New Button()
-        Label3 = New Label()
-        Label2 = New Label()
-        Label1 = New Label()
-        pictMember = New PictureBox()
         panelLoginMember = New Panel()
         txtPasswordMember = New TextBox()
         txtUsernameMember = New TextBox()
@@ -42,17 +34,25 @@ Partial Class Landing
         Label4 = New Label()
         Label5 = New Label()
         Label6 = New Label()
+        txtPasswordAdmin = New TextBox()
+        txtUsernameAdmin = New TextBox()
+        btnBackAdmin = New Button()
+        btnLoginAdmin = New Button()
+        Label3 = New Label()
+        Label2 = New Label()
+        Label1 = New Label()
+        pictMember = New PictureBox()
         CType(landingBg, ComponentModel.ISupportInitialize).BeginInit()
         CType(pictAdmin, ComponentModel.ISupportInitialize).BeginInit()
         panelLoginAdmin.SuspendLayout()
-        CType(pictMember, ComponentModel.ISupportInitialize).BeginInit()
         panelLoginMember.SuspendLayout()
+        CType(pictMember, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' landingBg
         ' 
         landingBg.Image = My.Resources.Resources.Login_Bg1
-        landingBg.Location = New Point(-2, -3)
+        landingBg.Location = New Point(-4, -1)
         landingBg.Name = "landingBg"
         landingBg.Size = New Size(1060, 757)
         landingBg.SizeMode = PictureBoxSizeMode.Zoom
@@ -79,16 +79,105 @@ Partial Class Landing
         panelLoginAdmin.Controls.Add(Label3)
         panelLoginAdmin.Controls.Add(Label2)
         panelLoginAdmin.Controls.Add(Label1)
-        panelLoginAdmin.Location = New Point(280, 335)
+        panelLoginAdmin.Location = New Point(273, 335)
         panelLoginAdmin.Name = "panelLoginAdmin"
         panelLoginAdmin.Size = New Size(493, 257)
         panelLoginAdmin.TabIndex = 4
         panelLoginAdmin.Visible = False
         ' 
+        ' panelLoginMember
+        ' 
+        panelLoginMember.Controls.Add(txtPasswordMember)
+        panelLoginMember.Controls.Add(txtUsernameMember)
+        panelLoginMember.Controls.Add(btnBackMember)
+        panelLoginMember.Controls.Add(btnRegistMember)
+        panelLoginMember.Controls.Add(btnLoginMember)
+        panelLoginMember.Controls.Add(Label4)
+        panelLoginMember.Controls.Add(Label5)
+        panelLoginMember.Controls.Add(Label6)
+        panelLoginMember.Location = New Point(276, 335)
+        panelLoginMember.Name = "panelLoginMember"
+        panelLoginMember.Size = New Size(495, 257)
+        panelLoginMember.TabIndex = 5
+        panelLoginMember.Visible = False
+        ' 
+        ' txtPasswordMember
+        ' 
+        txtPasswordMember.Location = New Point(144, 110)
+        txtPasswordMember.Name = "txtPasswordMember"
+        txtPasswordMember.PasswordChar = "●"c
+        txtPasswordMember.Size = New Size(228, 27)
+        txtPasswordMember.TabIndex = 2
+        ' 
+        ' txtUsernameMember
+        ' 
+        txtUsernameMember.Location = New Point(144, 63)
+        txtUsernameMember.Name = "txtUsernameMember"
+        txtUsernameMember.Size = New Size(228, 27)
+        txtUsernameMember.TabIndex = 2
+        ' 
+        ' btnBackMember
+        ' 
+        btnBackMember.Location = New Point(200, 213)
+        btnBackMember.Name = "btnBackMember"
+        btnBackMember.Size = New Size(94, 29)
+        btnBackMember.TabIndex = 1
+        btnBackMember.Text = "Kembali"
+        btnBackMember.UseVisualStyleBackColor = True
+        ' 
+        ' btnRegistMember
+        ' 
+        btnRegistMember.Location = New Point(266, 164)
+        btnRegistMember.Name = "btnRegistMember"
+        btnRegistMember.Size = New Size(94, 29)
+        btnRegistMember.TabIndex = 1
+        btnRegistMember.Text = "Daftar"
+        btnRegistMember.UseVisualStyleBackColor = True
+        ' 
+        ' btnLoginMember
+        ' 
+        btnLoginMember.Location = New Point(147, 164)
+        btnLoginMember.Name = "btnLoginMember"
+        btnLoginMember.Size = New Size(94, 29)
+        btnLoginMember.TabIndex = 1
+        btnLoginMember.Text = "Masuk"
+        btnLoginMember.UseVisualStyleBackColor = True
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.ForeColor = Color.White
+        Label4.Location = New Point(63, 113)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(70, 20)
+        Label4.TabIndex = 0
+        Label4.Text = "Password"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.ForeColor = Color.White
+        Label5.Location = New Point(63, 66)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(75, 20)
+        Label5.TabIndex = 0
+        Label5.Text = "Username"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.ForeColor = Color.White
+        Label6.Location = New Point(229, 24)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(65, 20)
+        Label6.TabIndex = 0
+        Label6.Text = "Member"
+        ' 
         ' txtPasswordAdmin
         ' 
         txtPasswordAdmin.Location = New Point(125, 110)
         txtPasswordAdmin.Name = "txtPasswordAdmin"
+        txtPasswordAdmin.PasswordChar = "●"c
         txtPasswordAdmin.Size = New Size(228, 27)
         txtPasswordAdmin.TabIndex = 2
         ' 
@@ -157,93 +246,6 @@ Partial Class Landing
         pictMember.TabIndex = 5
         pictMember.TabStop = False
         ' 
-        ' panelLoginMember
-        ' 
-        panelLoginMember.Controls.Add(txtPasswordMember)
-        panelLoginMember.Controls.Add(txtUsernameMember)
-        panelLoginMember.Controls.Add(btnBackMember)
-        panelLoginMember.Controls.Add(btnRegistMember)
-        panelLoginMember.Controls.Add(btnLoginMember)
-        panelLoginMember.Controls.Add(Label4)
-        panelLoginMember.Controls.Add(Label5)
-        panelLoginMember.Controls.Add(Label6)
-        panelLoginMember.Location = New Point(278, 335)
-        panelLoginMember.Name = "panelLoginMember"
-        panelLoginMember.Size = New Size(496, 257)
-        panelLoginMember.TabIndex = 5
-        panelLoginMember.Visible = False
-        ' 
-        ' txtPasswordMember
-        ' 
-        txtPasswordMember.Location = New Point(144, 110)
-        txtPasswordMember.Name = "txtPasswordMember"
-        txtPasswordMember.Size = New Size(228, 27)
-        txtPasswordMember.TabIndex = 2
-        ' 
-        ' txtUsernameMember
-        ' 
-        txtUsernameMember.Location = New Point(144, 63)
-        txtUsernameMember.Name = "txtUsernameMember"
-        txtUsernameMember.Size = New Size(228, 27)
-        txtUsernameMember.TabIndex = 2
-        ' 
-        ' btnBackMember
-        ' 
-        btnBackMember.Location = New Point(200, 213)
-        btnBackMember.Name = "btnBackMember"
-        btnBackMember.Size = New Size(94, 29)
-        btnBackMember.TabIndex = 1
-        btnBackMember.Text = "Kembali"
-        btnBackMember.UseVisualStyleBackColor = True
-        ' 
-        ' btnRegistMember
-        ' 
-        btnRegistMember.Location = New Point(266, 164)
-        btnRegistMember.Name = "btnRegistMember"
-        btnRegistMember.Size = New Size(94, 29)
-        btnRegistMember.TabIndex = 1
-        btnRegistMember.Text = "Daftar"
-        btnRegistMember.UseVisualStyleBackColor = True
-        ' 
-        ' btnLoginMember
-        ' 
-        btnLoginMember.Location = New Point(147, 164)
-        btnLoginMember.Name = "btnLoginMember"
-        btnLoginMember.Size = New Size(94, 29)
-        btnLoginMember.TabIndex = 1
-        btnLoginMember.Text = "Masuk"
-        btnLoginMember.UseVisualStyleBackColor = True
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.ForeColor = Color.White
-        Label4.Location = New Point(63, 113)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(70, 20)
-        Label4.TabIndex = 0
-        Label4.Text = "Password"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.ForeColor = Color.White
-        Label5.Location = New Point(63, 66)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(75, 20)
-        Label5.TabIndex = 0
-        Label5.Text = "Username"
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.ForeColor = Color.White
-        Label6.Location = New Point(229, 24)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(65, 20)
-        Label6.TabIndex = 0
-        Label6.Text = "Member"
-        ' 
         ' Landing
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -251,9 +253,9 @@ Partial Class Landing
         BackColor = Color.FromArgb(CByte(11), CByte(41), CByte(79))
         ClientSize = New Size(1058, 717)
         Controls.Add(panelLoginMember)
-        Controls.Add(pictMember)
         Controls.Add(panelLoginAdmin)
         Controls.Add(pictAdmin)
+        Controls.Add(pictMember)
         Controls.Add(landingBg)
         FormBorderStyle = FormBorderStyle.Fixed3D
         MaximumSize = New Size(1080, 768)
@@ -265,9 +267,9 @@ Partial Class Landing
         CType(pictAdmin, ComponentModel.ISupportInitialize).EndInit()
         panelLoginAdmin.ResumeLayout(False)
         panelLoginAdmin.PerformLayout()
-        CType(pictMember, ComponentModel.ISupportInitialize).EndInit()
         panelLoginMember.ResumeLayout(False)
         panelLoginMember.PerformLayout()
+        CType(pictMember, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
     Friend WithEvents landingBg As PictureBox
