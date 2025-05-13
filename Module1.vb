@@ -10,7 +10,7 @@ Module Module1
     Sub koneksi()
         Try
             Dim STR As String =
-            "server=localhost; userid=root;password=;database=dbHaven;Port=3306"
+            "server=localhost; userid=root;password=heri123;database=dbHaven;Port=3306"
             CONN = New MySqlConnection(STR)
             If CONN.State = ConnectionState.Closed Then
                 CONN.Open()

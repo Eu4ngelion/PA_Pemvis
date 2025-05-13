@@ -164,7 +164,7 @@ Public Class Admin_Menu
             "tahun_terbit LIKE @cari"
         DA = New MySqlDataAdapter(query, CONN)
         DA.SelectCommand.Parameters.AddWithValue("@cari", "%" & txtCari.Text & "%")
-        DS = New DataSet()
+        DS = New DataSet
         DS.Clear()
         DA.Fill(DS, "tbBuku")
         DataGridView1.DataSource = DS.Tables("tbBuku")
@@ -174,28 +174,28 @@ Public Class Admin_Menu
     'Klik DataGridView
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         If e.RowIndex >= 0 Then
-            comboId.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value.ToString()
-            txtJudul.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString()
-            txtPenulis.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString()
-            dateTahunTerbit.Value = DateTime.ParseExact(DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString(), "yyyy", Nothing)
-            If DataGridView1.Rows(e.RowIndex).Cells(4).Value.ToString() = "Fiksi" Then
+            comboId.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value.ToString
+            txtJudul.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString
+            txtPenulis.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString
+            dateTahunTerbit.Value = Date.ParseExact(DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString, "yyyy", Nothing)
+            If DataGridView1.Rows(e.RowIndex).Cells(4).Value.ToString = "Fiksi" Then
                 radioFiksi.Checked = True
             Else
                 radioNonFiksi.Checked = True
             End If
-            Dim genre As String() = DataGridView1.Rows(e.RowIndex).Cells(5).Value.ToString().Split(", ")
+            Dim genre = DataGridView1.Rows(e.RowIndex).Cells(5).Value.ToString.Split(", ")
             For Each item In genre
-                For Each checkBox In groupGenre.Controls.OfType(Of CheckBox)()
+                For Each checkBox In groupGenre.Controls.OfType(Of CheckBox)
                     If checkBox.Text = item Then
                         checkBox.Checked = True
                     End If
                 Next
             Next
-            txtHarga.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value.ToString()
-            txtStok.Text = DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString()
-            txtDeskripsi.Text = DataGridView1.Rows(e.RowIndex).Cells(8).Value.ToString()
+            txtHarga.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value.ToString
+            txtStok.Text = DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString
+            txtDeskripsi.Text = DataGridView1.Rows(e.RowIndex).Cells(8).Value.ToString
 
-            Dim foto() As Byte = CType(DataGridView1.Rows(e.RowIndex).Cells(9).Value, Byte())
+            Dim foto = CType(DataGridView1.Rows(e.RowIndex).Cells(9).Value, Byte())
             Dim ms As New IO.MemoryStream(foto)
             pictCover.Image = Image.FromStream(ms)
         End If
@@ -205,7 +205,7 @@ Public Class Admin_Menu
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         Try
             If isInputValid() Then
-                Dim query As String = "INSERT INTO tbBuku (judul, penulis, harga, stok, tahun_terbit, jenis, genre, deskripsi, cover) " &
+                Dim query = "INSERT INTO tbBuku (judul, penulis, harga, stok, tahun_terbit, jenis, genre, deskripsi, cover) " &
                       "VALUES (@judul, @penulis, @harga, @stok, @tahun_terbit, @jenis, @genre, @deskripsi, @cover)"
                 CMD = New MySqlCommand(query, CONN)
 
@@ -215,12 +215,12 @@ Public Class Admin_Menu
                 CMD.Parameters.AddWithValue("@stok", Convert.ToInt16(txtStok.Text))
                 CMD.Parameters.AddWithValue("@tahun_terbit", dateTahunTerbit.Value.ToString("yyyy"))
                 CMD.Parameters.AddWithValue("@jenis", If(radioFiksi.Checked, "Fiksi", "Non-Fiksi"))
-                CMD.Parameters.AddWithValue("@genre", String.Join(", ", groupGenre.Controls.OfType(Of CheckBox)().Where(Function(c) c.Checked).Select(Function(c) c.Text)))
+                CMD.Parameters.AddWithValue("@genre", String.Join(", ", groupGenre.Controls.OfType(Of CheckBox).Where(Function(c) c.Checked).Select(Function(c) c.Text)))
                 CMD.Parameters.AddWithValue("@deskripsi", txtDeskripsi.Text)
                 Dim foto() As Byte = Nothing
                 Dim ms As New IO.MemoryStream
                 pictCover.Image.Save(ms, pictCover.Image.RawFormat)
-                foto = ms.ToArray()
+                foto = ms.ToArray
                 CMD.Parameters.AddWithValue("@cover", foto)
 
                 If CONN.State = ConnectionState.Closed Then
@@ -240,9 +240,8 @@ Public Class Admin_Menu
             End If
         End Try
     End Sub
-
     'Ubah buku
-    Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Try
             If isInputValid() And Not isIdValid() Then
                 Dim query As String = "UPDATE tbBuku SET judul = @judul, penulis = @penulis, harga = @harga, stok = @stok, tahun_terbit = @tahun_terbit, " &
@@ -284,14 +283,14 @@ Public Class Admin_Menu
     End Sub
 
     'Hapus Buku
-    Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
+    Private Sub BtnHapus_Click_1(sender As Object, e As EventArgs) Handles BtnHapus.Click
         Try
             If comboId.Text = "" Then
                 MsgBox("Pilih ID Buku yang ingin dihapus", MsgBoxStyle.Critical, "Error")
                 comboId.Focus()
                 Return
             End If
-            Dim query As String = "DELETE FROM tbBuku WHERE id = @id"
+            Dim query = "DELETE FROM tbBuku WHERE id = @id"
             CMD = New MySqlCommand(query, CONN)
             CMD.Parameters.AddWithValue("@id", comboId.Text)
             If CONN.State = ConnectionState.Closed Then
@@ -309,9 +308,6 @@ Public Class Admin_Menu
             End If
         End Try
     End Sub
-
-
-
     'Input ComboBox
     Private Sub comboId_KeyPress(sender As Object, e As KeyPressEventArgs) Handles comboId.KeyPress
         If e.KeyChar = Chr(13) Then
@@ -322,7 +318,6 @@ Public Class Admin_Menu
             e.Handled = True
         End If
     End Sub
-
     'Leave ComboBox
     Private Sub comboId_Leave(sender As Object, e As EventArgs) Handles comboId.Leave
         If comboId.Text <> "" Then
@@ -361,7 +356,6 @@ Public Class Admin_Menu
             End If
         End If
     End Sub
-
     'Klik ComboBox
     Private Sub comboId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles comboId.SelectedIndexChanged
         Dim query As String = "SELECT * FROM tbBuku WHERE id = @id"
@@ -456,7 +450,7 @@ Public Class Admin_Menu
     End Sub
 
     'Input Deskripsi
-    Private Sub txtDeskripsi_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDeskripsi.KeyPress
+    Private Sub txtDeskripsi_KeyPress(sender As Object, e As KeyPressEventArgs)
         If e.KeyChar = Chr(13) Then
             btnUpload.Focus()
         End If
@@ -465,9 +459,30 @@ Public Class Admin_Menu
     'Upload Gambar
     Private Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.Click
         OpenFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
-        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
             pictCover.Image = Image.FromFile(OpenFileDialog1.FileName)
         End If
         btnTambah.Focus()
+    End Sub
+
+    Private Sub TabControl1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles TabControl1.DrawItem
+        Dim g As Graphics = e.Graphics
+        Dim tp As TabPage = TabControl1.TabPages(e.Index)
+        Dim textBrush As Brush = New SolidBrush(Color.Black)
+
+        ' Gambar teks tab
+        Dim tabBounds As Rectangle = TabControl1.GetTabRect(e.Index)
+
+        ' Tambah jarak horizontal antara tab
+        tabBounds.X += 10 * e.Index ' Ubah angka 10 untuk mengatur jarak antar tab
+
+        Dim sf As New StringFormat()
+        sf.Alignment = StringAlignment.Center
+        sf.LineAlignment = StringAlignment.Center
+        g.DrawString(tp.Text, TabControl1.Font, textBrush, tabBounds, sf)
+    End Sub
+
+    Private Sub txtDeskripsi_TextChanged(sender As Object, e As EventArgs) Handles txtDeskripsi.TextChanged
+
     End Sub
 End Class
