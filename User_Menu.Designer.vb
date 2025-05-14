@@ -68,7 +68,7 @@ Partial Class User_Menu
         btnTambahKeranjang.BackColor = Color.Silver
         btnTambahKeranjang.Enabled = False
         btnTambahKeranjang.FlatStyle = FlatStyle.Popup
-        btnTambahKeranjang.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        btnTambahKeranjang.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         btnTambahKeranjang.ForeColor = Color.Black
         btnTambahKeranjang.Location = New Point(890, 342)
         btnTambahKeranjang.Name = "btnTambahKeranjang"
@@ -121,7 +121,7 @@ Partial Class User_Menu
         ' 
         btnKurang.BackColor = Color.Silver
         btnKurang.FlatStyle = FlatStyle.Popup
-        btnKurang.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        btnKurang.Font = New Font("Segoe UI", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         btnKurang.ForeColor = Color.Black
         btnKurang.Location = New Point(775, 304)
         btnKurang.Name = "btnKurang"
@@ -134,7 +134,7 @@ Partial Class User_Menu
         ' 
         btnTambah.BackColor = Color.Silver
         btnTambah.FlatStyle = FlatStyle.Popup
-        btnTambah.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        btnTambah.Font = New Font("Segoe UI", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
         btnTambah.ForeColor = Color.Black
         btnTambah.Location = New Point(957, 304)
         btnTambah.Name = "btnTambah"
@@ -147,7 +147,7 @@ Partial Class User_Menu
         ' 
         btnCetakStruk.BackColor = SystemColors.ActiveCaption
         btnCetakStruk.FlatStyle = FlatStyle.Popup
-        btnCetakStruk.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        btnCetakStruk.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         btnCetakStruk.Location = New Point(732, 679)
         btnCetakStruk.Name = "btnCetakStruk"
         btnCetakStruk.Size = New Size(299, 29)
@@ -159,7 +159,7 @@ Partial Class User_Menu
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
-        Label2.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label2.ForeColor = Color.White
         Label2.Location = New Point(847, 279)
         Label2.Name = "Label2"
@@ -182,7 +182,7 @@ Partial Class User_Menu
         ' 
         menuBack.Alignment = ToolStripItemAlignment.Right
         menuBack.BackColor = Color.Red
-        menuBack.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        menuBack.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         menuBack.ForeColor = Color.White
         menuBack.Name = "menuBack"
         menuBack.Size = New Size(79, 24)
@@ -239,7 +239,7 @@ Partial Class User_Menu
         ' 
         Label7.AutoSize = True
         Label7.BackColor = Color.Transparent
-        Label7.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label7.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label7.ForeColor = SystemColors.Control
         Label7.Location = New Point(534, 87)
         Label7.Name = "Label7"
@@ -251,7 +251,7 @@ Partial Class User_Menu
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label5.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.Control
         Label5.Location = New Point(284, 226)
         Label5.Name = "Label5"
@@ -263,7 +263,7 @@ Partial Class User_Menu
         ' 
         Label4.AutoSize = True
         Label4.BackColor = Color.Transparent
-        Label4.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label4.ForeColor = SystemColors.Control
         Label4.Location = New Point(284, 156)
         Label4.Name = "Label4"
@@ -275,7 +275,7 @@ Partial Class User_Menu
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
-        Label3.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label3.ForeColor = SystemColors.Control
         Label3.Location = New Point(284, 121)
         Label3.Name = "Label3"
@@ -287,7 +287,7 @@ Partial Class User_Menu
         ' 
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
-        Label1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label1.ForeColor = SystemColors.Control
         Label1.Location = New Point(284, 84)
         Label1.Name = "Label1"
@@ -308,7 +308,7 @@ Partial Class User_Menu
         ' 
         Label6.AutoSize = True
         Label6.BackColor = Color.Transparent
-        Label6.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label6.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label6.ForeColor = SystemColors.Control
         Label6.Location = New Point(284, 262)
         Label6.Name = "Label6"
@@ -320,7 +320,7 @@ Partial Class User_Menu
         ' 
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
-        Label8.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label8.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label8.ForeColor = SystemColors.Control
         Label8.Location = New Point(284, 296)
         Label8.Name = "Label8"
@@ -332,7 +332,7 @@ Partial Class User_Menu
         ' 
         Label9.AutoSize = True
         Label9.BackColor = Color.Transparent
-        Label9.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label9.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label9.ForeColor = SystemColors.Control
         Label9.Location = New Point(847, 83)
         Label9.Name = "Label9"
@@ -379,7 +379,7 @@ Partial Class User_Menu
         ' 
         Label10.AutoSize = True
         Label10.BackColor = Color.Transparent
-        Label10.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label10.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label10.ForeColor = SystemColors.Control
         Label10.Location = New Point(33, 348)
         Label10.Name = "Label10"
@@ -411,7 +411,7 @@ Partial Class User_Menu
         btnHapusKeranjang.BackColor = Color.Silver
         btnHapusKeranjang.Enabled = False
         btnHapusKeranjang.FlatStyle = FlatStyle.Popup
-        btnHapusKeranjang.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        btnHapusKeranjang.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         btnHapusKeranjang.ForeColor = Color.Black
         btnHapusKeranjang.Location = New Point(734, 342)
         btnHapusKeranjang.Name = "btnHapusKeranjang"
@@ -459,7 +459,7 @@ Partial Class User_Menu
         ' 
         Label12.AutoSize = True
         Label12.BackColor = Color.Transparent
-        Label12.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label12.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label12.ForeColor = SystemColors.Control
         Label12.Location = New Point(284, 190)
         Label12.Name = "Label12"
@@ -469,7 +469,7 @@ Partial Class User_Menu
         ' 
         ' User_Menu
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.Menu_User
         ClientSize = New Size(1062, 721)
@@ -505,6 +505,8 @@ Partial Class User_Menu
         Controls.Add(btnTambahKeranjang)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
+        MaximumSize = New Size(1080, 768)
+        MinimumSize = New Size(1080, 768)
         Name = "User_Menu"
         Text = "Haven Media (Member)"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()

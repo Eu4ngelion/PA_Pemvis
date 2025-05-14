@@ -80,9 +80,9 @@ Partial Class Landing
         panelLoginAdmin.Controls.Add(Label3)
         panelLoginAdmin.Controls.Add(Label2)
         panelLoginAdmin.Controls.Add(Label1)
-        panelLoginAdmin.Location = New Point(273, 335)
+        panelLoginAdmin.Location = New Point(281, 335)
         panelLoginAdmin.Name = "panelLoginAdmin"
-        panelLoginAdmin.Size = New Size(493, 257)
+        panelLoginAdmin.Size = New Size(489, 254)
         panelLoginAdmin.TabIndex = 4
         panelLoginAdmin.Visible = False
         ' 
