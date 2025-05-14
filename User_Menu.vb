@@ -13,6 +13,7 @@ Public Class User_Menu
         txtGenre.Clear()
         txtDeskripsi.Clear()
         txtSearch.Clear()
+        txtTahunTerbit.Clear()
         PictureBox1.Image = Nothing
     End Sub
 
@@ -166,8 +167,13 @@ Public Class User_Menu
     Private Sub DataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellClick
         If e.RowIndex >= 0 Then
             btnHapusKeranjang.Enabled = True
+            btnHapusKeranjang.BackColor = Color.Crimson
+            btnHapusKeranjang.ForeColor = Color.White
         Else
             btnHapusKeranjang.Enabled = False
+            btnHapusKeranjang.BackColor = Color.Silver
+            btnHapusKeranjang.ForeColor = Color.LightGray
+
         End If
     End Sub
 
@@ -175,13 +181,14 @@ Public Class User_Menu
     Private Sub txtJudul_TextChanged(sender As Object, e As EventArgs) Handles txtJudul.TextChanged
         If txtJudul.Text = "" Then
             txtJumlah.ReadOnly = True
-            txtJumlah.BackColor = Color.DarkGray
+            txtJumlah.BackColor = Color.Silver
+            txtJumlah.ForeColor = Color.LightGray
             txtJumlah.Clear()
         End If
         If txtJudul.Text <> "" Then
             txtJumlah.ReadOnly = False
-            'active caption color
             txtJumlah.BackColor = Color.White
+            txtJumlah.ForeColor = Color.Black
             txtJumlah.Text = 0
         End If
     End Sub
@@ -200,14 +207,24 @@ Public Class User_Menu
     Private Sub txtJumlah_ReadOnlyChanged(sender As Object, e As EventArgs) Handles txtJumlah.ReadOnlyChanged
         If txtJumlah.ReadOnly = True Then
             btnKurang.Enabled = False
-            btnKurang.BackColor = Color.DarkGray
+            btnKurang.BackColor = Color.Silver
+            btnKurang.ForeColor = Color.LightGray
             btnTambah.Enabled = False
-            btnTambah.BackColor = Color.DarkGray
+            btnTambah.BackColor = Color.Silver
+            btnTambah.ForeColor = Color.LightGray
             btnTambahKeranjang.Enabled = False
+            btnTambahKeranjang.BackColor = Color.Silver
+            btnTambahKeranjang.ForeColor = Color.LightGray
         Else
             btnKurang.Enabled = True
+            btnKurang.BackColor = Color.White
+            btnKurang.ForeColor = Color.Black
             btnTambah.Enabled = True
+            btnTambah.BackColor = Color.White
+            btnTambah.ForeColor = Color.Black
             btnTambahKeranjang.Enabled = True
+            btnTambahKeranjang.BackColor = Color.MediumSeaGreen
+            btnTambahKeranjang.ForeColor = Color.White
         End If
 
     End Sub
@@ -385,5 +402,7 @@ Public Class User_Menu
         Show_Data_Keranjang()
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
+    End Sub
 End Class

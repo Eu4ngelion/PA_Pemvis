@@ -65,13 +65,17 @@ Partial Class User_Menu
         ' 
         ' btnTambahKeranjang
         ' 
+        btnTambahKeranjang.BackColor = Color.Silver
         btnTambahKeranjang.Enabled = False
+        btnTambahKeranjang.FlatStyle = FlatStyle.Popup
+        btnTambahKeranjang.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        btnTambahKeranjang.ForeColor = Color.Black
         btnTambahKeranjang.Location = New Point(890, 342)
         btnTambahKeranjang.Name = "btnTambahKeranjang"
         btnTambahKeranjang.Size = New Size(141, 29)
         btnTambahKeranjang.TabIndex = 0
         btnTambahKeranjang.Text = "Tambah"
-        btnTambahKeranjang.UseVisualStyleBackColor = True
+        btnTambahKeranjang.UseVisualStyleBackColor = False
         ' 
         ' DataGridView1
         ' 
@@ -81,7 +85,7 @@ Partial Class User_Menu
         DataGridView1.AllowUserToResizeRows = False
         DataGridView1.BackgroundColor = SystemColors.Control
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(30, 375)
+        DataGridView1.Location = New Point(30, 378)
         DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
         DataGridView1.ReadOnly = True
@@ -90,20 +94,23 @@ Partial Class User_Menu
         DataGridView1.ScrollBars = ScrollBars.Vertical
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.ShowEditingIcon = False
-        DataGridView1.Size = New Size(652, 333)
+        DataGridView1.Size = New Size(652, 330)
         DataGridView1.TabIndex = 1
         ' 
         ' txtSearch
         ' 
         txtSearch.BackColor = SystemColors.Control
-        txtSearch.Location = New Point(85, 346)
+        txtSearch.BorderStyle = BorderStyle.FixedSingle
+        txtSearch.Location = New Point(85, 345)
         txtSearch.Name = "txtSearch"
         txtSearch.Size = New Size(597, 27)
         txtSearch.TabIndex = 4
         ' 
         ' txtJumlah
         ' 
-        txtJumlah.BackColor = SystemColors.Control
+        txtJumlah.BackColor = Color.Silver
+        txtJumlah.BorderStyle = BorderStyle.FixedSingle
+        txtJumlah.ForeColor = Color.Black
         txtJumlah.Location = New Point(814, 304)
         txtJumlah.Name = "txtJumlah"
         txtJumlah.Size = New Size(138, 27)
@@ -112,41 +119,51 @@ Partial Class User_Menu
         ' 
         ' btnKurang
         ' 
-        btnKurang.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        btnKurang.Location = New Point(732, 303)
+        btnKurang.BackColor = Color.Silver
+        btnKurang.FlatStyle = FlatStyle.Popup
+        btnKurang.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        btnKurang.ForeColor = Color.Black
+        btnKurang.Location = New Point(775, 304)
         btnKurang.Name = "btnKurang"
-        btnKurang.Size = New Size(61, 31)
+        btnKurang.Size = New Size(33, 28)
         btnKurang.TabIndex = 7
         btnKurang.Text = "-"
-        btnKurang.UseVisualStyleBackColor = True
+        btnKurang.UseVisualStyleBackColor = False
         ' 
         ' btnTambah
         ' 
-        btnTambah.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        btnTambah.Location = New Point(969, 304)
+        btnTambah.BackColor = Color.Silver
+        btnTambah.FlatStyle = FlatStyle.Popup
+        btnTambah.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
+        btnTambah.ForeColor = Color.Black
+        btnTambah.Location = New Point(957, 304)
         btnTambah.Name = "btnTambah"
-        btnTambah.Size = New Size(62, 29)
+        btnTambah.Size = New Size(28, 27)
         btnTambah.TabIndex = 7
         btnTambah.Text = "+"
-        btnTambah.UseVisualStyleBackColor = True
+        btnTambah.UseVisualStyleBackColor = False
         ' 
         ' btnCetakStruk
         ' 
-        btnCetakStruk.Location = New Point(732, 685)
+        btnCetakStruk.BackColor = SystemColors.ActiveCaption
+        btnCetakStruk.FlatStyle = FlatStyle.Popup
+        btnCetakStruk.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        btnCetakStruk.Location = New Point(732, 679)
         btnCetakStruk.Name = "btnCetakStruk"
         btnCetakStruk.Size = New Size(299, 29)
         btnCetakStruk.TabIndex = 0
         btnCetakStruk.Text = "Cetak Struk"
-        btnCetakStruk.UseVisualStyleBackColor = True
+        btnCetakStruk.UseVisualStyleBackColor = False
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
-        Label2.ForeColor = SystemColors.Control
+        Label2.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        Label2.ForeColor = Color.White
         Label2.Location = New Point(847, 279)
         Label2.Name = "Label2"
-        Label2.Size = New Size(76, 20)
+        Label2.Size = New Size(80, 20)
         Label2.TabIndex = 10
         Label2.Text = "Keranjang"
         ' 
@@ -165,7 +182,7 @@ Partial Class User_Menu
         ' 
         menuBack.Alignment = ToolStripItemAlignment.Right
         menuBack.BackColor = Color.Red
-        menuBack.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        menuBack.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         menuBack.ForeColor = Color.White
         menuBack.Name = "menuBack"
         menuBack.Size = New Size(79, 24)
@@ -173,6 +190,8 @@ Partial Class User_Menu
         ' 
         ' txtStok
         ' 
+        txtStok.BackColor = Color.Silver
+        txtStok.BorderStyle = BorderStyle.FixedSingle
         txtStok.Location = New Point(596, 84)
         txtStok.Name = "txtStok"
         txtStok.ReadOnly = True
@@ -182,6 +201,8 @@ Partial Class User_Menu
         ' 
         ' txtHarga
         ' 
+        txtHarga.BackColor = Color.Silver
+        txtHarga.BorderStyle = BorderStyle.FixedSingle
         txtHarga.Location = New Point(383, 223)
         txtHarga.Name = "txtHarga"
         txtHarga.ReadOnly = True
@@ -191,6 +212,8 @@ Partial Class User_Menu
         ' 
         ' txtPenulis
         ' 
+        txtPenulis.BackColor = Color.Silver
+        txtPenulis.BorderStyle = BorderStyle.FixedSingle
         txtPenulis.Location = New Point(383, 153)
         txtPenulis.Name = "txtPenulis"
         txtPenulis.ReadOnly = True
@@ -200,7 +223,8 @@ Partial Class User_Menu
         ' 
         ' txtJudul
         ' 
-        txtJudul.BackColor = SystemColors.Control
+        txtJudul.BackColor = Color.Silver
+        txtJudul.BorderStyle = BorderStyle.FixedSingle
         txtJudul.Location = New Point(383, 118)
         txtJudul.Name = "txtJudul"
         txtJudul.ReadOnly = True
@@ -212,10 +236,11 @@ Partial Class User_Menu
         ' 
         Label7.AutoSize = True
         Label7.BackColor = Color.Transparent
+        Label7.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label7.ForeColor = SystemColors.Control
         Label7.Location = New Point(534, 87)
         Label7.Name = "Label7"
-        Label7.Size = New Size(38, 20)
+        Label7.Size = New Size(40, 20)
         Label7.TabIndex = 13
         Label7.Text = "Stok"
         ' 
@@ -223,10 +248,11 @@ Partial Class User_Menu
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label5.ForeColor = SystemColors.Control
         Label5.Location = New Point(284, 226)
         Label5.Name = "Label5"
-        Label5.Size = New Size(50, 20)
+        Label5.Size = New Size(51, 20)
         Label5.TabIndex = 14
         Label5.Text = "Harga"
         ' 
@@ -234,10 +260,11 @@ Partial Class User_Menu
         ' 
         Label4.AutoSize = True
         Label4.BackColor = Color.Transparent
+        Label4.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label4.ForeColor = SystemColors.Control
         Label4.Location = New Point(284, 156)
         Label4.Name = "Label4"
-        Label4.Size = New Size(54, 20)
+        Label4.Size = New Size(59, 20)
         Label4.TabIndex = 15
         Label4.Text = "Penulis"
         ' 
@@ -245,10 +272,11 @@ Partial Class User_Menu
         ' 
         Label3.AutoSize = True
         Label3.BackColor = Color.Transparent
+        Label3.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label3.ForeColor = SystemColors.Control
         Label3.Location = New Point(284, 121)
         Label3.Name = "Label3"
-        Label3.Size = New Size(47, 20)
+        Label3.Size = New Size(51, 20)
         Label3.TabIndex = 16
         Label3.Text = "Judul "
         ' 
@@ -256,10 +284,11 @@ Partial Class User_Menu
         ' 
         Label1.AutoSize = True
         Label1.BackColor = Color.Transparent
+        Label1.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label1.ForeColor = SystemColors.Control
         Label1.Location = New Point(284, 84)
         Label1.Name = "Label1"
-        Label1.Size = New Size(58, 20)
+        Label1.Size = New Size(63, 20)
         Label1.TabIndex = 12
         Label1.Text = "Id Buku"
         ' 
@@ -276,10 +305,11 @@ Partial Class User_Menu
         ' 
         Label6.AutoSize = True
         Label6.BackColor = Color.Transparent
+        Label6.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label6.ForeColor = SystemColors.Control
         Label6.Location = New Point(284, 262)
         Label6.Name = "Label6"
-        Label6.Size = New Size(40, 20)
+        Label6.Size = New Size(44, 20)
         Label6.TabIndex = 14
         Label6.Text = "Jenis"
         ' 
@@ -287,10 +317,11 @@ Partial Class User_Menu
         ' 
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
+        Label8.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label8.ForeColor = SystemColors.Control
         Label8.Location = New Point(284, 296)
         Label8.Name = "Label8"
-        Label8.Size = New Size(48, 20)
+        Label8.Size = New Size(51, 20)
         Label8.TabIndex = 14
         Label8.Text = "Genre"
         ' 
@@ -298,15 +329,18 @@ Partial Class User_Menu
         ' 
         Label9.AutoSize = True
         Label9.BackColor = Color.Transparent
+        Label9.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label9.ForeColor = SystemColors.Control
         Label9.Location = New Point(847, 83)
         Label9.Name = "Label9"
-        Label9.Size = New Size(69, 20)
+        Label9.Size = New Size(73, 20)
         Label9.TabIndex = 13
         Label9.Text = "Deskripsi"
         ' 
         ' txtDeskripsi
         ' 
+        txtDeskripsi.BackColor = Color.Silver
+        txtDeskripsi.BorderStyle = BorderStyle.FixedSingle
         txtDeskripsi.Location = New Point(732, 107)
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
@@ -317,6 +351,8 @@ Partial Class User_Menu
         ' 
         ' txtJenis
         ' 
+        txtJenis.BackColor = Color.Silver
+        txtJenis.BorderStyle = BorderStyle.FixedSingle
         txtJenis.Location = New Point(383, 259)
         txtJenis.Name = "txtJenis"
         txtJenis.ReadOnly = True
@@ -326,6 +362,8 @@ Partial Class User_Menu
         ' 
         ' txtGenre
         ' 
+        txtGenre.BackColor = Color.Silver
+        txtGenre.BorderStyle = BorderStyle.FixedSingle
         txtGenre.Location = New Point(383, 296)
         txtGenre.Name = "txtGenre"
         txtGenre.ReadOnly = True
@@ -337,10 +375,11 @@ Partial Class User_Menu
         ' 
         Label10.AutoSize = True
         Label10.BackColor = Color.Transparent
+        Label10.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label10.ForeColor = SystemColors.Control
         Label10.Location = New Point(33, 348)
         Label10.Name = "Label10"
-        Label10.Size = New Size(35, 20)
+        Label10.Size = New Size(36, 20)
         Label10.TabIndex = 12
         Label10.Text = "Cari"
         ' 
@@ -352,7 +391,7 @@ Partial Class User_Menu
         DataGridView2.AllowUserToResizeRows = False
         DataGridView2.BackgroundColor = SystemColors.Control
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView2.Location = New Point(732, 375)
+        DataGridView2.Location = New Point(732, 378)
         DataGridView2.MultiSelect = False
         DataGridView2.Name = "DataGridView2"
         DataGridView2.ReadOnly = True
@@ -360,22 +399,26 @@ Partial Class User_Menu
         DataGridView2.RowHeadersWidth = 51
         DataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView2.ShowEditingIcon = False
-        DataGridView2.Size = New Size(299, 304)
+        DataGridView2.Size = New Size(299, 295)
         DataGridView2.TabIndex = 21
         ' 
         ' btnHapusKeranjang
         ' 
+        btnHapusKeranjang.BackColor = Color.Silver
         btnHapusKeranjang.Enabled = False
+        btnHapusKeranjang.FlatStyle = FlatStyle.Popup
+        btnHapusKeranjang.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
+        btnHapusKeranjang.ForeColor = Color.Black
         btnHapusKeranjang.Location = New Point(734, 342)
         btnHapusKeranjang.Name = "btnHapusKeranjang"
         btnHapusKeranjang.Size = New Size(150, 29)
         btnHapusKeranjang.TabIndex = 22
         btnHapusKeranjang.Text = "Hapus"
-        btnHapusKeranjang.UseVisualStyleBackColor = True
+        btnHapusKeranjang.UseVisualStyleBackColor = False
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.BackColor = Color.DimGray
+        PictureBox1.BackColor = Color.Silver
         PictureBox1.Location = New Point(30, 73)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(231, 243)
@@ -399,6 +442,8 @@ Partial Class User_Menu
         ' 
         ' txtTahunTerbit
         ' 
+        txtTahunTerbit.BackColor = Color.Silver
+        txtTahunTerbit.BorderStyle = BorderStyle.FixedSingle
         txtTahunTerbit.Location = New Point(383, 187)
         txtTahunTerbit.Name = "txtTahunTerbit"
         txtTahunTerbit.ReadOnly = True
@@ -410,16 +455,17 @@ Partial Class User_Menu
         ' 
         Label12.AutoSize = True
         Label12.BackColor = Color.Transparent
+        Label12.Font = New Font("Segoe UI", 9.0F, FontStyle.Bold)
         Label12.ForeColor = SystemColors.Control
         Label12.Location = New Point(284, 190)
         Label12.Name = "Label12"
-        Label12.Size = New Size(89, 20)
+        Label12.Size = New Size(97, 20)
         Label12.TabIndex = 25
         Label12.Text = "Tahun Terbit"
         ' 
         ' User_Menu
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.Menu_User
         ClientSize = New Size(1062, 721)
@@ -456,7 +502,7 @@ Partial Class User_Menu
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "User_Menu"
-        Text = "Nama Buku..."
+        Text = "Haven Media (Member)"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()

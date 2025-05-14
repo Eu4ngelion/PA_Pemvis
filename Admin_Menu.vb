@@ -466,4 +466,7 @@ Public Class Admin_Menu
         btnTambah.Focus()
     End Sub
 
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
 End Class
