@@ -44,7 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="resource\" />
+    <Folder Include="database\" />
   </ItemGroup>
 
   <ItemGroup>
