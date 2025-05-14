@@ -89,6 +89,8 @@ Public Class Admin_Menu
         Clear()
         ShowDataBuku()
         AturGrid()
+
+        dateTahunTerbit.MaxDate = DateTime.Now
         comboId.Focus()
     End Sub
 

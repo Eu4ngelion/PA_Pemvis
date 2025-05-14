@@ -57,6 +57,7 @@ Partial Class User_Menu
         PrintDocument1 = New Printing.PrintDocument()
         txtTahunTerbit = New TextBox()
         Label12 = New Label()
+        labelUsername = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         MenuStrip1.SuspendLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
@@ -467,12 +468,25 @@ Partial Class User_Menu
         Label12.TabIndex = 25
         Label12.Text = "Tahun Terbit"
         ' 
+        ' labelUsername
+        ' 
+        labelUsername.AutoSize = True
+        labelUsername.BackColor = Color.FromArgb(CByte(51), CByte(91), CByte(138))
+        labelUsername.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        labelUsername.ForeColor = Color.White
+        labelUsername.Location = New Point(30, 50)
+        labelUsername.Name = "labelUsername"
+        labelUsername.Size = New Size(82, 20)
+        labelUsername.TabIndex = 27
+        labelUsername.Text = "Welcome, "
+        ' 
         ' User_Menu
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImage = My.Resources.Resources.Menu_User
         ClientSize = New Size(1062, 721)
+        Controls.Add(labelUsername)
         Controls.Add(txtTahunTerbit)
         Controls.Add(Label12)
         Controls.Add(PictureBox1)
@@ -552,4 +566,5 @@ Partial Class User_Menu
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents txtTahunTerbit As TextBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents labelUsername As Label
 End Class

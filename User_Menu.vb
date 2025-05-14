@@ -82,6 +82,9 @@ Public Class User_Menu
         Show_Data_Buku()
         Show_Data_Keranjang()
         Atur_Grid()
+
+        'Welcove, username
+        labelUsername.Text = "Welcome, " & logged_username
     End Sub
 
     ' Logout
@@ -322,6 +325,22 @@ Public Class User_Menu
         End If
 
         'Cek Stok buku
+        Dim IsStokCukup As Boolean = True
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow Then
+                Dim id_buku As String = row.Cells(0).Value.ToString()
+                Dim jumlah As Integer = Convert.ToInt32(row.Cells(2).Value)
+                Dim queryStok As String = "SELECT stok FROM tbBuku WHERE id = @id_buku"
+                CMD = New MySqlCommand(queryStok, CONN)
+                CMD.Parameters.AddWithValue("@id_buku", id_buku)
+                Dim stok As Integer = Convert.ToInt32(CMD.ExecuteScalar())
+                If stok < jumlah Then
+                    IsStokCukup = False
+                    MessageBox.Show("Stok buku tidak cukup untuk judul: " & row.Cells(1).Value.ToString(), "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Exit Sub
+                End If
+            End If
+        Next
 
         'Konfirmasi Cetak
         Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin? Keranjang akan dikosongkan setelah struk dicetak.", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -408,4 +427,6 @@ Public Class User_Menu
         Show_Data_Buku()
         Show_Data_Keranjang()
     End Sub
+
+
 End Class
