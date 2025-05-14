@@ -25,6 +25,13 @@ Partial Class Landing
         landingBg = New PictureBox()
         pictAdmin = New PictureBox()
         panelLoginAdmin = New Panel()
+        txtPasswordAdmin = New TextBox()
+        txtUsernameAdmin = New TextBox()
+        btnBackAdmin = New Button()
+        btnLoginAdmin = New Button()
+        Label3 = New Label()
+        Label2 = New Label()
+        Label1 = New Label()
         panelLoginMember = New Panel()
         txtPasswordMember = New TextBox()
         txtUsernameMember = New TextBox()
@@ -34,13 +41,6 @@ Partial Class Landing
         Label4 = New Label()
         Label5 = New Label()
         Label6 = New Label()
-        txtPasswordAdmin = New TextBox()
-        txtUsernameAdmin = New TextBox()
-        btnBackAdmin = New Button()
-        btnLoginAdmin = New Button()
-        Label3 = New Label()
-        Label2 = New Label()
-        Label1 = New Label()
         pictMember = New PictureBox()
         CType(landingBg, ComponentModel.ISupportInitialize).BeginInit()
         CType(pictAdmin, ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +51,7 @@ Partial Class Landing
         ' 
         ' landingBg
         ' 
+        landingBg.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         landingBg.Image = My.Resources.Resources.Login_Bg1
         landingBg.Location = New Point(-4, -1)
         landingBg.Name = "landingBg"
@@ -85,97 +86,10 @@ Partial Class Landing
         panelLoginAdmin.TabIndex = 4
         panelLoginAdmin.Visible = False
         ' 
-        ' panelLoginMember
-        ' 
-        panelLoginMember.Controls.Add(txtPasswordMember)
-        panelLoginMember.Controls.Add(txtUsernameMember)
-        panelLoginMember.Controls.Add(btnBackMember)
-        panelLoginMember.Controls.Add(btnRegistMember)
-        panelLoginMember.Controls.Add(btnLoginMember)
-        panelLoginMember.Controls.Add(Label4)
-        panelLoginMember.Controls.Add(Label5)
-        panelLoginMember.Controls.Add(Label6)
-        panelLoginMember.Location = New Point(276, 335)
-        panelLoginMember.Name = "panelLoginMember"
-        panelLoginMember.Size = New Size(495, 257)
-        panelLoginMember.TabIndex = 5
-        panelLoginMember.Visible = False
-        ' 
-        ' txtPasswordMember
-        ' 
-        txtPasswordMember.Location = New Point(144, 110)
-        txtPasswordMember.Name = "txtPasswordMember"
-        txtPasswordMember.PasswordChar = "●"c
-        txtPasswordMember.Size = New Size(228, 27)
-        txtPasswordMember.TabIndex = 2
-        ' 
-        ' txtUsernameMember
-        ' 
-        txtUsernameMember.Location = New Point(144, 63)
-        txtUsernameMember.Name = "txtUsernameMember"
-        txtUsernameMember.Size = New Size(228, 27)
-        txtUsernameMember.TabIndex = 2
-        ' 
-        ' btnBackMember
-        ' 
-        btnBackMember.Location = New Point(200, 213)
-        btnBackMember.Name = "btnBackMember"
-        btnBackMember.Size = New Size(94, 29)
-        btnBackMember.TabIndex = 1
-        btnBackMember.Text = "Kembali"
-        btnBackMember.UseVisualStyleBackColor = True
-        ' 
-        ' btnRegistMember
-        ' 
-        btnRegistMember.Location = New Point(266, 164)
-        btnRegistMember.Name = "btnRegistMember"
-        btnRegistMember.Size = New Size(94, 29)
-        btnRegistMember.TabIndex = 1
-        btnRegistMember.Text = "Daftar"
-        btnRegistMember.UseVisualStyleBackColor = True
-        ' 
-        ' btnLoginMember
-        ' 
-        btnLoginMember.Location = New Point(147, 164)
-        btnLoginMember.Name = "btnLoginMember"
-        btnLoginMember.Size = New Size(94, 29)
-        btnLoginMember.TabIndex = 1
-        btnLoginMember.Text = "Masuk"
-        btnLoginMember.UseVisualStyleBackColor = True
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.ForeColor = Color.White
-        Label4.Location = New Point(63, 113)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(70, 20)
-        Label4.TabIndex = 0
-        Label4.Text = "Password"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.ForeColor = Color.White
-        Label5.Location = New Point(63, 66)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(75, 20)
-        Label5.TabIndex = 0
-        Label5.Text = "Username"
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.ForeColor = Color.White
-        Label6.Location = New Point(229, 24)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(65, 20)
-        Label6.TabIndex = 0
-        Label6.Text = "Member"
-        ' 
         ' txtPasswordAdmin
         ' 
         txtPasswordAdmin.Location = New Point(125, 110)
+        txtPasswordAdmin.MaxLength = 20
         txtPasswordAdmin.Name = "txtPasswordAdmin"
         txtPasswordAdmin.PasswordChar = "●"c
         txtPasswordAdmin.Size = New Size(228, 27)
@@ -184,6 +98,7 @@ Partial Class Landing
         ' txtUsernameAdmin
         ' 
         txtUsernameAdmin.Location = New Point(125, 63)
+        txtUsernameAdmin.MaxLength = 20
         txtUsernameAdmin.Name = "txtUsernameAdmin"
         txtUsernameAdmin.Size = New Size(228, 27)
         txtUsernameAdmin.TabIndex = 2
@@ -235,6 +150,105 @@ Partial Class Landing
         Label1.Size = New Size(94, 20)
         Label1.TabIndex = 0
         Label1.Text = "Login Admin"
+        ' 
+        ' panelLoginMember
+        ' 
+        panelLoginMember.Controls.Add(txtPasswordMember)
+        panelLoginMember.Controls.Add(txtUsernameMember)
+        panelLoginMember.Controls.Add(btnBackMember)
+        panelLoginMember.Controls.Add(btnRegistMember)
+        panelLoginMember.Controls.Add(btnLoginMember)
+        panelLoginMember.Controls.Add(Label4)
+        panelLoginMember.Controls.Add(Label5)
+        panelLoginMember.Controls.Add(Label6)
+        panelLoginMember.Location = New Point(276, 335)
+        panelLoginMember.Name = "panelLoginMember"
+        panelLoginMember.Size = New Size(495, 257)
+        panelLoginMember.TabIndex = 5
+        panelLoginMember.Visible = False
+        ' 
+        ' txtPasswordMember
+        ' 
+        txtPasswordMember.Location = New Point(144, 110)
+        txtPasswordMember.MaxLength = 20
+        txtPasswordMember.Name = "txtPasswordMember"
+        txtPasswordMember.PasswordChar = "●"c
+        txtPasswordMember.Size = New Size(228, 27)
+        txtPasswordMember.TabIndex = 2
+        ' 
+        ' txtUsernameMember
+        ' 
+        txtUsernameMember.Location = New Point(144, 63)
+        txtUsernameMember.MaxLength = 20
+        txtUsernameMember.Name = "txtUsernameMember"
+        txtUsernameMember.Size = New Size(228, 27)
+        txtUsernameMember.TabIndex = 2
+        ' 
+        ' btnBackMember
+        ' 
+        btnBackMember.BackColor = Color.White
+        btnBackMember.FlatStyle = FlatStyle.Popup
+        btnBackMember.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnBackMember.Location = New Point(200, 213)
+        btnBackMember.Name = "btnBackMember"
+        btnBackMember.Size = New Size(94, 29)
+        btnBackMember.TabIndex = 1
+        btnBackMember.Text = "Kembali"
+        btnBackMember.UseVisualStyleBackColor = False
+        ' 
+        ' btnRegistMember
+        ' 
+        btnRegistMember.BackColor = Color.White
+        btnRegistMember.FlatStyle = FlatStyle.Popup
+        btnRegistMember.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnRegistMember.Location = New Point(266, 164)
+        btnRegistMember.Name = "btnRegistMember"
+        btnRegistMember.Size = New Size(94, 29)
+        btnRegistMember.TabIndex = 1
+        btnRegistMember.Text = "Daftar"
+        btnRegistMember.UseVisualStyleBackColor = False
+        ' 
+        ' btnLoginMember
+        ' 
+        btnLoginMember.BackColor = Color.White
+        btnLoginMember.FlatStyle = FlatStyle.Popup
+        btnLoginMember.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnLoginMember.Location = New Point(147, 164)
+        btnLoginMember.Name = "btnLoginMember"
+        btnLoginMember.Size = New Size(94, 29)
+        btnLoginMember.TabIndex = 1
+        btnLoginMember.Text = "Masuk"
+        btnLoginMember.UseVisualStyleBackColor = False
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.ForeColor = Color.White
+        Label4.Location = New Point(63, 113)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(70, 20)
+        Label4.TabIndex = 0
+        Label4.Text = "Password"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.ForeColor = Color.White
+        Label5.Location = New Point(63, 66)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(75, 20)
+        Label5.TabIndex = 0
+        Label5.Text = "Username"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.ForeColor = Color.White
+        Label6.Location = New Point(229, 24)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(65, 20)
+        Label6.TabIndex = 0
+        Label6.Text = "Member"
         ' 
         ' pictMember
         ' 

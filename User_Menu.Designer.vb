@@ -193,6 +193,7 @@ Partial Class User_Menu
         txtStok.BackColor = Color.Silver
         txtStok.BorderStyle = BorderStyle.FixedSingle
         txtStok.Location = New Point(596, 84)
+        txtStok.MaxLength = 10
         txtStok.Name = "txtStok"
         txtStok.ReadOnly = True
         txtStok.Size = New Size(86, 27)
@@ -215,6 +216,7 @@ Partial Class User_Menu
         txtPenulis.BackColor = Color.Silver
         txtPenulis.BorderStyle = BorderStyle.FixedSingle
         txtPenulis.Location = New Point(383, 153)
+        txtPenulis.MaxLength = 50
         txtPenulis.Name = "txtPenulis"
         txtPenulis.ReadOnly = True
         txtPenulis.Size = New Size(299, 27)
@@ -226,6 +228,7 @@ Partial Class User_Menu
         txtJudul.BackColor = Color.Silver
         txtJudul.BorderStyle = BorderStyle.FixedSingle
         txtJudul.Location = New Point(383, 118)
+        txtJudul.MaxLength = 50
         txtJudul.Name = "txtJudul"
         txtJudul.ReadOnly = True
         txtJudul.Size = New Size(299, 27)
@@ -342,6 +345,7 @@ Partial Class User_Menu
         txtDeskripsi.BackColor = Color.Silver
         txtDeskripsi.BorderStyle = BorderStyle.FixedSingle
         txtDeskripsi.Location = New Point(732, 107)
+        txtDeskripsi.MaxLength = 255
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
         txtDeskripsi.ReadOnly = True

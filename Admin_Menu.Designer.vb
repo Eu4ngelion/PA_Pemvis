@@ -197,6 +197,7 @@ Partial Class Admin_Menu
         ' 
         txtStok.BorderStyle = BorderStyle.FixedSingle
         txtStok.Location = New Point(316, 58)
+        txtStok.MaxLength = 10
         txtStok.Name = "txtStok"
         txtStok.Size = New Size(143, 27)
         txtStok.TabIndex = 2
@@ -222,6 +223,7 @@ Partial Class Admin_Menu
         ' 
         comboId.FormattingEnabled = True
         comboId.Location = New Point(126, 57)
+        comboId.MaxLength = 10
         comboId.Name = "comboId"
         comboId.Size = New Size(140, 28)
         comboId.TabIndex = 0
@@ -364,6 +366,7 @@ Partial Class Admin_Menu
         ' 
         txtHarga.BorderStyle = BorderStyle.FixedSingle
         txtHarga.Location = New Point(126, 200)
+        txtHarga.MaxLength = 20
         txtHarga.Name = "txtHarga"
         txtHarga.Size = New Size(333, 27)
         txtHarga.TabIndex = 6
@@ -427,6 +430,7 @@ Partial Class Admin_Menu
         txtDeskripsi.BorderStyle = BorderStyle.FixedSingle
         txtDeskripsi.Location = New Point(195, 438)
         txtDeskripsi.Margin = New Padding(2)
+        txtDeskripsi.MaxLength = 255
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
         txtDeskripsi.Size = New Size(264, 194)
