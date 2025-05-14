@@ -175,12 +175,13 @@ Public Class User_Menu
     Private Sub txtJudul_TextChanged(sender As Object, e As EventArgs) Handles txtJudul.TextChanged
         If txtJudul.Text = "" Then
             txtJumlah.ReadOnly = True
-            txtJumlah.BackColor = Control.DefaultBackColor
+            txtJumlah.BackColor = Color.DarkGray
             txtJumlah.Clear()
         End If
         If txtJudul.Text <> "" Then
             txtJumlah.ReadOnly = False
-            txtJumlah.BackColor = Color.Cyan
+            'active caption color
+            txtJumlah.BackColor = Color.White
             txtJumlah.Text = 0
         End If
     End Sub
@@ -199,7 +200,9 @@ Public Class User_Menu
     Private Sub txtJumlah_ReadOnlyChanged(sender As Object, e As EventArgs) Handles txtJumlah.ReadOnlyChanged
         If txtJumlah.ReadOnly = True Then
             btnKurang.Enabled = False
+            btnKurang.BackColor = Color.DarkGray
             btnTambah.Enabled = False
+            btnTambah.BackColor = Color.DarkGray
             btnTambahKeranjang.Enabled = False
         Else
             btnKurang.Enabled = True
@@ -381,4 +384,6 @@ Public Class User_Menu
         Show_Data_Buku()
         Show_Data_Keranjang()
     End Sub
+
+
 End Class

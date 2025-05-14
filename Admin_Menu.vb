@@ -13,6 +13,7 @@ Public Class Admin_Menu
         txtPenulis.Clear()
         txtHarga.Clear()
         txtDeskripsi.Clear()
+        txtCari.Clear()
         dateTahunTerbit.Value = DateTime.Now
         radioFiksi.Checked = False
         radioNonFiksi.Checked = False
@@ -58,9 +59,9 @@ Public Class Admin_Menu
     Sub AturGrid()
         With DataGridView1
             .Columns(0).HeaderText = "ID"
-            .Columns(1).HeaderText = "Judul"
+            .Columns(1).HeaderText = "Judul Buku"
             .Columns(2).HeaderText = "Penulis"
-            .Columns(3).HeaderText = "Tahun Terbit"
+            .Columns(3).HeaderText = "Tahun"
             .Columns(4).HeaderText = "Jenis"
             .Columns(5).HeaderText = "Genre"
             .Columns(6).HeaderText = "Harga"
@@ -68,14 +69,14 @@ Public Class Admin_Menu
             .Columns(8).Visible = False
             .Columns(9).Visible = False
 
-            .Columns(0).Width = 50
-            .Columns(1).Width = 200
-            .Columns(2).Width = 150
-            .Columns(3).Width = 150
-            .Columns(4).Width = 100
-            .Columns(5).Width = 100
-            .Columns(6).Width = 100
-            .Columns(7).Width = 100
+            .Columns(0).Width = 30
+            .Columns(1).Width = 120
+            .Columns(2).Width = 80
+            .Columns(3).Width = 60
+            .Columns(4).Width = 50
+            .Columns(5).Width = 70
+            .Columns(6).Width = 90
+            .Columns(7).Width = 50
 
             .DefaultCellStyle.WrapMode = DataGridViewTriState.True
             .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
@@ -465,24 +466,4 @@ Public Class Admin_Menu
         btnTambah.Focus()
     End Sub
 
-    Private Sub TabControl1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles TabControl1.DrawItem
-        Dim g As Graphics = e.Graphics
-        Dim tp As TabPage = TabControl1.TabPages(e.Index)
-        Dim textBrush As Brush = New SolidBrush(Color.Black)
-
-        ' Gambar teks tab
-        Dim tabBounds As Rectangle = TabControl1.GetTabRect(e.Index)
-
-        ' Tambah jarak horizontal antara tab
-        tabBounds.X += 10 * e.Index ' Ubah angka 10 untuk mengatur jarak antar tab
-
-        Dim sf As New StringFormat()
-        sf.Alignment = StringAlignment.Center
-        sf.LineAlignment = StringAlignment.Center
-        g.DrawString(tp.Text, TabControl1.Font, textBrush, tabBounds, sf)
-    End Sub
-
-    Private Sub txtDeskripsi_TextChanged(sender As Object, e As EventArgs) Handles txtDeskripsi.TextChanged
-
-    End Sub
 End Class

@@ -53,7 +53,6 @@ Partial Class User_Menu
         DataGridView2 = New DataGridView()
         btnHapusKeranjang = New Button()
         PictureBox1 = New PictureBox()
-        Label11 = New Label()
         PrintPreviewDialog1 = New PrintPreviewDialog()
         PrintDocument1 = New Printing.PrintDocument()
         txtTahunTerbit = New TextBox()
@@ -67,7 +66,7 @@ Partial Class User_Menu
         ' btnTambahKeranjang
         ' 
         btnTambahKeranjang.Enabled = False
-        btnTambahKeranjang.Location = New Point(890, 340)
+        btnTambahKeranjang.Location = New Point(890, 342)
         btnTambahKeranjang.Name = "btnTambahKeranjang"
         btnTambahKeranjang.Size = New Size(141, 29)
         btnTambahKeranjang.TabIndex = 0
@@ -97,15 +96,15 @@ Partial Class User_Menu
         ' txtSearch
         ' 
         txtSearch.BackColor = SystemColors.Control
-        txtSearch.Location = New Point(91, 346)
+        txtSearch.Location = New Point(85, 346)
         txtSearch.Name = "txtSearch"
-        txtSearch.Size = New Size(591, 27)
+        txtSearch.Size = New Size(597, 27)
         txtSearch.TabIndex = 4
         ' 
         ' txtJumlah
         ' 
         txtJumlah.BackColor = SystemColors.Control
-        txtJumlah.Location = New Point(814, 297)
+        txtJumlah.Location = New Point(814, 304)
         txtJumlah.Name = "txtJumlah"
         txtJumlah.Size = New Size(138, 27)
         txtJumlah.TabIndex = 6
@@ -114,7 +113,7 @@ Partial Class User_Menu
         ' btnKurang
         ' 
         btnKurang.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        btnKurang.Location = New Point(732, 296)
+        btnKurang.Location = New Point(732, 303)
         btnKurang.Name = "btnKurang"
         btnKurang.Size = New Size(61, 31)
         btnKurang.TabIndex = 7
@@ -124,7 +123,7 @@ Partial Class User_Menu
         ' btnTambah
         ' 
         btnTambah.Font = New Font("Segoe UI Black", 9F, FontStyle.Bold Or FontStyle.Italic, GraphicsUnit.Point, CByte(0))
-        btnTambah.Location = New Point(969, 297)
+        btnTambah.Location = New Point(969, 304)
         btnTambah.Name = "btnTambah"
         btnTambah.Size = New Size(62, 29)
         btnTambah.TabIndex = 7
@@ -145,7 +144,7 @@ Partial Class User_Menu
         Label2.AutoSize = True
         Label2.BackColor = Color.Transparent
         Label2.ForeColor = SystemColors.Control
-        Label2.Location = New Point(856, 268)
+        Label2.Location = New Point(847, 279)
         Label2.Name = "Label2"
         Label2.Size = New Size(76, 20)
         Label2.TabIndex = 10
@@ -164,12 +163,13 @@ Partial Class User_Menu
         ' 
         ' menuBack
         ' 
+        menuBack.Alignment = ToolStripItemAlignment.Right
         menuBack.BackColor = Color.Red
         menuBack.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         menuBack.ForeColor = Color.White
         menuBack.Name = "menuBack"
-        menuBack.Size = New Size(56, 24)
-        menuBack.Text = "Back"
+        menuBack.Size = New Size(79, 24)
+        menuBack.Text = "Log Out"
         ' 
         ' txtStok
         ' 
@@ -299,7 +299,7 @@ Partial Class User_Menu
         Label9.AutoSize = True
         Label9.BackColor = Color.Transparent
         Label9.ForeColor = SystemColors.Control
-        Label9.Location = New Point(856, 73)
+        Label9.Location = New Point(847, 83)
         Label9.Name = "Label9"
         Label9.Size = New Size(69, 20)
         Label9.TabIndex = 13
@@ -338,11 +338,11 @@ Partial Class User_Menu
         Label10.AutoSize = True
         Label10.BackColor = Color.Transparent
         Label10.ForeColor = SystemColors.Control
-        Label10.Location = New Point(32, 349)
+        Label10.Location = New Point(33, 348)
         Label10.Name = "Label10"
-        Label10.Size = New Size(53, 20)
+        Label10.Size = New Size(35, 20)
         Label10.TabIndex = 12
-        Label10.Text = "Search"
+        Label10.Text = "Cari"
         ' 
         ' DataGridView2
         ' 
@@ -366,7 +366,7 @@ Partial Class User_Menu
         ' btnHapusKeranjang
         ' 
         btnHapusKeranjang.Enabled = False
-        btnHapusKeranjang.Location = New Point(734, 340)
+        btnHapusKeranjang.Location = New Point(734, 342)
         btnHapusKeranjang.Name = "btnHapusKeranjang"
         btnHapusKeranjang.Size = New Size(150, 29)
         btnHapusKeranjang.TabIndex = 22
@@ -382,17 +382,6 @@ Partial Class User_Menu
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 24
         PictureBox1.TabStop = False
-        ' 
-        ' Label11
-        ' 
-        Label11.AutoSize = True
-        Label11.BackColor = Color.Transparent
-        Label11.ForeColor = SystemColors.Control
-        Label11.Location = New Point(91, 50)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(87, 20)
-        Label11.TabIndex = 23
-        Label11.Text = "Cover (WIP)"
         ' 
         ' PrintPreviewDialog1
         ' 
@@ -437,7 +426,6 @@ Partial Class User_Menu
         Controls.Add(txtTahunTerbit)
         Controls.Add(Label12)
         Controls.Add(PictureBox1)
-        Controls.Add(Label11)
         Controls.Add(btnHapusKeranjang)
         Controls.Add(DataGridView2)
         Controls.Add(txtIdBuku)
@@ -508,7 +496,6 @@ Partial Class User_Menu
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents btnHapusKeranjang As Button
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents txtTahunTerbit As TextBox
