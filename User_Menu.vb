@@ -1,6 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class User_Menu
-    'Array Keranjang
 
     'Fungsi Clear Tools
     Sub ClearTxt()
@@ -117,6 +116,10 @@ Public Class User_Menu
             txtJenis.Text = DS.Tables("tbBuku").Rows(0).Item("jenis").ToString()
             txtGenre.Text = DS.Tables("tbBuku").Rows(0).Item("genre").ToString()
             txtDeskripsi.Text = DS.Tables("tbBuku").Rows(0).Item("deskripsi").ToString()
+            Dim foto() As Byte = DS.Tables("tbBuku").Rows(0).Item("cover")
+            txtTahunTerbit.Text = DS.Tables("tbBuku").Rows(0).Item("tahun_terbit").ToString()
+            Dim ms As New IO.MemoryStream(foto)
+            PictureBox1.Image = Image.FromStream(ms)
         Else
             txtJudul.Clear()
             txtStok.Clear()
@@ -125,6 +128,8 @@ Public Class User_Menu
             txtJenis.Clear()
             txtGenre.Clear()
             txtDeskripsi.Clear()
+            txtTahunTerbit.Clear()
+            PictureBox1.Image = Nothing
         End If
     End Sub
 
@@ -316,6 +321,8 @@ Public Class User_Menu
             Exit Sub
         End If
 
+        'Cek Stok buku
+
         'Konfirmasi Cetak
         Dim result As DialogResult = MessageBox.Show("Apakah Anda yakin? Keranjang akan dikosongkan setelah struk dicetak.", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.No Then
@@ -400,9 +407,5 @@ Public Class User_Menu
         MessageBox.Show("Struk pesanan berhasil dicetak, silahkan bawa ke kasir", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Show_Data_Buku()
         Show_Data_Keranjang()
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
     End Sub
 End Class
