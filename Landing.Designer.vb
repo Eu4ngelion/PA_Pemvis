@@ -105,49 +105,60 @@ Partial Class Landing
         ' 
         ' btnBackAdmin
         ' 
+        btnBackAdmin.BackColor = Color.Crimson
+        btnBackAdmin.FlatStyle = FlatStyle.Popup
+        btnBackAdmin.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnBackAdmin.ForeColor = Color.White
         btnBackAdmin.Location = New Point(243, 164)
         btnBackAdmin.Name = "btnBackAdmin"
         btnBackAdmin.Size = New Size(94, 29)
         btnBackAdmin.TabIndex = 1
         btnBackAdmin.Text = "Kembali"
-        btnBackAdmin.UseVisualStyleBackColor = True
+        btnBackAdmin.UseVisualStyleBackColor = False
         ' 
         ' btnLoginAdmin
         ' 
+        btnLoginAdmin.BackColor = Color.MediumSeaGreen
+        btnLoginAdmin.FlatStyle = FlatStyle.Popup
+        btnLoginAdmin.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnLoginAdmin.ForeColor = Color.White
         btnLoginAdmin.Location = New Point(133, 164)
         btnLoginAdmin.Name = "btnLoginAdmin"
         btnLoginAdmin.Size = New Size(94, 29)
         btnLoginAdmin.TabIndex = 1
         btnLoginAdmin.Text = "Masuk"
-        btnLoginAdmin.UseVisualStyleBackColor = True
+        btnLoginAdmin.UseVisualStyleBackColor = False
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label3.ForeColor = Color.White
-        Label3.Location = New Point(44, 113)
+        Label3.Location = New Point(41, 113)
         Label3.Name = "Label3"
-        Label3.Size = New Size(70, 20)
+        Label3.Size = New Size(76, 20)
         Label3.TabIndex = 0
         Label3.Text = "Password"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label2.ForeColor = Color.White
-        Label2.Location = New Point(44, 66)
+        Label2.Location = New Point(41, 66)
         Label2.Name = "Label2"
-        Label2.Size = New Size(75, 20)
+        Label2.Size = New Size(80, 20)
         Label2.TabIndex = 0
         Label2.Text = "Username"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label1.ForeColor = Color.White
         Label1.Location = New Point(190, 26)
         Label1.Name = "Label1"
-        Label1.Size = New Size(94, 20)
+        Label1.Size = New Size(99, 20)
         Label1.TabIndex = 0
         Label1.Text = "Login Admin"
         ' 
@@ -186,10 +197,11 @@ Partial Class Landing
         ' 
         ' btnBackMember
         ' 
-        btnBackMember.BackColor = Color.White
+        btnBackMember.BackColor = Color.Crimson
         btnBackMember.FlatStyle = FlatStyle.Popup
         btnBackMember.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
-        btnBackMember.Location = New Point(200, 213)
+        btnBackMember.ForeColor = Color.White
+        btnBackMember.Location = New Point(200, 206)
         btnBackMember.Name = "btnBackMember"
         btnBackMember.Size = New Size(94, 29)
         btnBackMember.TabIndex = 1
@@ -198,9 +210,10 @@ Partial Class Landing
         ' 
         ' btnRegistMember
         ' 
-        btnRegistMember.BackColor = Color.White
+        btnRegistMember.BackColor = Color.SteelBlue
         btnRegistMember.FlatStyle = FlatStyle.Popup
         btnRegistMember.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnRegistMember.ForeColor = Color.White
         btnRegistMember.Location = New Point(266, 164)
         btnRegistMember.Name = "btnRegistMember"
         btnRegistMember.Size = New Size(94, 29)
@@ -210,9 +223,10 @@ Partial Class Landing
         ' 
         ' btnLoginMember
         ' 
-        btnLoginMember.BackColor = Color.White
+        btnLoginMember.BackColor = Color.MediumSeaGreen
         btnLoginMember.FlatStyle = FlatStyle.Popup
         btnLoginMember.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
+        btnLoginMember.ForeColor = Color.White
         btnLoginMember.Location = New Point(147, 164)
         btnLoginMember.Name = "btnLoginMember"
         btnLoginMember.Size = New Size(94, 29)
@@ -223,30 +237,33 @@ Partial Class Landing
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label4.ForeColor = Color.White
         Label4.Location = New Point(63, 113)
         Label4.Name = "Label4"
-        Label4.Size = New Size(70, 20)
+        Label4.Size = New Size(76, 20)
         Label4.TabIndex = 0
         Label4.Text = "Password"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label5.ForeColor = Color.White
         Label5.Location = New Point(63, 66)
         Label5.Name = "Label5"
-        Label5.Size = New Size(75, 20)
+        Label5.Size = New Size(80, 20)
         Label5.TabIndex = 0
         Label5.Text = "Username"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label6.ForeColor = Color.White
         Label6.Location = New Point(229, 24)
         Label6.Name = "Label6"
-        Label6.Size = New Size(65, 20)
+        Label6.Size = New Size(68, 20)
         Label6.TabIndex = 0
         Label6.Text = "Member"
         ' 
@@ -266,8 +283,8 @@ Partial Class Landing
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(11), CByte(41), CByte(79))
         ClientSize = New Size(1058, 717)
-        Controls.Add(panelLoginMember)
         Controls.Add(panelLoginAdmin)
+        Controls.Add(panelLoginMember)
         Controls.Add(pictAdmin)
         Controls.Add(pictMember)
         Controls.Add(landingBg)

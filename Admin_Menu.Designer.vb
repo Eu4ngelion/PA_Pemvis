@@ -418,7 +418,7 @@ Partial Class Admin_Menu
         ' Label17
         ' 
         Label17.AutoSize = True
-        Label17.Location = New Point(294, 416)
+        Label17.Location = New Point(294, 413)
         Label17.Margin = New Padding(2, 0, 2, 0)
         Label17.Name = "Label17"
         Label17.Size = New Size(69, 20)
@@ -428,12 +428,12 @@ Partial Class Admin_Menu
         ' txtDeskripsi
         ' 
         txtDeskripsi.BorderStyle = BorderStyle.FixedSingle
-        txtDeskripsi.Location = New Point(195, 438)
+        txtDeskripsi.Location = New Point(195, 435)
         txtDeskripsi.Margin = New Padding(2)
         txtDeskripsi.MaxLength = 255
         txtDeskripsi.Multiline = True
         txtDeskripsi.Name = "txtDeskripsi"
-        txtDeskripsi.Size = New Size(264, 194)
+        txtDeskripsi.Size = New Size(264, 197)
         txtDeskripsi.TabIndex = 18
         ' 
         ' btnTambah
