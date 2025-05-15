@@ -244,9 +244,9 @@ Partial Class Admin_Menu
         CheckBox1.AutoSize = True
         CheckBox1.Location = New Point(18, 27)
         CheckBox1.Name = "CheckBox1"
-        CheckBox1.Size = New Size(78, 24)
+        CheckBox1.Size = New Size(76, 24)
         CheckBox1.TabIndex = 8
-        CheckBox1.Text = "Genre1"
+        CheckBox1.Text = "Fantasi"
         CheckBox1.UseVisualStyleBackColor = True
         ' 
         ' groupJenis
@@ -256,7 +256,7 @@ Partial Class Admin_Menu
         groupJenis.FlatStyle = FlatStyle.Popup
         groupJenis.Location = New Point(24, 239)
         groupJenis.Name = "groupJenis"
-        groupJenis.Size = New Size(193, 61)
+        groupJenis.Size = New Size(216, 61)
         groupJenis.TabIndex = 6
         groupJenis.TabStop = False
         groupJenis.Text = "Jenis Buku"
@@ -264,7 +264,7 @@ Partial Class Admin_Menu
         ' radioNonFiksi
         ' 
         radioNonFiksi.AutoSize = True
-        radioNonFiksi.Location = New Point(89, 26)
+        radioNonFiksi.Location = New Point(108, 26)
         radioNonFiksi.Name = "radioNonFiksi"
         radioNonFiksi.Size = New Size(92, 24)
         radioNonFiksi.TabIndex = 8
@@ -293,33 +293,33 @@ Partial Class Admin_Menu
         ' CheckBox6
         ' 
         CheckBox6.AutoSize = True
-        CheckBox6.Location = New Point(101, 55)
+        CheckBox6.Location = New Point(106, 55)
         CheckBox6.Margin = New Padding(2)
         CheckBox6.Name = "CheckBox6"
-        CheckBox6.Size = New Size(78, 24)
+        CheckBox6.Size = New Size(80, 24)
         CheckBox6.TabIndex = 15
-        CheckBox6.Text = "Genre6"
+        CheckBox6.Text = "Sejarah"
         CheckBox6.UseVisualStyleBackColor = True
         ' 
         ' CheckBox3
         ' 
         CheckBox3.AutoSize = True
-        CheckBox3.Location = New Point(184, 27)
+        CheckBox3.Location = New Point(194, 27)
         CheckBox3.Margin = New Padding(2)
         CheckBox3.Name = "CheckBox3"
-        CheckBox3.Size = New Size(78, 24)
+        CheckBox3.Size = New Size(76, 24)
         CheckBox3.TabIndex = 14
-        CheckBox3.Text = "Genre3"
+        CheckBox3.Text = "Drama"
         CheckBox3.UseVisualStyleBackColor = True
         ' 
         ' CheckBox8
         ' 
         CheckBox8.AutoSize = True
-        CheckBox8.Location = New Point(269, 55)
+        CheckBox8.Location = New Point(283, 55)
         CheckBox8.Name = "CheckBox8"
-        CheckBox8.Size = New Size(78, 24)
+        CheckBox8.Size = New Size(85, 24)
         CheckBox8.TabIndex = 13
-        CheckBox8.Text = "Genre8"
+        CheckBox8.Text = "Edukatif"
         CheckBox8.UseVisualStyleBackColor = True
         ' 
         ' CheckBox5
@@ -327,39 +327,39 @@ Partial Class Admin_Menu
         CheckBox5.AutoSize = True
         CheckBox5.Location = New Point(18, 55)
         CheckBox5.Name = "CheckBox5"
-        CheckBox5.Size = New Size(78, 24)
+        CheckBox5.Size = New Size(70, 24)
         CheckBox5.TabIndex = 11
-        CheckBox5.Text = "Genre5"
+        CheckBox5.Text = "Horor"
         CheckBox5.UseVisualStyleBackColor = True
         ' 
         ' CheckBox2
         ' 
         CheckBox2.AutoSize = True
-        CheckBox2.Location = New Point(101, 27)
+        CheckBox2.Location = New Point(106, 27)
         CheckBox2.Name = "CheckBox2"
-        CheckBox2.Size = New Size(78, 24)
+        CheckBox2.Size = New Size(74, 24)
         CheckBox2.TabIndex = 9
-        CheckBox2.Text = "Genre2"
+        CheckBox2.Text = "Action"
         CheckBox2.UseVisualStyleBackColor = True
         ' 
         ' CheckBox4
         ' 
         CheckBox4.AutoSize = True
-        CheckBox4.Location = New Point(268, 27)
+        CheckBox4.Location = New Point(282, 27)
         CheckBox4.Name = "CheckBox4"
-        CheckBox4.Size = New Size(78, 24)
+        CheckBox4.Size = New Size(92, 24)
         CheckBox4.TabIndex = 10
-        CheckBox4.Text = "Genre4"
+        CheckBox4.Text = "Romansa"
         CheckBox4.UseVisualStyleBackColor = True
         ' 
         ' CheckBox7
         ' 
         CheckBox7.AutoSize = True
-        CheckBox7.Location = New Point(184, 55)
+        CheckBox7.Location = New Point(194, 55)
         CheckBox7.Name = "CheckBox7"
-        CheckBox7.Size = New Size(78, 24)
+        CheckBox7.Size = New Size(84, 24)
         CheckBox7.TabIndex = 12
-        CheckBox7.Text = "Genre7"
+        CheckBox7.Text = "Biografi"
         CheckBox7.UseVisualStyleBackColor = True
         ' 
         ' txtHarga

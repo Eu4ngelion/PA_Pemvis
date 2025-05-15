@@ -424,6 +424,7 @@ Public Class User_Menu
         CMD.ExecuteNonQuery()
         Show_Data_Keranjang()
         MessageBox.Show("Struk pesanan berhasil dicetak, silahkan bawa ke kasir", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        ClearTxt()
         Show_Data_Buku()
         Show_Data_Keranjang()
     End Sub

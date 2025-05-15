@@ -293,7 +293,7 @@ Partial Class Landing
         MinimumSize = New Size(1080, 768)
         Name = "Landing"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Haven Media"
+        Text = "user"
         CType(landingBg, ComponentModel.ISupportInitialize).EndInit()
         CType(pictAdmin, ComponentModel.ISupportInitialize).EndInit()
         panelLoginAdmin.ResumeLayout(False)
