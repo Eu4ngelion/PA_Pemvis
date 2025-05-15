@@ -192,6 +192,8 @@ Public Class Admin_Menu
                 For Each checkBox In groupGenre.Controls.OfType(Of CheckBox)
                     If checkBox.Text = item Then
                         checkBox.Checked = True
+                    Else
+                        checkBox.Checked = False
                     End If
                 Next
             Next
