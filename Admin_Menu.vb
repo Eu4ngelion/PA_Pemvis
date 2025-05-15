@@ -75,10 +75,10 @@ Public Class Admin_Menu
             .Columns(1).Width = 120
             .Columns(2).Width = 80
             .Columns(3).Width = 60
-            .Columns(4).Width = 50
+            .Columns(4).Width = 70
             .Columns(5).Width = 70
             .Columns(6).Width = 70
-            .Columns(7).Width = 70
+            .Columns(7).Width = 50
 
             .DefaultCellStyle.WrapMode = DataGridViewTriState.True
             .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
@@ -178,25 +178,29 @@ Public Class Admin_Menu
     'Klik DataGridView
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         If e.RowIndex >= 0 Then
+            Clear()
             comboId.Text = DataGridView1.Rows(e.RowIndex).Cells(0).Value.ToString
             txtJudul.Text = DataGridView1.Rows(e.RowIndex).Cells(1).Value.ToString
             txtPenulis.Text = DataGridView1.Rows(e.RowIndex).Cells(2).Value.ToString
+
             dateTahunTerbit.Value = Date.ParseExact(DataGridView1.Rows(e.RowIndex).Cells(3).Value.ToString, "yyyy", Nothing)
+
             If DataGridView1.Rows(e.RowIndex).Cells(4).Value.ToString = "Fiksi" Then
                 radioFiksi.Checked = True
             Else
                 radioNonFiksi.Checked = True
             End If
+
             Dim genre = DataGridView1.Rows(e.RowIndex).Cells(5).Value.ToString.Split(", ")
             For Each item In genre
                 For Each checkBox In groupGenre.Controls.OfType(Of CheckBox)
                     If checkBox.Text = item Then
                         checkBox.Checked = True
                     Else
-                        checkBox.Checked = False
                     End If
                 Next
             Next
+
             txtHarga.Text = DataGridView1.Rows(e.RowIndex).Cells(6).Value.ToString
             txtStok.Text = DataGridView1.Rows(e.RowIndex).Cells(7).Value.ToString
             txtDeskripsi.Text = DataGridView1.Rows(e.RowIndex).Cells(8).Value.ToString
