@@ -239,14 +239,15 @@ Public Class User_Menu
 
     'Tombol Kurang
     Private Sub btnKurang_Click(sender As Object, e As EventArgs) Handles btnKurang.Click
-        If txtJumlah.Text > 0 Then
+        If CInt(txtJumlah.Text) > 0 Then
             txtJumlah.Text -= 1
         End If
     End Sub
 
     'Tombol Tambah
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        If txtJumlah.Text < txtStok.Text Then
+        'to integer
+        If CInt(txtJumlah.Text) < CInt(txtStok.Text) Then
             txtJumlah.Text += 1
         Else
             MessageBox.Show("Stok Buku Tidak Cukup", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -255,14 +256,14 @@ Public Class User_Menu
 
     'Tambah Keranjang
     Private Sub btnTambahKeranjang_Click(sender As Object, e As EventArgs) Handles btnTambahKeranjang.Click
-        If txtJumlah.Text = 0 Then
+        If CInt(txtJumlah.Text) = 0 Then
             MessageBox.Show("Jumlah Buku Tidak Boleh Kosong", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
             txtJumlah.Focus()
             Exit Sub
         End If
 
         'Validasi Stok Input
-        If txtJumlah.Text > txtStok.Text Then
+        If CInt(txtJumlah.Text) > CInt(txtStok.Text) Then
             MessageBox.Show("Stok Buku Tidak Cukup", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
             txtJumlah.Focus()
             Exit Sub
