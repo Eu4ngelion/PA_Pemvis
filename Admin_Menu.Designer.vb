@@ -385,7 +385,7 @@ Partial Class Admin_Menu
         dateTahunTerbit.CustomFormat = "yyyy"
         dateTahunTerbit.Format = DateTimePickerFormat.Custom
         dateTahunTerbit.Location = New Point(126, 165)
-        dateTahunTerbit.MaxDate = New Date(2099, 5, 11, 0, 0, 0, 0)
+        dateTahunTerbit.MaxDate = New Date(2025, 5, 30, 0, 0, 0, 0)
         dateTahunTerbit.Name = "dateTahunTerbit"
         dateTahunTerbit.Size = New Size(333, 27)
         dateTahunTerbit.TabIndex = 5

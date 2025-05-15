@@ -261,7 +261,7 @@ Partial Class Landing
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI", 9F, FontStyle.Bold)
         Label6.ForeColor = Color.White
-        Label6.Location = New Point(229, 24)
+        Label6.Location = New Point(216, 24)
         Label6.Name = "Label6"
         Label6.Size = New Size(68, 20)
         Label6.TabIndex = 0

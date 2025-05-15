@@ -14,7 +14,9 @@ Public Class Admin_Menu
         txtHarga.Clear()
         txtDeskripsi.Clear()
         txtCari.Clear()
+        dateTahunTerbit.MaxDate = DateTime.Now.AddHours(+1)
         dateTahunTerbit.Value = DateTime.Now
+
         radioFiksi.Checked = False
         radioNonFiksi.Checked = False
         CheckBox1.Checked = False
@@ -75,8 +77,8 @@ Public Class Admin_Menu
             .Columns(3).Width = 60
             .Columns(4).Width = 50
             .Columns(5).Width = 70
-            .Columns(6).Width = 90
-            .Columns(7).Width = 50
+            .Columns(6).Width = 70
+            .Columns(7).Width = 70
 
             .DefaultCellStyle.WrapMode = DataGridViewTriState.True
             .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
@@ -90,7 +92,6 @@ Public Class Admin_Menu
         ShowDataBuku()
         AturGrid()
 
-        dateTahunTerbit.MaxDate = DateTime.Now
         comboId.Focus()
     End Sub
 
